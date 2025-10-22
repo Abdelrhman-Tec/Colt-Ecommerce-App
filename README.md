@@ -33,16 +33,30 @@ A modern Flutter-based e-commerce application designed with clean architecture, 
 
 ---
 
-## Notes
+## Requirements
 
-This app is a practical project for learning Flutter architecture, state management, and feature-based structure in real-world e-commerce development.
+Before running this project, make sure you have the following installed:
+
+- Flutter SDK (latest stable version)
+- Dart SDK (included with Flutter)
+- Android Studio or VS Code with Flutter extensions
+- A connected Android/iOS device or emulator
 
 ---
 
-## Author
+## Installation & Run
 
-**Abdelrhman Nada**  
-Flutter Developer
+Follow these steps to clone and run the project locally:
 
-# Colt-Ecommerce-App
-A modern Flutter-based e-commerce application designed with clean architecture, state management, and responsive UI.
+```bash
+# 1. Clone the repository
+git clone https://github.com/Abdelrhman-Tec/Colt-Ecommerce-App.git
+
+# 2. Navigate into the project directory
+cd Colt-Ecommerce-App
+
+# 3. Get dependencies
+flutter pub get
+
+# 4. Run the app
+flutter run
