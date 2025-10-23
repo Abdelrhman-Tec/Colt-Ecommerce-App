@@ -45,15 +45,19 @@ dependencies:
 
   # Splash Screen
   flutter_native_splash: ^2.4.6    # Native splash screen
-  flutter_gen: ^5.12.0
-  flutter_localizations:
-    sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0            # Recommended Flutter lints
 
+flutter_gen:
+  outputs:
+    lib/core/localization/generated/
+  integrations:
+    - flutter_localizations
+    
+  # assets:
+  #   - assets/translations/
+
 # flutter:
-#   uses-material-design: true
-#   assets:
