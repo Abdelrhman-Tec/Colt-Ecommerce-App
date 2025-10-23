@@ -116,12 +116,6 @@
       "languageVersion": "3.4"
     },
     {
-      "name": "color",
-      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/color-3.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "convert",
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/convert-3.1.2",
       "packageUri": "lib/",
@@ -150,12 +144,6 @@
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/dart_style-3.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.7"
-    },
-    {
-      "name": "dartx",
-      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/dartx-1.2.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "data_connection_checker_tv",
@@ -242,18 +230,6 @@
       "languageVersion": "2.14"
     },
     {
-      "name": "flutter_gen",
-      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_gen-5.12.0",
-      "packageUri": "lib/",
-      "languageVersion": "3.4"
-    },
-    {
-      "name": "flutter_gen_core",
-      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_gen_core-5.12.0",
-      "packageUri": "lib/",
-      "languageVersion": "3.4"
-    },
-    {
       "name": "flutter_lints",
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-5.0.0",
       "packageUri": "lib/",
@@ -326,12 +302,6 @@
       "languageVersion": "3.4"
     },
     {
-      "name": "hashcodes",
-      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/hashcodes-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "html",
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/html-0.15.6",
       "packageUri": "lib/",
@@ -360,12 +330,6 @@
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.5.4",
       "packageUri": "lib/",
       "languageVersion": "3.0"
-    },
-    {
-      "name": "image_size_getter",
-      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/image_size_getter-2.4.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "intl",
@@ -672,12 +636,6 @@
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.7.6",
       "packageUri": "lib/",
       "languageVersion": "3.5"
-    },
-    {
-      "name": "time",
-      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/time-2.1.5",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "typed_data",
