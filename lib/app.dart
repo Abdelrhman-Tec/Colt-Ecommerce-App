@@ -1,5 +1,7 @@
 import 'package:colt_ecommerce_app/core/config/app_config.dart';
 import 'package:colt_ecommerce_app/core/routing/app_route_observer.dart';
+import 'package:colt_ecommerce_app/core/routing/app_router.dart';
+import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -31,7 +33,12 @@ class ColtEcommerceApp extends StatelessWidget {
 
           //Navigator key
           navigatorKey: navigatorKey,
-          home: const Placeholder(),
+
+          // Page Route
+          onGenerateRoute: AppRouter.onGenerateRoute,
+          initialRoute: Routes.loginScreen,
+
+          home: Scaffold(),
         );
       },
     );
