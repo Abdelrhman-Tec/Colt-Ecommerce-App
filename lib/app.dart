@@ -1,4 +1,5 @@
 import 'package:colt_ecommerce_app/core/config/app_config.dart';
+import 'package:colt_ecommerce_app/core/routing/app_route_observer.dart';
 import 'package:colt_ecommerce_app/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -17,7 +18,7 @@ class ColtEcommerceApp extends StatelessWidget {
         return MaterialApp(
           title: 'Colt Ecommerce',
           debugShowCheckedModeBanner: false,
-
+          navigatorObservers: [AppRouteObserver()],
           //Theme setup
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
