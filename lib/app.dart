@@ -35,10 +35,8 @@ class ColtEcommerceApp extends StatelessWidget {
           navigatorKey: navigatorKey,
 
           // Page Route
-          onGenerateRoute: AppRouter.onGenerateRoute,
+          onGenerateRoute: (settings) => AppRouter.onGenerateRoute(settings),
           initialRoute: Routes.loginScreen,
-
-          home: Scaffold(),
         );
       },
     );
