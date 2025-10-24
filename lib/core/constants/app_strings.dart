@@ -12,6 +12,7 @@ class AppStrings {
   static const String lastname = 'Lastname';
   static const String continueText = 'Continue';
   static const String men = 'Men';
+  static const String reset = "Reset";
   static const String women = 'Women';
   static const String forgotPasswordReset = 'Forgot Password ? Reset';
   static const String howOldAreYou = 'How Old are you ?';
