@@ -12,7 +12,7 @@ dependencies:
 
   # UI and Styling
   cupertino_icons: ^1.0.8          # iOS-style icons
-  flutter_svg: ^2.2.0              # SVG rendering and widget library
+  flutter_svg: ^2.2.1              # SVG rendering and widget library
   flutter_screenutil: ^5.9.3       # Screen and font size adaptation
 
   # Network and Connectivity
@@ -49,15 +49,27 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0            # Recommended Flutter lints
 
-flutter_gen:
-  outputs:
-    lib/core/localization/generated/
-  integrations:
-    - flutter_localizations
-    
-  # assets:
-  #   - assets/translations/
+  flutter_lints: ^5.0.0
 
-# flutter:
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - asset/icon/
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
