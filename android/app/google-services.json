@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "115404061965",
+    "project_id": "colt-ecommerce-app",
+    "storage_bucket": "colt-ecommerce-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115404061965:android:5721c0f2b1dbaf20534444",
+        "android_client_info": {
+          "package_name": "com.example.colt_ecommerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXfuuZzJrI20uvbEmHe0ctr8leKquAW90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
