@@ -73,19 +73,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {},
                 ),
                 verticalSpace(10),
-                Text.rich(
-                  TextSpan(
-                    text: AppStrings.dontHaveAccount,
-                    children: [
-                      TextSpan(
-                        text: AppStrings.createOne,
-                        recognizer: _tapRecognizer,
-                      ),
-                    ],
+                Center(
+                  child: Text.rich(
+                    TextSpan(
+                      text: AppStrings.dontHaveAccount,
+                      children: [
+                        TextSpan(
+                          text: AppStrings.createOne,
+                          recognizer: _tapRecognizer,
+                        ),
+                      ],
+                    ),
+                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodySmall!.copyWith(fontWeight: FontWeight.w500),
                 ),
                 verticalSpace(100),
                 SocialButton(
