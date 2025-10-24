@@ -6,7 +6,7 @@ class AppColors {
   //Light Theme
   static const Color lightBackground = Color(0xFFFFFFFF);
   static const Color lightSurface = Color(0xFFF5F5F5);
-  static const Color lightTextPrimary = Color(0xFF1C1C1E);
+  static const Color lightTextPrimary = Color.fromARGB(255, 0, 0, 0);
   static const Color lightTextSecondary = Color(0xFF6E6E73);
 
   // Dark Theme
