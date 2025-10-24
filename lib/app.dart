@@ -16,7 +16,6 @@ class ColtEcommerceApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          title: 'Colt Ecommerce',
           debugShowCheckedModeBanner: false,
           navigatorObservers: [AppRouteObserver()],
           //Theme setup

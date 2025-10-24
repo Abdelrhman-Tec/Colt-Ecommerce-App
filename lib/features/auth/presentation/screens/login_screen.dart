@@ -1,5 +1,7 @@
 import 'package:colt_ecommerce_app/core/constants/app_strings.dart';
+import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
+import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/app_colors.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_text_form_filed.dart';
@@ -17,8 +19,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TapGestureRecognizer _tapRecognizer = TapGestureRecognizer()
-    ..onTap = () {};
+  TapGestureRecognizer get _tapRecognizer =>
+      TapGestureRecognizer()
+        ..onTap = () => context.pushNamed(Routes.registerScreen);
   bool obscurePassword = true;
   @override
   Widget build(BuildContext context) {
@@ -55,7 +58,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 Align(
                   alignment: Alignment.topRight,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () =>
+                        context.pushNamed(Routes.forgotPasswordScreen),
                     child: Text(
                       AppStrings.forgotPassword,
                       style: textTheme.bodySmall!.copyWith(
