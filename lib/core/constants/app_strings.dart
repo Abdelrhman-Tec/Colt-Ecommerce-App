@@ -18,7 +18,8 @@ class AppStrings {
   static const String weSentYouEmail =
       'We Sent you an Email to reset your password.';
   static const String ageRange = 'Age Range';
-  static const String dontHaveAccount = 'Dont have an Account ? Create One';
+  static const String dontHaveAccount = 'Dont have an Account ? ';
+  static const String createOne = 'Create One';
   static const String returnToLogin = 'Return to Login';
   static const String continueWithApple = 'Continue With Apple';
   static const String continueWithGoogle = 'Continue With Google';
