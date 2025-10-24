@@ -12,9 +12,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool obscureText = false;
+
   @override
   Widget build(BuildContext context) {
-    final bool obscureText = false;
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
@@ -40,11 +41,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 CustomTextFormField(
                   hintText: AppStrings.password,
                   obscureText: obscureText,
-                  suffixIcon: Icon(Icons.visibility_off, size: 24),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        obscureText = !obscureText;
+                      });
+                    },
+                    icon: obscureText
+                        ? const Icon(Icons.visibility_off_outlined, size: 24)
+                        : const Icon(Icons.visibility_outlined, size: 24),
+                  ),
                 ),
-                Icon(Icons.visibility_off, size: 24),
-                Icon(Icons.visibility_off, size: 24),
-                Icon(Icons.visibility_off, size: 24),
               ],
             ),
           ),
