@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   background: theme.colorScheme.primary.withAlpha(30),
                 ),
                 verticalSpace(40),
-                AuthBlocListener(),
+                AuthBlocListener(redirectRoute: Routes.homeScreen),
               ],
             ),
           ),
