@@ -1,5 +1,6 @@
 import 'package:colt_ecommerce_app/core/errors/firebase_error_handler.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class FirebaseAuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -75,6 +76,22 @@ class FirebaseAuthService {
       throw FirebaseErrorHandler.handleAuthError(e);
     } catch (e) {
       throw 'Failed to send verification email: $e';
+    }
+  }
+
+  Future<User?> signInFacebook() async {
+    final result = await FacebookAuth.instance.login();
+
+    if (result.status == LoginStatus.success && result.accessToken != null) {
+      final credential = FacebookAuthProvider.credential(
+        result.accessToken!.tokenString,
+      );
+      final userCredential = await _auth.signInWithCredential(credential);
+      return userCredential.user;
+    } else if (result.status == LoginStatus.cancelled) {
+      throw 'Facebook login was cancelled by the user.';
+    } else {
+      throw 'Facebook login failed: ${result.message}';
     }
   }
 

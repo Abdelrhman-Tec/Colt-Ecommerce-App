@@ -7,6 +7,5 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await firebaseSetup();
   await setupGetIt();
-
   runApp(const ColtEcommerceApp());
 }

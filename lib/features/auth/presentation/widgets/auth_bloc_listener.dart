@@ -22,8 +22,10 @@ class AuthBlocListener extends StatelessWidget {
               context: context,
               barrierDismissible: false,
               builder: (context) => Center(
-                child: CircularProgressIndicator(
-                  color: Theme.of(context).colorScheme.primary,
+                child: Image.asset(
+                  'asset/icon/loading.gif',
+                  width: 160,
+                  height: 160,
                 ),
               ),
             );

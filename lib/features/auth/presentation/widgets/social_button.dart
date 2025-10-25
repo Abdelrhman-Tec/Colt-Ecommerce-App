@@ -2,12 +2,14 @@ import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class SocialButton extends StatelessWidget {
+  final VoidCallback ontap;
   final IconData icon;
   final String text;
   final Color background;
   final double iconSize;
 
   const SocialButton({
+    required this.ontap,
     super.key,
     required this.icon,
     required this.text,
@@ -24,7 +26,7 @@ class SocialButton extends StatelessWidget {
       backgroundColor: background,
       borderRadius: 50,
       text: text,
-      onPressed: () {},
+      onPressed: ontap,
     );
   }
 }

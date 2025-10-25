@@ -29,4 +29,16 @@ class AuthCubit extends Cubit<AuthState<User?>> {
       emit(AuthState.error(message: e.toString()));
     }
   }
+
+  Future<void> loginWithFacebook() async {
+    emit(AuthState.loading());
+    try {
+      final userCredential = await _auth.signInFacebook();
+      emit(AuthState.success(data: userCredential));
+    } on FirebaseAuthException catch (e) {
+      emit(AuthState.error(message: FirebaseErrorHandler.handleAuthError(e)));
+    } catch (e) {
+      emit(AuthState.error(message: e.toString()));
+    }
+  }
 }

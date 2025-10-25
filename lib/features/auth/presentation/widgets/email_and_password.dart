@@ -21,38 +21,43 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   bool hasMinLength = false;
 
   late TextEditingController passwordController;
+  late TextEditingController emailController;
+  bool obscurePassword = true;
 
   @override
   void initState() {
     super.initState();
-    passwordController = context.read<AuthCubit>().passwordController;
+    final cubit = context.read<AuthCubit>();
+    passwordController = cubit.passwordController;
+    emailController = cubit.emailController;
     setupPasswordControllerListener();
   }
 
   void setupPasswordControllerListener() {
     passwordController.addListener(() {
       setState(() {
-        hasLowercase = AppRegex.hasLowerCase(passwordController.text);
-        hasUppercase = AppRegex.hasUpperCase(passwordController.text);
-        hasNumber = AppRegex.hasNumber(passwordController.text);
-        hasSpecialCharacter = AppRegex.hasSpecialCharacter(
-          passwordController.text,
-        );
-        hasMinLength = AppRegex.hasMinLength(passwordController.text);
+        final text = passwordController.text;
+        hasLowercase = AppRegex.hasLowerCase(text);
+        hasUppercase = AppRegex.hasUpperCase(text);
+        hasNumber = AppRegex.hasNumber(text);
+        hasSpecialCharacter = AppRegex.hasSpecialCharacter(text);
+        hasMinLength = AppRegex.hasMinLength(text);
       });
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<AuthCubit>();
     return Form(
-      key: context.read<AuthCubit>().formKey,
+      key: cubit.formKey,
       child: Column(
         children: [
           verticalSpace(25),
           CustomTextFormField(
-            hintText: 'email',
+            hintText: 'Email',
             obscureText: false,
+            controller: emailController,
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -61,28 +66,36 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
               }
               return null;
             },
-            controller: context.read<AuthCubit>().emailController,
           ),
           verticalSpace(17),
           CustomTextFormField(
             hintText: 'Password',
-            obscureText: true,
+            obscureText: obscurePassword,
+            controller: passwordController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'please enter your valid password';
+                return 'Please enter your password';
               }
               return null;
             },
-            controller: context.read<AuthCubit>().passwordController,
+            suffixIcon: IconButton(
+              onPressed: () =>
+                  setState(() => obscurePassword = !obscurePassword),
+              icon: obscurePassword
+                  ? const Icon(Icons.visibility_off_outlined, size: 24)
+                  : const Icon(Icons.visibility_outlined, size: 24),
+            ),
           ),
           verticalSpace(15),
-          PasswordValidation(
-            hasLowercase: hasLowercase,
-            hasUppercase: hasUppercase,
-            hasNumber: hasNumber,
-            hasSpecialCharacter: hasSpecialCharacter,
-            hasMinLength: hasMinLength,
-          ),
+          if (passwordController.text.isNotEmpty) ...[
+            PasswordValidation(
+              hasLowercase: hasLowercase,
+              hasUppercase: hasUppercase,
+              hasNumber: hasNumber,
+              hasSpecialCharacter: hasSpecialCharacter,
+              hasMinLength: hasMinLength,
+            ),
+          ],
         ],
       ),
     );
@@ -90,7 +103,6 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
 
   @override
   void dispose() {
-    passwordController.dispose();
     super.dispose();
   }
 }
