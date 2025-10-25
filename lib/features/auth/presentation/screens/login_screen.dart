@@ -82,20 +82,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                verticalSpace(100),
+                verticalSpace(50),
                 SocialButton(
-                  icon: Icons.apple,
-                  text: AppStrings.continueWithApple,
-                  iconSize: 25,
-                  background: theme.colorScheme.primary.withAlpha(30),
-                ),
-                verticalSpace(10),
-                SocialButton(
+                  ontap: () {
+                    context.read<AuthCubit>().loginWithFacebook();
+                  },
                   icon: Icons.facebook,
                   text: AppStrings.continueWithFacebook,
                   iconSize: 20,
                   background: theme.colorScheme.primary.withAlpha(30),
                 ),
+                verticalSpace(40),
                 AuthBlocListener(),
               ],
             ),
