@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:colt_ecommerce_app/core/errors/firebase_error_handler.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
@@ -12,8 +14,6 @@ class FirebaseAuthService {
 
   //Email & Password Sign Up
   Future<User?> signUpWithEmailAndPassword({
-    required String firstName,
-    required String lastName,
     required String email,
     required String password,
   }) async {
@@ -38,6 +38,8 @@ class FirebaseAuthService {
         email: email,
         password: password,
       );
+      log(userCredential.user!.email.toString());
+      log(userCredential.user!.uid.toString());
       return userCredential.user;
     } on FirebaseAuthException catch (e) {
       throw FirebaseErrorHandler.handleAuthError(e);
@@ -59,9 +61,11 @@ class FirebaseAuthService {
   Future<void> sendPasswordResetEmail(String email) async {
     try {
       await _auth.sendPasswordResetEmail(email: email);
+      log('Password reset email sent successfully');
     } on FirebaseAuthException catch (e) {
       throw FirebaseErrorHandler.handleAuthError(e);
     } catch (e) {
+      log('Error sending password reset email: $e');
       throw 'Failed to send reset email: $e';
     }
   }
@@ -87,6 +91,10 @@ class FirebaseAuthService {
         result.accessToken!.tokenString,
       );
       final userCredential = await _auth.signInWithCredential(credential);
+      log(userCredential.user.toString());
+      log(userCredential.user!.email.toString());
+      log(userCredential.user!.uid.toString());
+      log(userCredential.user!.displayName.toString());
       return userCredential.user;
     } else if (result.status == LoginStatus.cancelled) {
       throw 'Facebook login was cancelled by the user.';

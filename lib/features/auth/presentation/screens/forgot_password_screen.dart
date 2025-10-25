@@ -1,12 +1,17 @@
 import 'package:colt_ecommerce_app/core/constants/app_strings.dart';
+import 'package:colt_ecommerce_app/core/helpers/app_regex.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
+import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/app_colors.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_text_form_filed.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/widgets/auth_bloc_listener.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/back_button.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/header.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
@@ -35,14 +40,35 @@ class ForgotPasswordScreen extends StatelessWidget {
                 ),
                 verticalSpace(20),
                 // Email
-                CustomTextFormField(hintText: AppStrings.emailAddress),
+                Form(
+                  key: context.read<AuthCubit>().formKey,
+                  child: CustomTextFormField(
+                    controller: context.read<AuthCubit>().emailController,
+                    hintText: AppStrings.emailAddress,
+                    keyboardType: TextInputType.emailAddress,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your email address';
+                      } else if (!AppRegex.isEmailValid(value)) {
+                        return 'Please enter a valid email address';
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+
                 verticalSpace(20),
                 CustomButton(
                   backgroundColor: AppColors.primary,
                   text: AppStrings.continueText,
                   textColor: AppColors.lightBackground,
                   borderRadius: 50,
-                  onPressed: () {},
+                  onPressed: () {
+                    validateThenDoForgotPasswordEmail(context);
+                  },
+                ),
+                AuthBlocListener(
+                  redirectRoute: Routes.forgotPasswordRedirectScreen,
                 ),
               ],
             ),
@@ -50,5 +76,12 @@ class ForgotPasswordScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+void validateThenDoForgotPasswordEmail(BuildContext context) {
+  final authCubit = context.read<AuthCubit>();
+  if (authCubit.formKey.currentState!.validate()) {
+    authCubit.resetPassword();
   }
 }

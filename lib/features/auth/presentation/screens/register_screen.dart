@@ -4,11 +4,14 @@ import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/app_colors.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
-import 'package:colt_ecommerce_app/core/widgets/custom_text_form_filed.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/widgets/auth_bloc_listener.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/back_button.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/widgets/email_and_password.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/header.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -45,29 +48,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     title: AppStrings.createAccount,
                   ),
                 ),
-                verticalSpace(20),
-                // FirstName
-                CustomTextFormField(hintText: AppStrings.firstname),
-                verticalSpace(20),
-                // LastName
-                CustomTextFormField(hintText: AppStrings.lastname),
-                verticalSpace(20),
-                // Email Adderss
-                CustomTextFormField(hintText: AppStrings.emailAddress),
-                verticalSpace(20),
-                // Password
-                CustomTextFormField(
-                  hintText: AppStrings.password,
-
-                  obscureText: obscurePassword,
-                  suffixIcon: IconButton(
-                    onPressed: () =>
-                        setState(() => obscurePassword = !obscurePassword),
-                    icon: obscurePassword
-                        ? const Icon(Icons.visibility_off_outlined, size: 24)
-                        : const Icon(Icons.visibility_outlined, size: 24),
-                  ),
-                ),
+                EmailAndPassword(),
                 // Register Button
                 verticalSpace(50),
                 CustomButton(
@@ -75,7 +56,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   text: AppStrings.continueText,
                   textColor: AppColors.lightBackground,
                   borderRadius: 50,
-                  onPressed: () {},
+                  onPressed: () {
+                    validateThenDoRegister(context);
+                  },
                 ),
                 verticalSpace(10),
                 Center(
@@ -94,11 +77,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                 ),
+                AuthBlocListener(redirectRoute: Routes.loginScreen),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+}
+
+void validateThenDoRegister(BuildContext context) {
+  final authCubit = context.read<AuthCubit>();
+  if (authCubit.formKey.currentState!.validate()) {
+    authCubit.register();
   }
 }

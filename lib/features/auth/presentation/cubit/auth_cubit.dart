@@ -30,6 +30,43 @@ class AuthCubit extends Cubit<AuthState<User?>> {
     }
   }
 
+  Future<void> register() async {
+    emit(AuthState.loading());
+    try {
+      final user = await _auth.signUpWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+      emit(AuthState.success(data: user));
+    } on FirebaseAuthException catch (e) {
+      emit(AuthState.error(message: FirebaseErrorHandler.handleAuthError(e)));
+    } catch (e) {
+      emit(AuthState.error(message: e.toString()));
+    }
+  }
+
+  Future<void> resetPassword() async {
+    emit(const AuthState.loading());
+    try {
+      await _auth.sendPasswordResetEmail(emailController.text.trim());
+      emit(AuthState.success(data: null));
+    } on FirebaseAuthException catch (e) {
+      emit(AuthState.error(message: FirebaseErrorHandler.handleAuthError(e)));
+    } catch (e) {
+      emit(AuthState.error(message: e.toString()));
+    }
+  }
+
+  Future<void> logout() async {
+    emit(AuthState.loading());
+    try {
+      await _auth.signOut();
+      emit(AuthState.success(data: null));
+    } catch (e) {
+      emit(AuthState.error(message: e.toString()));
+    }
+  }
+
   Future<void> loginWithFacebook() async {
     emit(AuthState.loading());
     try {
