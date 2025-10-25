@@ -1,4 +1,3 @@
-// firebase_error_handler.dart
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseErrorHandler {
@@ -25,6 +24,38 @@ class FirebaseErrorHandler {
         return 'Network error. Please check your connection';
       case 'requires-recent-login':
         return 'Please log in again to perform this action';
+      case 'account-exists-with-different-credential':
+        return 'An account already exists with a different sign-in method';
+      case 'invalid-credential':
+        return 'The provided credential is malformed or has expired';
+      case 'credential-already-in-use':
+        return 'This credential is already associated with a different user';
+      case 'user-mismatch':
+        return 'The supplied credentials do not match the currently signed in user';
+      case 'provider-already-linked':
+        return 'This provider is already linked to the user';
+      case 'no-such-provider':
+        return 'No such provider is linked to the user';
+      case 'popup-blocked':
+        return 'Popup has been blocked by the browser';
+      case 'popup-closed-by-user':
+        return 'Popup closed before completing sign-in';
+      case 'unauthorized-domain':
+        return 'This domain is not authorized for OAuth operations';
+      case 'internal-error':
+        return 'An internal error occurred, try again later';
+      case 'timeout':
+        return 'The operation timed out, please try again';
+      case 'app-not-authorized':
+        return 'This app is not authorized to perform this operation';
+      case 'invalid-verification-code':
+        return 'The SMS verification code is invalid';
+      case 'invalid-verification-id':
+        return 'The SMS verification ID is invalid';
+      case 'session-expired':
+        return 'Your session has expired, please try again';
+      case 'quota-exceeded':
+        return 'Request quota exceeded, try again later';
       default:
         return 'Authentication failed: ${error.message}';
     }

@@ -4,11 +4,14 @@ import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/app_colors.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
-import 'package:colt_ecommerce_app/core/widgets/custom_text_form_filed.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/widgets/auth_bloc_listener.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/widgets/email_and_password.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/header.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/social_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -38,23 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Header(textTheme: textTheme, title: AppStrings.signIn),
-                verticalSpace(20),
-                const CustomTextFormField(
-                  hintText: AppStrings.emailAddress,
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                verticalSpace(20),
-                CustomTextFormField(
-                  hintText: AppStrings.password,
-                  obscureText: obscurePassword,
-                  suffixIcon: IconButton(
-                    onPressed: () =>
-                        setState(() => obscurePassword = !obscurePassword),
-                    icon: obscurePassword
-                        ? const Icon(Icons.visibility_off_outlined, size: 24)
-                        : const Icon(Icons.visibility_outlined, size: 24),
-                  ),
-                ),
+                EmailAndPassword(),
                 Align(
                   alignment: Alignment.topRight,
                   child: TextButton(
@@ -74,7 +61,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   text: AppStrings.continueText,
                   textColor: AppColors.lightBackground,
                   borderRadius: 50,
-                  onPressed: () {},
+                  onPressed: () {
+                    validateThenDoLogin(context);
+                  },
                 ),
                 verticalSpace(10),
                 Center(
@@ -107,11 +96,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   iconSize: 20,
                   background: theme.colorScheme.primary.withAlpha(30),
                 ),
+                AuthBlocListener(),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+}
+
+void validateThenDoLogin(BuildContext context) {
+  if (context.read<AuthCubit>().formKey.currentState!.validate()) {
+    context.read<AuthCubit>().login();
   }
 }

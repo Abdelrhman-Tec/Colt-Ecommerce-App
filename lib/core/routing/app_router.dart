@@ -1,19 +1,29 @@
+import 'package:colt_ecommerce_app/core/di/dependency_injection.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.loginScreen:
-        return _animatedRoute(const LoginScreen());
+        return _animatedRoute(
+          BlocProvider<AuthCubit>(
+            create: (context) => getIt<AuthCubit>(),
+            child: const LoginScreen(),
+          ),
+        );
+
       case Routes.registerScreen:
         return _animatedRoute(const RegisterScreen());
       case Routes.forgotPasswordScreen:
         return _animatedRoute(const ForgotPasswordScreen());
-
+      case Routes.homeScreen:
+        return _animatedRoute(const Scaffold());
       default:
         return _errorRoute(settings.name);
     }
