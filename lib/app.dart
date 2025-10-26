@@ -19,7 +19,7 @@ class ColtEcommerceApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          locale: Locale("ar"),
+          locale: Locale("en"),
           localizationsDelegates: [
             T.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -33,7 +33,7 @@ class ColtEcommerceApp extends StatelessWidget {
           //Theme setup
           theme: LightTheme.theme(context),
           darkTheme: DarkTheme.theme(context),
-          themeMode: ThemeMode.dark,
+          themeMode: ThemeMode.light,
           // Page Route
           onGenerateRoute: (settings) => AppRouter.onGenerateRoute(settings),
           initialRoute: initialRoute,

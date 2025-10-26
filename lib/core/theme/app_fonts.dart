@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppFonts {
-  static const String arabic = 'Cairo';
+  static const String arabic = 'NotoKufiArabic';
   static const String english = 'Inter';
 
   static const String defaultFont = english;

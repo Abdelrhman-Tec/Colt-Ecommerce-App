@@ -77,9 +77,9 @@ flutter_intl:
 
 
   fonts:
-    - family: Cairo
+    - family: NotoKufiArabic
       fonts:
-        - asset: asset/fonts/Cairo-Regular.ttf
+        - asset: asset/fonts/NotoKufiArabic-Regular.ttf
           style: Regular
     - family: Inter
       fonts:
