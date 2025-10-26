@@ -4,10 +4,8 @@ import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/app_colors.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
-import 'package:colt_ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ForgotPasswordRedirectScreen extends StatelessWidget {
   const ForgotPasswordRedirectScreen({super.key});

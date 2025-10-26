@@ -1,4 +1,5 @@
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
+import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,11 @@ class AuthBlocListener extends StatelessWidget {
           },
           success: (userCredential) {
             if (Navigator.canPop(context)) context.pop();
-            context.pushNamed(redirectRoute ?? "null");
+
+            Navigator.pushReplacementNamed(
+              context,
+              redirectRoute ?? Routes.homeScreen,
+            );
           },
           error: (message) {
             setupErrorState(context, message);

@@ -1,3 +1,4 @@
+import 'package:colt_ecommerce_app/core/databases/cache/cache_helper.dart';
 import 'package:colt_ecommerce_app/core/databases/firebase/firebase_service.dart';
 import 'package:colt_ecommerce_app/core/errors/firebase_error_handler.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -23,6 +24,7 @@ class AuthCubit extends Cubit<AuthState<User?>> {
         password: passwordController.text,
       );
       emit(AuthState.success(data: user));
+      await CacheHelper.saveData(key: 'isLoggedIn', value: true);
     } on FirebaseAuthException catch (e) {
       emit(AuthState.error(message: FirebaseErrorHandler.handleAuthError(e)));
     } catch (e) {
@@ -61,6 +63,7 @@ class AuthCubit extends Cubit<AuthState<User?>> {
     emit(AuthState.loading());
     try {
       await _auth.signOut();
+      await CacheHelper.removeData(key: 'isLoggedIn');
       emit(AuthState.success(data: null));
     } catch (e) {
       emit(AuthState.error(message: e.toString()));
