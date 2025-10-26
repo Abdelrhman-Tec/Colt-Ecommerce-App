@@ -1,4 +1,3 @@
-//!data_connection_checker_tv
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
 
 abstract class NetworkInfo {

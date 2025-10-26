@@ -3,7 +3,9 @@ import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/app_colors.dart';
+import 'package:colt_ecommerce_app/core/theme/cubit/theme_cubit.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
+import 'package:colt_ecommerce_app/core/widgets/theme_toggle_button.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/auth_bloc_listener.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/email_and_password.dart';
@@ -26,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
       TapGestureRecognizer()
         ..onTap = () => context.pushNamed(Routes.registerScreen);
   bool obscurePassword = true;
-
+  bool changeThemeMode = true;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -41,6 +43,15 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                ThemeToggleButton(
+                  isLightMode:
+                      context.watch<ThemeCubit>().state.themeMode ==
+                      ThemeMode.light,
+                  onToggle: () {
+                    context.read<ThemeCubit>().toggleTheme();
+                  },
+                ),
+                verticalSpace(30),
                 Header(textTheme: textTheme, title: T.current.signIn),
                 EmailAndPassword(),
                 Align(
