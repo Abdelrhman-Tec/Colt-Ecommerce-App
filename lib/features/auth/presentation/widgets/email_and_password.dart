@@ -1,3 +1,4 @@
+import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/app_regex.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_text_form_filed.dart';
@@ -55,26 +56,26 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
         children: [
           verticalSpace(25),
           CustomTextFormField(
-            hintText: 'Email',
+            hintText: T.current.emailAddress,
             obscureText: false,
             controller: emailController,
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isEmailValid(value)) {
-                return 'Please enter a valid email';
+                return T.current.pleaseEnterValidEmail;
               }
               return null;
             },
           ),
           verticalSpace(17),
           CustomTextFormField(
-            hintText: 'Password',
+            hintText: T.current.password,
             obscureText: obscurePassword,
             controller: passwordController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter your password';
+                return T.current.pleaseEnterYourPassword;
               }
               return null;
             },

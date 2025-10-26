@@ -1,4 +1,4 @@
-import 'package:colt_ecommerce_app/core/constants/app_strings.dart';
+import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
@@ -45,7 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   alignment: Alignment.topLeft,
                   child: Header(
                     textTheme: Theme.of(context).textTheme,
-                    title: AppStrings.createAccount,
+                    title: T.current.createAccount,
                   ),
                 ),
                 EmailAndPassword(),
@@ -53,7 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 verticalSpace(50),
                 CustomButton(
                   backgroundColor: AppColors.primary,
-                  text: AppStrings.signUp,
+                  text: T.current.signUp,
                   textColor: AppColors.lightBackground,
                   borderRadius: 50,
                   onPressed: () {
@@ -64,15 +64,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Center(
                   child: Text.rich(
                     TextSpan(
-                      text: "${AppStrings.forgotPassword}? ",
+                      text: "${T.current.forgotPassword}? ",
                       children: [
                         TextSpan(
-                          text: AppStrings.reset,
+                          text: T.current.reset,
                           recognizer: _tapRecognizer,
                         ),
                       ],
                     ),
-                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
                   ),

@@ -1,7 +1,15 @@
+import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_cubit.dart';
+import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_state.dart';
+import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/routing/app_route_observer.dart';
 import 'package:colt_ecommerce_app/core/routing/app_router.dart';
-import 'package:colt_ecommerce_app/core/theme/app_theme.dart';
+import 'package:colt_ecommerce_app/core/theme/cubit/theme_cubit.dart';
+import 'package:colt_ecommerce_app/core/theme/cubit/theme_state.dart';
+import 'package:colt_ecommerce_app/core/theme/dark_theme.dart';
+import 'package:colt_ecommerce_app/core/theme/light_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ColtEcommerceApp extends StatelessWidget {
@@ -15,16 +23,41 @@ class ColtEcommerceApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          navigatorObservers: [AppRouteObserver()],
-          //Theme setup
-          theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
-          themeMode: ThemeMode.light,
-          // Page Route
-          onGenerateRoute: (settings) => AppRouter.onGenerateRoute(settings),
-          initialRoute: initialRoute,
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => ThemeCubit()..toggleTheme()),
+            BlocProvider(create: (_) => LanguageCubit()..loadLanguage()),
+          ],
+          child: BlocBuilder<ThemeCubit, ThemeState>(
+            builder: (context, themeState) {
+              return BlocBuilder<LanguageCubit, LanguageState>(
+                builder: (context, langState) {
+                  return MaterialApp(
+                    locale: langState.locale,
+                    localizationsDelegates: const [
+                      T.delegate,
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: T.delegate.supportedLocales,
+                    debugShowCheckedModeBanner: false,
+                    navigatorObservers: [AppRouteObserver()],
+
+                    // Theme setup
+                    theme: LightTheme.theme(context),
+                    darkTheme: DarkTheme.theme(context),
+                    themeMode: themeState.themeMode,
+
+                    // Page Route
+                    onGenerateRoute: (settings) =>
+                        AppRouter.onGenerateRoute(settings),
+                    initialRoute: initialRoute,
+                  );
+                },
+              );
+            },
+          ),
         );
       },
     );

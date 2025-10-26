@@ -1,3 +1,4 @@
+import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:flutter/material.dart';
 
@@ -22,23 +23,27 @@ class PasswordValidation extends StatelessWidget {
       children: [
         buildPasswordValidation(
           context,
-          'At least 1 hasLowercase',
+          T.of(context).passwordValidationLowercase,
           hasLowercase,
         ),
         buildPasswordValidation(
           context,
-          'At least 1 hasUppercase',
+          T.of(context).passwordValidationUppercase,
           hasUppercase,
         ),
-        buildPasswordValidation(context, 'At least 1 hasNumber', hasNumber),
         buildPasswordValidation(
           context,
-          'At least 1 hasMinLength',
+          T.of(context).passwordValidationNumber,
+          hasNumber,
+        ),
+        buildPasswordValidation(
+          context,
+          T.of(context).passwordValidationMinLength,
           hasMinLength,
         ),
         buildPasswordValidation(
           context,
-          'At least 8 hasSpecialCharacter',
+          T.of(context).passwordValidationSpecialCharacter,
           hasSpecialCharacter,
         ),
       ],

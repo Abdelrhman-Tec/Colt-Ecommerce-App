@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? hintText;
@@ -45,7 +46,10 @@ class CustomTextFormField extends StatelessWidget {
         hintText: hintText,
         hintStyle:
             hintStyle ??
-            theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+            theme.textTheme.displaySmall?.copyWith(
+              color: theme.hintColor,
+              fontSize: 15.sp,
+            ),
         filled: true,
         fillColor: fillColor ?? theme.inputDecorationTheme.fillColor,
 

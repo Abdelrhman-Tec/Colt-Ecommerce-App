@@ -75,7 +75,7 @@
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/build_runner-2.10.0",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/build_runner-2.10.1",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -284,6 +284,12 @@
       "languageVersion": "3.5"
     },
     {
+      "name": "flutter_localization",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_localization-0.3.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "flutter_localizations",
       "rootUri": "file:///C:/src/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
@@ -420,6 +426,12 @@
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.20.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
+    },
+    {
+      "name": "intl_utils",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/intl_utils-2.8.12",
+      "packageUri": "lib/",
+      "languageVersion": "3.7"
     },
     {
       "name": "io",
