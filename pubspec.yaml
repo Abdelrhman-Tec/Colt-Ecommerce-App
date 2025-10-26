@@ -47,6 +47,11 @@ dependencies:
   flutter_native_splash: ^2.4.6    # Native splash screen
   firebase_auth: ^6.1.1
   flutter_facebook_auth: ^7.1.2
+  flutter_localization: ^0.3.3
+  flutter_localizations:
+    sdk: flutter
+  intl_utils: ^2.8.12
+
 
 dev_dependencies:
   flutter_test:
@@ -55,23 +60,30 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
 flutter:
-
   uses-material-design: true
+
+flutter_intl:
+  enabled: true
+  class_name: T
+  main_locale: en
+  arb_dir: lib/l10n
+  output_dir: lib/core/generated/l10n 
+
 
   assets:
     - asset/icon/
+    - lib/l10n/intl_ar.arb
+    - lib/l10n/intl_en.arb
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: asset/fonts/Cairo-Regular.ttf
+          style: Regular
+    - family: Inter
+      fonts:
+        - asset: asset/fonts/Inter.ttc
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

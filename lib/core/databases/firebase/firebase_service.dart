@@ -1,16 +1,42 @@
 import 'dart:developer';
 
 import 'package:colt_ecommerce_app/core/errors/firebase_error_handler.dart';
+import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class FirebaseAuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
   // Get current user
   User? get currentUser => _auth.currentUser;
 
   // Get auth state changes stream
   Stream<User?> get authStateChanges => _auth.authStateChanges();
+
+  // Helper method for translations
+  String _getTranslation(String key) {
+    try {
+      switch (key) {
+        case 'unexpectedError':
+          return T.current.unexpectedError;
+        case 'signOutFailed':
+          return T.current.signOutFailed;
+        case 'failedToSendResetEmail':
+          return T.current.failedToSendResetEmail;
+        case 'failedToSendVerificationEmail':
+          return T.current.failedToSendVerificationEmail;
+        case 'facebookLoginCancelled':
+          return T.current.facebookLoginCancelled;
+        case 'facebookLoginFailed':
+          return T.current.facebookLoginFailed;
+        default:
+          return key;
+      }
+    } catch (e) {
+      return key;
+    }
+  }
 
   //Email & Password Sign Up
   Future<User?> signUpWithEmailAndPassword({
@@ -24,7 +50,7 @@ class FirebaseAuthService {
     } on FirebaseAuthException catch (e) {
       throw FirebaseErrorHandler.handleAuthError(e);
     } catch (e) {
-      throw 'An unexpected error occurred: $e';
+      throw '${_getTranslation('unexpectedError')}: $e';
     }
   }
 
@@ -44,7 +70,7 @@ class FirebaseAuthService {
     } on FirebaseAuthException catch (e) {
       throw FirebaseErrorHandler.handleAuthError(e);
     } catch (e) {
-      throw 'An unexpected error occurred: $e';
+      throw '${_getTranslation('unexpectedError')}: $e';
     }
   }
 
@@ -53,7 +79,7 @@ class FirebaseAuthService {
     try {
       await _auth.signOut();
     } catch (e) {
-      throw 'Sign out failed: $e';
+      throw '${_getTranslation('signOutFailed')}: $e';
     }
   }
 
@@ -66,7 +92,7 @@ class FirebaseAuthService {
       throw FirebaseErrorHandler.handleAuthError(e);
     } catch (e) {
       log('Error sending password reset email: $e');
-      throw 'Failed to send reset email: $e';
+      throw '${_getTranslation('failedToSendResetEmail')}: $e';
     }
   }
 
@@ -79,7 +105,7 @@ class FirebaseAuthService {
     } on FirebaseAuthException catch (e) {
       throw FirebaseErrorHandler.handleAuthError(e);
     } catch (e) {
-      throw 'Failed to send verification email: $e';
+      throw '${_getTranslation('failedToSendVerificationEmail')}: $e';
     }
   }
 
@@ -97,9 +123,9 @@ class FirebaseAuthService {
       log(userCredential.user!.displayName.toString());
       return userCredential.user;
     } else if (result.status == LoginStatus.cancelled) {
-      throw 'Facebook login was cancelled by the user.';
+      throw _getTranslation('facebookLoginCancelled');
     } else {
-      throw 'Facebook login failed: ${result.message}';
+      throw '${_getTranslation('facebookLoginFailed')}: ${result.message}';
     }
   }
 

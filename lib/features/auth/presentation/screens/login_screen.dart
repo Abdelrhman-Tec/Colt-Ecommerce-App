@@ -1,4 +1,4 @@
-import 'package:colt_ecommerce_app/core/constants/app_strings.dart';
+import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Header(textTheme: textTheme, title: AppStrings.signIn),
+                Header(textTheme: textTheme, title: T.current.signIn),
                 EmailAndPassword(),
                 Align(
                   alignment: Alignment.topRight,
@@ -49,17 +49,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () =>
                         context.pushNamed(Routes.forgotPasswordScreen),
                     child: Text(
-                      AppStrings.forgotPassword,
-                      style: textTheme.bodySmall!.copyWith(
-                        fontWeight: FontWeight.w500,
-                      ),
+                      T.current.forgotPassword,
+                      style: textTheme.displaySmall!.copyWith(fontSize: 18.sp),
                     ),
                   ),
                 ),
                 verticalSpace(100),
                 CustomButton(
                   backgroundColor: AppColors.primary,
-                  text: AppStrings.signIn,
+                  text: T.current.signIn,
                   textColor: AppColors.lightBackground,
                   borderRadius: 50,
                   onPressed: () {
@@ -70,17 +68,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 Center(
                   child: Text.rich(
                     TextSpan(
-                      text: AppStrings.dontHaveAccount,
+                      text: T.current.dontHaveAccount,
                       children: [
                         TextSpan(
-                          text: AppStrings.createOne,
+                          text: T.current.createOne,
                           recognizer: _tapRecognizer,
                         ),
                       ],
                     ),
-                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.displaySmall!.copyWith(fontSize: 14.sp),
                   ),
                 ),
                 verticalSpace(50),
@@ -89,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     context.read<AuthCubit>().loginWithFacebook();
                   },
                   icon: Icons.facebook,
-                  text: AppStrings.continueWithFacebook,
+                  text: T.current.continueWithFacebook,
                   iconSize: 20,
                   background: theme.colorScheme.primary.withAlpha(30),
                 ),

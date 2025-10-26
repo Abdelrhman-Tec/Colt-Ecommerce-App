@@ -1,3 +1,4 @@
+import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseErrorHandler {
@@ -5,120 +6,59 @@ class FirebaseErrorHandler {
   static String handleAuthError(FirebaseAuthException error) {
     switch (error.code) {
       case 'invalid-email':
-        return 'Invalid email address format';
+        return T.current.firebaseInvalidEmail;
       case 'user-disabled':
-        return 'This account has been disabled';
+        return T.current.firebaseUserDisabled;
       case 'user-not-found':
-        return 'No user found with this email';
+        return T.current.firebaseUserNotFound;
       case 'wrong-password':
-        return 'Incorrect password';
+        return T.current.firebaseWrongPassword;
       case 'email-already-in-use':
-        return 'Email is already registered';
+        return T.current.firebaseEmailAlreadyInUse;
       case 'weak-password':
-        return 'Password is too weak';
+        return T.current.firebaseWeakPassword;
       case 'operation-not-allowed':
-        return 'This operation is not allowed';
+        return T.current.firebaseOperationNotAllowed;
       case 'too-many-requests':
-        return 'Too many attempts. Please try again later';
+        return T.current.firebaseTooManyRequests;
       case 'network-request-failed':
-        return 'Network error. Please check your connection';
+        return T.current.firebaseNetworkRequestFailed;
       case 'requires-recent-login':
-        return 'Please log in again to perform this action';
+        return T.current.firebaseRequiresRecentLogin;
       case 'account-exists-with-different-credential':
-        return 'An account already exists with a different sign-in method';
+        return T.current.firebaseAccountExistsWithDifferentCredential;
       case 'invalid-credential':
-        return 'The provided credential is malformed or has expired';
+        return T.current.firebaseInvalidCredential;
       case 'credential-already-in-use':
-        return 'This credential is already associated with a different user';
+        return T.current.firebaseCredentialAlreadyInUse;
       case 'user-mismatch':
-        return 'The supplied credentials do not match the currently signed in user';
+        return T.current.firebaseUserMismatch;
       case 'provider-already-linked':
-        return 'This provider is already linked to the user';
+        return T.current.firebaseProviderAlreadyLinked;
       case 'no-such-provider':
-        return 'No such provider is linked to the user';
+        return T.current.firebaseNoSuchProvider;
       case 'popup-blocked':
-        return 'Popup has been blocked by the browser';
+        return T.current.firebasePopupBlocked;
       case 'popup-closed-by-user':
-        return 'Popup closed before completing sign-in';
+        return T.current.firebasePopupClosedByUser;
       case 'unauthorized-domain':
-        return 'This domain is not authorized for OAuth operations';
+        return T.current.firebaseUnauthorizedDomain;
       case 'internal-error':
-        return 'An internal error occurred, try again later';
+        return T.current.firebaseInternalError;
       case 'timeout':
-        return 'The operation timed out, please try again';
+        return T.current.firebaseTimeout;
       case 'app-not-authorized':
-        return 'This app is not authorized to perform this operation';
+        return T.current.firebaseAppNotAuthorized;
       case 'invalid-verification-code':
-        return 'The SMS verification code is invalid';
+        return T.current.firebaseInvalidVerificationCode;
       case 'invalid-verification-id':
-        return 'The SMS verification ID is invalid';
+        return T.current.firebaseInvalidVerificationId;
       case 'session-expired':
-        return 'Your session has expired, please try again';
+        return T.current.firebaseSessionExpired;
       case 'quota-exceeded':
-        return 'Request quota exceeded, try again later';
+        return T.current.firebaseQuotaExceeded;
       default:
-        return 'Authentication failed: ${error.message}';
-    }
-  }
-
-  // Handle Firestore Errors
-  static String handleFirestoreError(FirebaseException error) {
-    switch (error.code) {
-      case 'permission-denied':
-        return 'You don\'t have permission to access this data';
-      case 'not-found':
-        return 'Requested document not found';
-      case 'already-exists':
-        return 'Document already exists';
-      case 'resource-exhausted':
-        return 'Quota exceeded. Please try again later';
-      case 'failed-precondition':
-        return 'Operation was rejected';
-      case 'unavailable':
-        return 'Service is temporarily unavailable';
-      case 'deadline-exceeded':
-        return 'Request timeout. Please try again';
-      default:
-        return 'Database error: ${error.message}';
-    }
-  }
-
-  // Handle Storage Errors
-  static String handleStorageError(FirebaseException error) {
-    switch (error.code) {
-      case 'object-not-found':
-        return 'File not found';
-      case 'bucket-not-found':
-        return 'Storage bucket not found';
-      case 'project-not-found':
-        return 'Project not found';
-      case 'quota-exceeded':
-        return 'Storage quota exceeded';
-      case 'unauthenticated':
-        return 'User authentication required';
-      case 'unauthorized':
-        return 'User not authorized to perform this action';
-      case 'retry-limit-exceeded':
-        return 'Maximum operations limit exceeded';
-      case 'invalid-checksum':
-        return 'File corruption detected';
-      case 'canceled':
-        return 'Operation was canceled';
-      default:
-        return 'Storage error: ${error.message}';
-    }
-  }
-
-  // Generic Error Handler
-  static String handleGenericError(dynamic error) {
-    if (error is FirebaseAuthException) {
-      return handleAuthError(error);
-    } else if (error is FirebaseException) {
-      return handleFirestoreError(error);
-    } else if (error is Exception) {
-      return 'Unexpected error: ${error.toString()}';
-    } else {
-      return 'An unknown error occurred';
+        return '${T.current.firebaseAuthFailed}: ${error.message}';
     }
   }
 }

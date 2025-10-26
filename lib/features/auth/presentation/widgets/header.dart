@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Header extends StatelessWidget {
   final TextTheme textTheme;
@@ -9,12 +8,6 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: textTheme.bodyLarge!.copyWith(
-        fontWeight: FontWeight.w700,
-        fontSize: 30.sp,
-      ),
-    );
+    return Text(title, style: textTheme.displayLarge!);
   }
 }

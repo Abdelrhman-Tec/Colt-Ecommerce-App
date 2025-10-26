@@ -1,4 +1,4 @@
-import 'package:colt_ecommerce_app/core/constants/app_strings.dart';
+import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
@@ -24,7 +24,7 @@ class ForgotPasswordRedirectScreen extends StatelessWidget {
               ),
               verticalSpace(25),
               Text(
-                AppStrings.weSentYouEmail,
+                 T.current.weSentYouEmail,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                   fontWeight: FontWeight.bold,
@@ -34,7 +34,7 @@ class ForgotPasswordRedirectScreen extends StatelessWidget {
               CustomButton(
                 width: 220,
                 backgroundColor: AppColors.primary,
-                text: AppStrings.returnToLogin,
+                text: T.current.returnToLogin,
                 textColor: AppColors.lightBackground,
                 borderRadius: 50,
                 onPressed: () =>

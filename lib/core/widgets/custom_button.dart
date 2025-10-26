@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -29,7 +30,7 @@ class CustomButton extends StatelessWidget {
     this.borderColor,
     this.borderRadius = 12,
     this.elevation = 2,
-    this.height = 50,
+    this.height = 55,
     this.width = double.infinity,
     this.icon,
     this.iconSize = 22,
@@ -81,8 +82,9 @@ class CustomButton extends StatelessWidget {
             ],
             Text(
               text,
-              style: theme.textTheme.labelLarge?.copyWith(
+              style: theme.textTheme.displaySmall?.copyWith(
                 color: effectiveTextColor,
+                fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),

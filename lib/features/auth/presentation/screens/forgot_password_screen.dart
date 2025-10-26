@@ -1,4 +1,4 @@
-import 'package:colt_ecommerce_app/core/constants/app_strings.dart';
+import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/app_regex.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
@@ -25,18 +25,16 @@ class ForgotPasswordScreen extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 27.h),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomBackButton(
                   onTap: () => context.pop(),
                   iconPath: "asset/icon/arrowleft2.svg",
                 ),
                 verticalSpace(30),
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Header(
-                    textTheme: Theme.of(context).textTheme,
-                    title: AppStrings.forgotPassword,
-                  ),
+                Header(
+                  textTheme: Theme.of(context).textTheme,
+                  title: T.current.forgotPassword,
                 ),
                 verticalSpace(20),
                 // Email
@@ -44,13 +42,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                   key: context.read<AuthCubit>().formKey,
                   child: CustomTextFormField(
                     controller: context.read<AuthCubit>().emailController,
-                    hintText: AppStrings.emailAddress,
+                    hintText: T.current.emailAddress,
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your email address';
+                        return T.current.pleaseEnterYourEmail;
                       } else if (!AppRegex.isEmailValid(value)) {
-                        return 'Please enter a valid email address';
+                        return T.current.pleaseEnterValidEmail;
                       }
                       return null;
                     },
@@ -60,7 +58,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 verticalSpace(20),
                 CustomButton(
                   backgroundColor: AppColors.primary,
-                  text: AppStrings.signIn,
+                  text: T.current.signIn,
                   textColor: AppColors.lightBackground,
                   borderRadius: 50,
                   onPressed: () {
