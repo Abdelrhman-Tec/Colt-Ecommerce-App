@@ -1,3 +1,4 @@
+import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_cubit.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
@@ -5,6 +6,7 @@ import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/app_colors.dart';
 import 'package:colt_ecommerce_app/core/theme/cubit/theme_cubit.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
+import 'package:colt_ecommerce_app/core/widgets/language_Toggle_Button.dart';
 import 'package:colt_ecommerce_app/core/widgets/theme_toggle_button.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/auth_bloc_listener.dart';
@@ -29,6 +31,8 @@ class _LoginScreenState extends State<LoginScreen> {
         ..onTap = () => context.pushNamed(Routes.registerScreen);
   bool obscurePassword = true;
   bool changeThemeMode = true;
+  bool isEnglish = true;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -43,13 +47,30 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ThemeToggleButton(
-                  isLightMode:
-                      context.watch<ThemeCubit>().state.themeMode ==
-                      ThemeMode.light,
-                  onToggle: () {
-                    context.read<ThemeCubit>().toggleTheme();
-                  },
+                Row(
+                  children: [
+                    ThemeToggleButton(
+                      isLightMode:
+                          context.watch<ThemeCubit>().state.themeMode ==
+                          ThemeMode.light,
+                      onToggle: () {
+                        context.read<ThemeCubit>().toggleTheme();
+                      },
+                    ),
+                    horizontalSpace(20),
+                    LanguageToggleButton(
+                      isEnglish:
+                          context
+                              .watch<LanguageCubit>()
+                              .state
+                              .locale
+                              .languageCode ==
+                          'en',
+                      onToggle: () {
+                        context.read<LanguageCubit>().toggleLanguage();
+                      },
+                    ),
+                  ],
                 ),
                 verticalSpace(30),
                 Header(textTheme: textTheme, title: T.current.signIn),

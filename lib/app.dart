@@ -1,3 +1,5 @@
+import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_cubit.dart';
+import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_state.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/routing/app_route_observer.dart';
 import 'package:colt_ecommerce_app/core/routing/app_router.dart';
@@ -21,31 +23,38 @@ class ColtEcommerceApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return BlocProvider(
-          create: (_) => ThemeCubit(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => ThemeCubit()..toggleTheme()),
+            BlocProvider(create: (_) => LanguageCubit()..loadLanguage()),
+          ],
           child: BlocBuilder<ThemeCubit, ThemeState>(
-            builder: (context, state) {
-              return MaterialApp(
-                locale: const Locale("en"),
-                localizationsDelegates: [
-                  T.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                supportedLocales: T.delegate.supportedLocales,
-                debugShowCheckedModeBanner: false,
-                navigatorObservers: [AppRouteObserver()],
+            builder: (context, themeState) {
+              return BlocBuilder<LanguageCubit, LanguageState>(
+                builder: (context, langState) {
+                  return MaterialApp(
+                    locale: langState.locale,
+                    localizationsDelegates: const [
+                      T.delegate,
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: T.delegate.supportedLocales,
+                    debugShowCheckedModeBanner: false,
+                    navigatorObservers: [AppRouteObserver()],
 
-                // Theme setup
-                theme: LightTheme.theme(context),
-                darkTheme: DarkTheme.theme(context),
-                themeMode: state.themeMode,
+                    // Theme setup
+                    theme: LightTheme.theme(context),
+                    darkTheme: DarkTheme.theme(context),
+                    themeMode: themeState.themeMode,
 
-                // Page Route
-                onGenerateRoute: (settings) =>
-                    AppRouter.onGenerateRoute(settings),
-                initialRoute: initialRoute,
+                    // Page Route
+                    onGenerateRoute: (settings) =>
+                        AppRouter.onGenerateRoute(settings),
+                    initialRoute: initialRoute,
+                  );
+                },
               );
             },
           ),
