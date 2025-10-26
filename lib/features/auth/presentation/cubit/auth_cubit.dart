@@ -75,6 +75,7 @@ class AuthCubit extends Cubit<AuthState<User?>> {
     try {
       final userCredential = await _auth.signInFacebook();
       emit(AuthState.success(data: userCredential));
+      await CacheHelper.saveData(key: 'isLoggedIn', value: true);
     } on FirebaseAuthException catch (e) {
       emit(AuthState.error(message: FirebaseErrorHandler.handleAuthError(e)));
     } catch (e) {

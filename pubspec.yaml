@@ -11,79 +11,73 @@ dependencies:
     sdk: flutter
 
   # UI and Styling
-  cupertino_icons: ^1.0.8          # iOS-style icons
-  flutter_svg: ^2.2.1              # SVG rendering and widget library
-  flutter_screenutil: ^5.9.3       # Screen and font size adaptation
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.2.1
+  flutter_screenutil: ^5.9.3
 
   # Network and Connectivity
-  data_connection_checker_tv: ^0.3.5-nullsafety  # Internet connectivity checker
-  dio: ^5.9.0                      # HTTP client for API calls
-  pretty_dio_logger: ^1.4.0        # Network calls logging
-  retrofit: ^4.6.0                 # Type-safe HTTP client
-  retrofit_generator: ^10.0.0      # Code generation for retrofit
+  data_connection_checker_tv: ^0.3.5-nullsafety
+  dio: ^5.9.0
+  pretty_dio_logger: ^1.4.0
+  retrofit: ^4.6.0
+  retrofit_generator: ^10.0.0
 
   # State Management
-  flutter_bloc: ^9.1.1             # BLoC pattern implementation
-  get_it: ^8.0.3                   # Dependency injection
+  flutter_bloc: ^9.1.1
+  get_it: ^8.0.3
 
   # Storage
-  shared_preferences: ^2.5.3       # Persistent storage
+  shared_preferences: ^2.5.3
 
   # Code Generation and Serialization
-  freezed: ^3.2.0                  # Code generation for data classes
-  build_runner: ^2.3.3             # Code generation tool
-  json_serializable: ^6.7.1        # JSON serialization
-  json_annotation: ^4.9.0          # JSON annotations
-  freezed_annotation: ^3.1.0       # Freezed annotations
+  freezed: ^3.2.0
+  build_runner: ^2.3.3
+  json_serializable: ^6.7.1
+  json_annotation: ^4.9.0
+  freezed_annotation: ^3.1.0
 
   # Localization
-  intl: ^0.20.2                    # Internationalization support
-  easy_localization: ^3.0.7+1      # Simplified localization
-
-  # Firebase
-  firebase_core: ^4.0.0            # Firebase core functionality
-
-  # Splash Screen
-  flutter_native_splash: ^2.4.6    # Native splash screen
-  firebase_auth: ^6.1.1
-  flutter_facebook_auth: ^7.1.2
-  flutter_localization: ^0.3.3
+  intl: ^0.20.2
+  easy_localization: ^3.0.7+1
   flutter_localizations:
     sdk: flutter
+  flutter_localization: ^0.3.3
   intl_utils: ^2.8.12
 
+  # Firebase
+  firebase_core: ^4.0.0
+  firebase_auth: ^6.1.1
+  flutter_facebook_auth: ^7.1.2
+
+  # Splash Screen
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
-
-flutter_intl:
-  enabled: true
-  class_name: T
-  main_locale: en
-  arb_dir: lib/l10n
-  output_dir: lib/core/generated/l10n 
-
 
   assets:
     - asset/icon/
     - lib/l10n/intl_ar.arb
     - lib/l10n/intl_en.arb
 
-
   fonts:
     - family: NotoKufiArabic
       fonts:
         - asset: asset/fonts/NotoKufiArabic-Regular.ttf
-          style: Regular
+          weight: 400
     - family: Inter
       fonts:
         - asset: asset/fonts/Inter.ttc
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
+          weight: 400
+
+flutter_intl:
+  enabled: true
+  class_name: T
+  main_locale: en
+  arb_dir: lib/l10n
+  output_dir: lib/core/generated/l10n
