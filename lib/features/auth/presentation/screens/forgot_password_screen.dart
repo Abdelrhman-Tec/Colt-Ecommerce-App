@@ -60,7 +60,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 verticalSpace(20),
                 CustomButton(
                   backgroundColor: AppColors.primary,
-                  text: AppStrings.continueText,
+                  text: AppStrings.signIn,
                   textColor: AppColors.lightBackground,
                   borderRadius: 50,
                   onPressed: () {

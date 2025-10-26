@@ -53,7 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 verticalSpace(50),
                 CustomButton(
                   backgroundColor: AppColors.primary,
-                  text: AppStrings.continueText,
+                  text: AppStrings.signUp,
                   textColor: AppColors.lightBackground,
                   borderRadius: 50,
                   onPressed: () {

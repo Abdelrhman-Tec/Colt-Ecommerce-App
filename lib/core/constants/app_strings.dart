@@ -1,6 +1,7 @@
 class AppStrings {
   // Authentication & Account
   static const String signIn = 'Sign in';
+  static const String signUp = 'Sign up';
   static const String createAccount = 'Create Account';
   static const String forgotPassword = 'Forgot Password';
   static const String tellUsAboutYourself = 'Tell us About yourself';

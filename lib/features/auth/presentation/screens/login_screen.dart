@@ -26,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
       TapGestureRecognizer()
         ..onTap = () => context.pushNamed(Routes.registerScreen);
   bool obscurePassword = true;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -58,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 verticalSpace(100),
                 CustomButton(
                   backgroundColor: AppColors.primary,
-                  text: AppStrings.continueText,
+                  text: AppStrings.signIn,
                   textColor: AppColors.lightBackground,
                   borderRadius: 50,
                   onPressed: () {
@@ -93,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   background: theme.colorScheme.primary.withAlpha(30),
                 ),
                 verticalSpace(40),
-                AuthBlocListener(redirectRoute: Routes.homeScreen),
+                AuthBlocListener(),
               ],
             ),
           ),
