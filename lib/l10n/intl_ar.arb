@@ -186,5 +186,6 @@
     "facebookLoginCancelled": "تم إلغاء تسجيل الدخول عبر فيسبوك من قبل المستخدم",
     "facebookLoginFailed": "فشل تسجيل الدخول عبر فيسبوك",
     "ok": "موافق",
-    "error": "خطأ"
+    "error": "خطأ",
+    "categories": "فئات"
 }

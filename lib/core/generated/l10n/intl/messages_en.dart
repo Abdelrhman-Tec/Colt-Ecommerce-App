@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Carl max Cardigan",
     ),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+    "categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "ccv": MessageLookupByLibrary.simpleMessage("CCV"),
     "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
     "city": MessageLookupByLibrary.simpleMessage("City"),

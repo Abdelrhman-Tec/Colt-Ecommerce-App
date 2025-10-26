@@ -9,7 +9,7 @@ String checkLogin() {
 
   if (isLoggedIn) {
     log('User is logged in');
-    return Routes.homeScreen;
+    return Routes.mainScreen;
   } else {
     log('User is not logged in');
     return Routes.loginScreen;

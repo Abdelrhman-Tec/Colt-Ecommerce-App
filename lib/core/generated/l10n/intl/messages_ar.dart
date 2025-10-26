@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cardholderName": MessageLookupByLibrary.simpleMessage("اسم حامل البطاقة"),
     "carlMaxCardigan": MessageLookupByLibrary.simpleMessage("卡爾麥克斯開衫"),
     "cart": MessageLookupByLibrary.simpleMessage("عربة التسوق"),
+    "categories": MessageLookupByLibrary.simpleMessage("فئات"),
     "ccv": MessageLookupByLibrary.simpleMessage("CVV"),
     "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
     "city": MessageLookupByLibrary.simpleMessage("المدينة"),

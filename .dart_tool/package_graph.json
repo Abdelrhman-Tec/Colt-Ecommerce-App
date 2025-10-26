@@ -29,6 +29,7 @@
         "intl_utils",
         "json_annotation",
         "json_serializable",
+        "persistent_bottom_nav_bar",
         "pretty_dio_logger",
         "retrofit",
         "retrofit_generator",
@@ -62,6 +63,13 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "persistent_bottom_nav_bar",
+      "version": "6.2.1",
+      "dependencies": [
+        "flutter"
       ]
     },
     {

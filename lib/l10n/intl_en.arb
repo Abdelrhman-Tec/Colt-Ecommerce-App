@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-{}
-=======
 {
     "@@locale": "en",
     "signIn": "Sign in",
@@ -189,6 +186,6 @@
     "facebookLoginCancelled": "Facebook login was cancelled by the user",
     "facebookLoginFailed": "Facebook login failed",
     "ok": "Ok",
-    "error": "Error"
+    "error": "Error",
+    "categories": "Categories"
 }
->>>>>>> main

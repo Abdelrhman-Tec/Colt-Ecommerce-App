@@ -6,6 +6,8 @@ import 'package:colt_ecommerce_app/features/auth/presentation/screens/forgot_pas
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/register_screen.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/screens/home_screen.dart';
+import 'package:colt_ecommerce_app/features/home/presentation/widget/main_screen.dart'
+    hide HomeScreen;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -45,6 +47,8 @@ class AppRouter {
 
       case Routes.homeScreen:
         return _animatedRoute(const HomeScreen());
+      case Routes.mainScreen:
+        return _animatedRoute(const MainScreen());
       default:
         return _errorRoute(settings.name);
     }

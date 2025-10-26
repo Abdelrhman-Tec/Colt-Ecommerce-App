@@ -51,6 +51,7 @@ dependencies:
 
   # Splash Screen
   flutter_native_splash: ^2.4.6
+  persistent_bottom_nav_bar: ^6.2.1
 
 dev_dependencies:
   flutter_test:
