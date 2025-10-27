@@ -187,5 +187,6 @@
     "facebookLoginFailed": "فشل تسجيل الدخول عبر فيسبوك",
     "ok": "موافق",
     "error": "خطأ",
-    "categories": "فئات"
+    "categories": "فئات",
+    "product": "منتجات"
 }

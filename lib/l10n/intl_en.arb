@@ -187,5 +187,6 @@
     "facebookLoginFailed": "Facebook login failed",
     "ok": "Ok",
     "error": "Error",
-    "categories": "Categories"
+    "categories": "Categories",
+    "product": "Products"
 }

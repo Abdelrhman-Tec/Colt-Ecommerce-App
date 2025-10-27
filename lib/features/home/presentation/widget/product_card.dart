@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,12 +46,22 @@ class ProductCard extends StatelessWidget {
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(12.r),
                   ),
-                  image: DecorationImage(
-                    image: AssetImage(image),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(12.r),
+                  ),
+                  child: CachedNetworkImage(
+                    imageUrl: image,
                     fit: BoxFit.cover,
+                    placeholder: (context, url) =>
+                        Center(child: CircularProgressIndicator()),
+                    errorWidget: (context, url, error) =>
+                        Center(child: Icon(Icons.error)),
                   ),
                 ),
               ),
+
               Positioned(
                 top: 10.h,
                 right: 10.w,

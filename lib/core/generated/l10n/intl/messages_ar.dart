@@ -291,6 +291,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
     "processing": MessageLookupByLibrary.simpleMessage("قيد المعالجة"),
+    "product": MessageLookupByLibrary.simpleMessage("منتجات"),
     "productDescription": MessageLookupByLibrary.simpleMessage(
       "مصمم للحياة ومصنوع ليدوم، هذا الجاكت من الكوردوريه part of our Nike Life collection. القصة الواسعة تمنحك مساحة كافية للطبقات تحته، بينما يحافظ الكوردوريه الناعم على المظهر العادي والخالد.",
     ),

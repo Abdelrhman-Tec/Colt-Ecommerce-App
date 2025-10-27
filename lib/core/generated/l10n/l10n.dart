@@ -1518,6 +1518,11 @@ class T {
   String get categories {
     return Intl.message('Categories', name: 'categories', desc: '', args: []);
   }
+
+  /// `Products`
+  String get product {
+    return Intl.message('Products', name: 'product', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<T> {
