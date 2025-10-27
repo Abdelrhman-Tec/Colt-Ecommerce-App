@@ -5,9 +5,10 @@ import 'package:colt_ecommerce_app/features/auth/presentation/screens/forgot_pas
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/register_screen.dart';
-import 'package:colt_ecommerce_app/features/home/presentation/cubit/home_cubit.dart';
+import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_cubit.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/screens/home_screen.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/main_screen.dart';
+import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -47,19 +48,26 @@ class AppRouter {
 
       case Routes.homeScreen:
         return _animatedRoute(
-          BlocProvider.value(
-            value: getIt<HomeCubit>(),
+          MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: getIt<ProductsCubit>()),
+              BlocProvider.value(value: getIt<CategoriesCubit>()),
+            ],
             child: const HomeScreen(),
           ),
         );
 
       case Routes.mainScreen:
         return _animatedRoute(
-          BlocProvider.value(
-            value: getIt<HomeCubit>(),
+          MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: getIt<ProductsCubit>()),
+              BlocProvider.value(value: getIt<CategoriesCubit>()),
+            ],
             child: const MainScreen(),
           ),
         );
+
       default:
         return _errorRoute(settings.name);
     }

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_cubit.dart';
+part of 'products_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of 'home_cubit.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$HomeState<T> {
+mixin _$ProductsState<T> {
 
 
 
@@ -20,7 +20,7 @@ mixin _$HomeState<T> {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeState<T>);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductsState<T>);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'HomeState<$T>()';
+  return 'ProductsState<$T>()';
 }
 
 
 }
 
 /// @nodoc
-class $HomeStateCopyWith<T,$Res>  {
-$HomeStateCopyWith(HomeState<T> _, $Res Function(HomeState<T>) __);
+class $ProductsStateCopyWith<T,$Res>  {
+$ProductsStateCopyWith(ProductsState<T> _, $Res Function(ProductsState<T>) __);
 }
 
 
-/// Adds pattern-matching-related methods to [HomeState].
-extension HomeStatePatterns<T> on HomeState<T> {
+/// Adds pattern-matching-related methods to [ProductsState].
+extension ProductsStatePatterns<T> on ProductsState<T> {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -55,10 +55,10 @@ extension HomeStatePatterns<T> on HomeState<T> {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial<T> value)?  initial,TResult Function( Loading<T> value)?  loading,TResult Function( Success<T> value)?  success,TResult Function( Error<T> value)?  error,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( Initial<T> value)?  initial,TResult Function( Loading<T> value)?  loading,TResult Function( Success<T> value)?  success,TResult Function( Error<T> value)?  error,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
+case Initial() when initial != null:
 return initial(_that);case Loading() when loading != null:
 return loading(_that);case Success() when success != null:
 return success(_that);case Error() when error != null:
@@ -80,10 +80,10 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial<T> value)  initial,required TResult Function( Loading<T> value)  loading,required TResult Function( Success<T> value)  success,required TResult Function( Error<T> value)  error,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( Initial<T> value)  initial,required TResult Function( Loading<T> value)  loading,required TResult Function( Success<T> value)  success,required TResult Function( Error<T> value)  error,}){
 final _that = this;
 switch (_that) {
-case _Initial():
+case Initial():
 return initial(_that);case Loading():
 return loading(_that);case Success():
 return success(_that);case Error():
@@ -104,10 +104,10 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial<T> value)?  initial,TResult? Function( Loading<T> value)?  loading,TResult? Function( Success<T> value)?  success,TResult? Function( Error<T> value)?  error,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( Initial<T> value)?  initial,TResult? Function( Loading<T> value)?  loading,TResult? Function( Success<T> value)?  success,TResult? Function( Error<T> value)?  error,}){
 final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
+case Initial() when initial != null:
 return initial(_that);case Loading() when loading != null:
 return loading(_that);case Success() when success != null:
 return success(_that);case Error() when error != null:
@@ -130,7 +130,7 @@ return error(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( T data)?  success,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
+case Initial() when initial != null:
 return initial();case Loading() when loading != null:
 return loading();case Success() when success != null:
 return success(_that.data);case Error() when error != null:
@@ -154,7 +154,7 @@ return error(_that.message);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( T data)  success,required TResult Function( String message)  error,}) {final _that = this;
 switch (_that) {
-case _Initial():
+case Initial():
 return initial();case Loading():
 return loading();case Success():
 return success(_that.data);case Error():
@@ -177,7 +177,7 @@ return error(_that.message);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( T data)?  success,TResult? Function( String message)?  error,}) {final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
+case Initial() when initial != null:
 return initial();case Loading() when loading != null:
 return loading();case Success() when success != null:
 return success(_that.data);case Error() when error != null:
@@ -192,8 +192,8 @@ return error(_that.message);case _:
 /// @nodoc
 
 
-class _Initial<T> implements HomeState<T> {
-  const _Initial();
+class Initial<T> implements ProductsState<T> {
+  const Initial();
   
 
 
@@ -203,7 +203,7 @@ class _Initial<T> implements HomeState<T> {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial<T>);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Initial<T>);
 }
 
 
@@ -212,7 +212,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'HomeState<$T>.initial()';
+  return 'ProductsState<$T>.initial()';
 }
 
 
@@ -224,7 +224,7 @@ String toString() {
 /// @nodoc
 
 
-class Loading<T> implements HomeState<T> {
+class Loading<T> implements ProductsState<T> {
   const Loading();
   
 
@@ -244,7 +244,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'HomeState<$T>.loading()';
+  return 'ProductsState<$T>.loading()';
 }
 
 
@@ -256,13 +256,13 @@ String toString() {
 /// @nodoc
 
 
-class Success<T> implements HomeState<T> {
+class Success<T> implements ProductsState<T> {
   const Success(this.data);
   
 
  final  T data;
 
-/// Create a copy of HomeState
+/// Create a copy of ProductsState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -281,14 +281,14 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'HomeState<$T>.success(data: $data)';
+  return 'ProductsState<$T>.success(data: $data)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $SuccessCopyWith<T,$Res> implements $HomeStateCopyWith<T, $Res> {
+abstract mixin class $SuccessCopyWith<T,$Res> implements $ProductsStateCopyWith<T, $Res> {
   factory $SuccessCopyWith(Success<T> value, $Res Function(Success<T>) _then) = _$SuccessCopyWithImpl;
 @useResult
 $Res call({
@@ -307,7 +307,7 @@ class _$SuccessCopyWithImpl<T,$Res>
   final Success<T> _self;
   final $Res Function(Success<T>) _then;
 
-/// Create a copy of HomeState
+/// Create a copy of ProductsState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? data = freezed,}) {
   return _then(Success<T>(
@@ -322,13 +322,13 @@ as T,
 /// @nodoc
 
 
-class Error<T> implements HomeState<T> {
+class Error<T> implements ProductsState<T> {
   const Error({required this.message});
   
 
  final  String message;
 
-/// Create a copy of HomeState
+/// Create a copy of ProductsState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -347,14 +347,14 @@ int get hashCode => Object.hash(runtimeType,message);
 
 @override
 String toString() {
-  return 'HomeState<$T>.error(message: $message)';
+  return 'ProductsState<$T>.error(message: $message)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ErrorCopyWith<T,$Res> implements $HomeStateCopyWith<T, $Res> {
+abstract mixin class $ErrorCopyWith<T,$Res> implements $ProductsStateCopyWith<T, $Res> {
   factory $ErrorCopyWith(Error<T> value, $Res Function(Error<T>) _then) = _$ErrorCopyWithImpl;
 @useResult
 $Res call({
@@ -373,7 +373,7 @@ class _$ErrorCopyWithImpl<T,$Res>
   final Error<T> _self;
   final $Res Function(Error<T>) _then;
 
-/// Create a copy of HomeState
+/// Create a copy of ProductsState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
   return _then(Error<T>(

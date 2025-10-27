@@ -1,6 +1,6 @@
 import 'package:colt_ecommerce_app/core/databases/api/api_constants.dart';
-import 'package:colt_ecommerce_app/features/home/data/model/categories_response_model.dart';
-import 'package:colt_ecommerce_app/features/home/data/model/products_response_model.dart';
+import 'package:colt_ecommerce_app/features/categories/data/model/categories_response_model.dart';
+import 'package:colt_ecommerce_app/features/products/data/model/products_response_model.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';

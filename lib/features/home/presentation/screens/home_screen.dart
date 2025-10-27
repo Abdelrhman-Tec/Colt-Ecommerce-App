@@ -1,14 +1,16 @@
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
-import 'package:colt_ecommerce_app/features/home/data/model/categories_response_model.dart';
-import 'package:colt_ecommerce_app/features/home/data/model/home_data.dart';
-import 'package:colt_ecommerce_app/features/home/data/model/products_response_model.dart';
-import 'package:colt_ecommerce_app/features/home/presentation/cubit/home_cubit.dart';
+import 'package:colt_ecommerce_app/features/categories/data/model/categories_response_model.dart';
+import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_cubit.dart';
+import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_state.dart';
+import 'package:colt_ecommerce_app/features/products/data/model/products_response_model.dart';
+import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_cubit.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/category_item.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/home_app_bar.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/product_card.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/search_field.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/section_title.dart';
+import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,13 +25,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with AutomaticKeepAliveClientMixin {
   @override
-  @override
   void initState() {
     super.initState();
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final cubit = context.read<HomeCubit>();
-      if (cubit.state is! Success) {
-        cubit.gethAllData();
+      final productsCubit = context.read<ProductsCubit>();
+      final categoriesCubit = context.read<CategoriesCubit>();
+      if (!productsCubit.isLoaded && !productsCubit.isLoading) {
+        productsCubit.getAllProducts();
+      }
+      if (!categoriesCubit.isLoaded && !categoriesCubit.isLoading) {
+        categoriesCubit.getAllCategories();
       }
     });
   }
@@ -45,28 +51,36 @@ class _HomeScreenState extends State<HomeScreen>
           child: SingleChildScrollView(
             child: Column(
               children: [
+                // App Bar
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: const HomeAppBar(),
                 ),
                 verticalSpace(20),
+
+                // Search Field
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: SearchField(),
+                  child: const SearchField(),
                 ),
                 verticalSpace(20),
+
+                // Categories Section
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: SectionTitle(title: T.current.categories),
                 ),
                 verticalSpace(20),
-                buildCategoriesBloc(),
+                _buildCategoriesBloc(),
+
+                // Products Section
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: SectionTitle(title: T.current.product),
                 ),
                 verticalSpace(20),
-                buildProductsBloc(),
+                _buildProductsBloc(),
+
                 verticalSpace(20),
               ],
             ),
@@ -76,8 +90,8 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 
-  Widget buildCategoriesBloc() {
-    return BlocConsumer<HomeCubit, HomeState<HomeData>>(
+  Widget _buildCategoriesBloc() {
+    return BlocConsumer<CategoriesCubit, CategoriesState>(
       listener: (context, state) {
         state.maybeWhen(
           error: (message) {
@@ -90,30 +104,26 @@ class _HomeScreenState extends State<HomeScreen>
       },
       builder: (context, state) {
         return state.maybeWhen(
-          loading: () => SizedBox(
+          loading: () => const SizedBox(
             height: 100,
-            child: Center(
-              child: Image.asset(
-                'asset/icon/loading.gif',
-                width: 150,
-                height: 150,
-              ),
-            ),
+            child: Center(child: CircularProgressIndicator()),
           ),
-          success: (homeData) => _buildListViewCategories(homeData.categories),
+          success: (categories) => _buildListViewCategories(categories),
           error: (message) => SizedBox(
             height: 100,
             child: Center(child: Text('Error: $message')),
           ),
-          orElse: () =>
-              SizedBox(height: 100, child: Center(child: Text('Welcome!'))),
+          orElse: () => const SizedBox(
+            height: 100,
+            child: Center(child: Text('No categories found')),
+          ),
         );
       },
     );
   }
 
-  Widget buildProductsBloc() {
-    return BlocConsumer<HomeCubit, HomeState<HomeData>>(
+  Widget _buildProductsBloc() {
+    return BlocConsumer<ProductsCubit, ProductsState>(
       listener: (context, state) {
         state.maybeWhen(
           error: (message) {
@@ -128,22 +138,16 @@ class _HomeScreenState extends State<HomeScreen>
         return state.maybeWhen(
           loading: () => SizedBox(
             height: 300.h,
-            child: Center(
-              child: Image.asset(
-                'asset/icon/loading.gif',
-                width: 150,
-                height: 150,
-              ),
-            ),
+            child: const Center(child: CircularProgressIndicator()),
           ),
-          success: (homeData) => _buildListViewProductCard(homeData.products),
+          success: (products) => _buildListViewProductCard(products),
           error: (message) => SizedBox(
             height: 300.h,
             child: Center(child: Text('Error: $message')),
           ),
           orElse: () => SizedBox(
             height: 300.h,
-            child: Center(child: Text('Welcome!')),
+            child: const Center(child: Text('No products found')),
           ),
         );
       },
@@ -154,17 +158,15 @@ class _HomeScreenState extends State<HomeScreen>
     return SizedBox(
       height: 100,
       child: ListView.separated(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        physics: BouncingScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (context, index) {
           final category = categories[index];
-          return CategoryItem(imageUrl: category.imageUrl, name: category.name);
+          return CategoryItem(imageUrl: category.image, name: category.name);
         },
-        separatorBuilder: (BuildContext context, int index) {
-          return SizedBox(width: 10);
-        },
+        separatorBuilder: (_, __) => const SizedBox(width: 10),
       ),
     );
   }
