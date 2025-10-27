@@ -14,9 +14,11 @@ ProductsResponseModel _$ProductsResponseModelFromJson(
   slug: json['slug'] as String,
   price: (json['price'] as num).toInt(),
   description: json['description'] as String,
-  category: CategoriesResponseModel.fromJson(
-    json['category'] as Map<String, dynamic>,
-  ),
+  category: json['category'] == null
+      ? null
+      : CategoriesResponseModel.fromJson(
+          json['category'] as Map<String, dynamic>,
+        ),
   images: (json['images'] as List<dynamic>).map((e) => e as String).toList(),
   creationAt: json['creationAt'] as String,
   updatedAt: json['updatedAt'] as String,

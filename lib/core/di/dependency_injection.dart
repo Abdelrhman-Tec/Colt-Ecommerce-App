@@ -27,17 +27,20 @@ Future<void> setupGetIt() async {
 
   // API
   getIt.registerLazySingleton<ApiServices>(() => ApiServices(getIt<Dio>()));
+
+  // Repos
   getIt.registerLazySingleton<ProductsRepo>(
     () => ProductsRepo(apiServices: getIt<ApiServices>()),
   );
+  getIt.registerLazySingleton<CategoriesRepo>(
+    () => CategoriesRepo(apiServices: getIt<ApiServices>()),
+  );
+
+  // Cubits
   getIt.registerFactory<ProductsCubit>(
     () => ProductsCubit(getIt<ProductsRepo>()),
   );
   getIt.registerFactory<CategoriesCubit>(
-    () => CategoriesCubit(getIt<CategoriesRepo>()),
-  );
-
-  getIt.registerLazySingleton<CategoriesCubit>(
     () => CategoriesCubit(getIt<CategoriesRepo>()),
   );
 }

@@ -1,3 +1,4 @@
+import 'package:colt_ecommerce_app/core/function/load_data_if_needed.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/features/categories/data/model/categories_response_model.dart';
@@ -27,16 +28,8 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     super.initState();
-
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final productsCubit = context.read<ProductsCubit>();
-      final categoriesCubit = context.read<CategoriesCubit>();
-      if (!productsCubit.isLoaded && !productsCubit.isLoading) {
-        productsCubit.getAllProducts();
-      }
-      if (!categoriesCubit.isLoaded && !categoriesCubit.isLoading) {
-        categoriesCubit.getAllCategories();
-      }
+      loadDataIfNeeded(context);
     });
   }
 
