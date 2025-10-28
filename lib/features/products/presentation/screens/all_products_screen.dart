@@ -2,6 +2,7 @@ import 'package:colt_ecommerce_app/core/function/load_data_if_needed.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
+import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/back_button.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/header.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/product_card.dart';
@@ -123,9 +124,10 @@ Widget _buildProductsWithShowMore(
                   image: product.images.first,
                   name: product.title,
                   price: product.price.toDouble(),
-                  ontap: () {
-                    // add cart logic
-                  },
+                  ontap: () => context.pushNamed(
+                    Routes.productsDetailsScreen,
+                    arguments: product,
+                  ),
                 );
               },
             ),

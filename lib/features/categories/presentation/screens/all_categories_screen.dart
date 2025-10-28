@@ -2,6 +2,7 @@ import 'package:colt_ecommerce_app/core/function/load_data_if_needed.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
+import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/back_button.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/header.dart';
 import 'package:colt_ecommerce_app/features/categories/data/model/categories_response_model.dart';
@@ -126,7 +127,14 @@ Widget _buildCategoriesWithShowMore(
           }
 
           final category = displayedCategories[index];
-          return CategoryCard(title: category.name, imageUrl: category.image);
+          return CategoryCard(
+            title: category.name,
+            imageUrl: category.image,
+            onTap: () => context.pushNamed(
+              Routes.categoriesDetailsScreen,
+              arguments: category,
+            ),
+          );
         },
       );
     },
