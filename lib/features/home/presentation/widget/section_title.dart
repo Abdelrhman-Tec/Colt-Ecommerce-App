@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SectionTitle extends StatelessWidget {
   final String title;
-  const SectionTitle({super.key, required this.title});
+  final Function()? ontap;
+  const SectionTitle({super.key, required this.title, this.ontap});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +18,14 @@ class SectionTitle extends StatelessWidget {
           ).textTheme.displaySmall!.copyWith(fontSize: 18.sp),
         ),
         const Spacer(),
-        Text(
-          T.current.seeAll,
-          style: Theme.of(context).textTheme.displaySmall!.copyWith(
-            fontSize: 18.sp,
-            fontWeight: FontWeight.w400,
+        GestureDetector(
+          onTap: ontap,
+          child: Text(
+            T.current.seeAll,
+            style: Theme.of(context).textTheme.displaySmall!.copyWith(
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w400,
+            ),
           ),
         ),
       ],

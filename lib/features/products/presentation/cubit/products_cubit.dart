@@ -36,4 +36,15 @@ class ProductsCubit extends Cubit<ProductsState<List<ProductsResponseModel>>> {
       emit(ProductsState.error(message: e.toString()));
     }
   }
+
+  List<ProductsResponseModel> getProductsByCategory(int categoryId) {
+    final currentProducts = state.maybeWhen(
+      success: (products) => products.cast<ProductsResponseModel>(),
+      orElse: () => <ProductsResponseModel>[],
+    );
+
+    return currentProducts
+        .where((product) => product.category?.id == categoryId)
+        .toList();
+  }
 }

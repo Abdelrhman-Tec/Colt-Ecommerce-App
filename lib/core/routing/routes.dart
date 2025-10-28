@@ -6,4 +6,6 @@ class Routes {
   static const String forgotPasswordRedirectScreen =
       "/forgot-password-redirect";
   static const String mainScreen = "/mainScreen";
+  static const String categoriesDetailsScreen = "/categoriesDetailsScreen";
+  static const String allCategoriesScreen = "/allCategoriesScreen";
 }

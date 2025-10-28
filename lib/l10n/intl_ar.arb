@@ -188,5 +188,7 @@
     "ok": "موافق",
     "error": "خطأ",
     "categories": "فئات",
-    "product": "منتجات"
+    "product": "منتجات",
+    "showMore": "اعرض المزيد",
+    "showLess": "اعرض أقل"
 }

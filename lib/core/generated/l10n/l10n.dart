@@ -1523,6 +1523,16 @@ class T {
   String get product {
     return Intl.message('Products', name: 'product', desc: '', args: []);
   }
+
+  /// `Show More`
+  String get showMore {
+    return Intl.message('Show More', name: 'showMore', desc: '', args: []);
+  }
+
+  /// `Show Less`
+  String get showLess {
+    return Intl.message('Show Less', name: 'showLess', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<T> {

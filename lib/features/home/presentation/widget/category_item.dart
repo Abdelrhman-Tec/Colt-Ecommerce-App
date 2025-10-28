@@ -6,44 +6,53 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CategoryItem extends StatelessWidget {
   final String imageUrl;
   final String name;
+  final Function()? ontap;
 
-  const CategoryItem({super.key, required this.imageUrl, required this.name});
+  const CategoryItem({
+    super.key,
+    required this.imageUrl,
+    required this.name,
+    this.ontap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CachedNetworkImage(
-          imageUrl: imageUrl,
-          imageBuilder: (context, imageProvider) =>
-              CircleAvatar(radius: 26, backgroundImage: imageProvider),
-          placeholder: (context, url) => CircleAvatar(
-            radius: 26,
-            backgroundColor: Colors.grey[200],
-            child: CircularProgressIndicator(strokeWidth: 2),
-          ),
-          errorWidget: (context, url, error) => CircleAvatar(
-            radius: 26,
-            backgroundColor: Colors.grey[200],
-            child: Icon(Icons.error, size: 20),
-          ),
-        ),
-        verticalSpace(10),
-        // Category name
-        SizedBox(
-          width: 60.w,
-          child: Text(
-            name,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.displaySmall!.copyWith(
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
+    return GestureDetector(
+      onTap: ontap,
+      child: Column(
+        children: [
+          CachedNetworkImage(
+            imageUrl: imageUrl,
+            imageBuilder: (context, imageProvider) =>
+                CircleAvatar(radius: 26, backgroundImage: imageProvider),
+            placeholder: (context, url) => CircleAvatar(
+              radius: 26,
+              backgroundColor: Colors.grey[200],
+              child: CircularProgressIndicator(strokeWidth: 2),
+            ),
+            errorWidget: (context, url, error) => CircleAvatar(
+              radius: 26,
+              backgroundColor: Colors.grey[200],
+              child: Icon(Icons.error, size: 20),
             ),
           ),
-        ),
-      ],
+          verticalSpace(10),
+          // Category name
+          SizedBox(
+            width: 60.w,
+            child: Text(
+              name,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

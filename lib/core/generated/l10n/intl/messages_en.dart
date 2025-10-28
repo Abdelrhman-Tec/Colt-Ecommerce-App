@@ -333,6 +333,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Shop by Categories",
     ),
     "shorts": MessageLookupByLibrary.simpleMessage("Shorts"),
+    "showLess": MessageLookupByLibrary.simpleMessage("Show Less"),
+    "showMore": MessageLookupByLibrary.simpleMessage("Show More"),
     "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
     "signOut": MessageLookupByLibrary.simpleMessage("Sign Out"),
     "signOutFailed": MessageLookupByLibrary.simpleMessage("Sign out failed"),

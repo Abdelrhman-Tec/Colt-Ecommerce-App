@@ -188,5 +188,7 @@
     "ok": "Ok",
     "error": "Error",
     "categories": "Categories",
-    "product": "Products"
+    "product": "Products",
+    "showMore": "Show More",
+    "showLess": "Show Less"
 }

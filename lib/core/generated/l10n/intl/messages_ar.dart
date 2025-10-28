@@ -317,6 +317,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "shoes": MessageLookupByLibrary.simpleMessage("أحذية"),
     "shopByCategories": MessageLookupByLibrary.simpleMessage("تسوق حسب الفئات"),
     "shorts": MessageLookupByLibrary.simpleMessage("شورتات"),
+    "showLess": MessageLookupByLibrary.simpleMessage("اعرض أقل"),
+    "showMore": MessageLookupByLibrary.simpleMessage("اعرض المزيد"),
     "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "signOutFailed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الخروج"),

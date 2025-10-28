@@ -5,7 +5,10 @@ import 'package:colt_ecommerce_app/features/auth/presentation/screens/forgot_pas
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/register_screen.dart';
+import 'package:colt_ecommerce_app/features/categories/data/model/categories_response_model.dart';
 import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_cubit.dart';
+import 'package:colt_ecommerce_app/features/categories/presentation/screens/all_categories_screen.dart';
+import 'package:colt_ecommerce_app/features/categories/presentation/screens/category_screen.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/screens/home_screen.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/main_screen.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_cubit.dart';
@@ -65,6 +68,29 @@ class AppRouter {
               BlocProvider.value(value: getIt<CategoriesCubit>()),
             ],
             child: const MainScreen(),
+          ),
+        );
+      case Routes.categoriesDetailsScreen:
+        return _animatedRoute(
+          MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: getIt<CategoriesCubit>()),
+              BlocProvider.value(value: getIt<ProductsCubit>()),
+            ],
+            child: CategoryScreen(
+              category: settings.arguments as CategoriesResponseModel,
+            ),
+          ),
+        );
+
+      case Routes.allCategoriesScreen:
+        return _animatedRoute(
+          MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: getIt<CategoriesCubit>()),
+              BlocProvider.value(value: getIt<ProductsCubit>()),
+            ],
+            child: const AllCategoriesScreen(),
           ),
         );
 

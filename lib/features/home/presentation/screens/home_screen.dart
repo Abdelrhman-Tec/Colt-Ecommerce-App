@@ -1,6 +1,8 @@
 import 'package:colt_ecommerce_app/core/function/load_data_if_needed.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
+import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
+import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/features/categories/data/model/categories_response_model.dart';
 import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_cubit.dart';
 import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_state.dart';
@@ -51,7 +53,12 @@ class _HomeScreenState extends State<HomeScreen>
               // Search Field
               buildSection(child: const SearchField()),
               // Categories Section
-              buildSection(child: SectionTitle(title: T.current.categories)),
+              buildSection(
+                child: SectionTitle(
+                  title: T.current.categories,
+                  ontap: () => context.pushNamed(Routes.allCategoriesScreen),
+                ),
+              ),
               _buildCategoriesBloc(),
               verticalSpace(20),
               // Products Section
@@ -167,9 +174,16 @@ class _HomeScreenState extends State<HomeScreen>
         itemCount: categories.length,
         itemBuilder: (context, index) {
           final category = categories[index];
-          return CategoryItem(imageUrl: category.image, name: category.name);
+          return CategoryItem(
+            imageUrl: category.image,
+            name: category.name,
+            ontap: () => context.pushNamed(
+              Routes.categoriesDetailsScreen,
+              arguments: category,
+            ),
+          );
         },
-        separatorBuilder: (_, __) => const SizedBox(width: 10),
+        separatorBuilder: (_, __) => horizontalSpace(10),
       ),
     );
   }
