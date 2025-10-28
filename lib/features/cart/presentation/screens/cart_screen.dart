@@ -66,7 +66,7 @@ class CartScreen extends StatelessWidget {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/icon/parcel 1.png", width: 100),
+              Image.asset("asset/icon/parcel 1.png", width: 100),
               verticalSpace(10),
               Text(
                 T.current.yourCartIsEmpty,
@@ -116,9 +116,18 @@ class CartScreen extends StatelessWidget {
   Widget _buildSummarySection(BuildContext context, ThemeData theme) {
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
-        final total = state.maybeWhen(
-          updated: (_, totalPrice) => totalPrice,
-          orElse: () => 0.0,
+        final cartItems = state.maybeWhen(
+          updated: (items, _) => items,
+          orElse: () => [],
+        );
+
+        if (cartItems.isEmpty) {
+          return const SizedBox.shrink();
+        }
+
+        final total = cartItems.fold<double>(
+          0,
+          (sum, item) => sum + (item.product.price.toDouble() * item.quantity),
         );
 
         const double shipping = 8.0;
@@ -173,8 +182,8 @@ class CartScreen extends StatelessWidget {
               verticalSpace(50),
               CustomButton(
                 text: T.current.checkout,
-                backgroundColor: theme.primaryColor,
-                textColor: AppColors.lightSurface,
+                backgroundColor: theme.colorScheme.primary,
+                textColor: theme.colorScheme.onPrimary,
                 height: 55.h,
                 borderRadius: 50,
                 onPressed: () {},
