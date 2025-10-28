@@ -3,21 +3,20 @@ import 'package:colt_ecommerce_app/features/products/presentation/cubit/products
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void loadDataIfNeeded(
-  BuildContext context, {
-  bool loadProducts = true,
-  bool loadCategories = true,
-}) {
+// Load products if needed
+void loadProductsIfNeeded(BuildContext context) {
   final productsCubit = context.read<ProductsCubit>();
-  final categoriesCubit = context.read<CategoriesCubit>();
 
-  if (loadProducts && !productsCubit.isLoaded && !productsCubit.isLoading) {
+  if (!productsCubit.isLoaded && !productsCubit.isLoading) {
     productsCubit.getAllProducts();
   }
+}
 
-  if (loadCategories &&
-      !categoriesCubit.isLoaded &&
-      !categoriesCubit.isLoading) {
+// Load categories if needed
+void loadCategoriesIfNeeded(BuildContext context) {
+  final categoriesCubit = context.read<CategoriesCubit>();
+
+  if (!categoriesCubit.isLoaded && !categoriesCubit.isLoading) {
     categoriesCubit.getAllCategories();
   }
 }

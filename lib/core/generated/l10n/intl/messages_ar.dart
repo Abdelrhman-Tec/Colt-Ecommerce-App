@@ -316,6 +316,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "shippingReturns": MessageLookupByLibrary.simpleMessage("الشحن والإرجاع"),
     "shoes": MessageLookupByLibrary.simpleMessage("أحذية"),
     "shopByCategories": MessageLookupByLibrary.simpleMessage("تسوق حسب الفئات"),
+    "shopByProducts": MessageLookupByLibrary.simpleMessage("تسوق حسب المنتجات"),
     "shorts": MessageLookupByLibrary.simpleMessage("شورتات"),
     "showLess": MessageLookupByLibrary.simpleMessage("اعرض أقل"),
     "showMore": MessageLookupByLibrary.simpleMessage("اعرض المزيد"),

@@ -31,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      loadDataIfNeeded(context);
+      loadProductsIfNeeded(context);
+      loadCategoriesIfNeeded(context);
     });
   }
 
@@ -62,7 +63,12 @@ class _HomeScreenState extends State<HomeScreen>
               _buildCategoriesBloc(),
               verticalSpace(20),
               // Products Section
-              buildSection(child: SectionTitle(title: T.current.product)),
+              buildSection(
+                child: SectionTitle(
+                  title: T.current.product,
+                  ontap: () => context.pushNamed(Routes.allProductsScreen),
+                ),
+              ),
               _buildProductsBloc(),
               verticalSpace(20),
             ],
@@ -203,7 +209,10 @@ class _HomeScreenState extends State<HomeScreen>
             image: product.images.isNotEmpty ? product.images.first : '',
             name: product.title,
             price: product.price.toDouble(),
-            ontap: () {},
+            ontap: () => context.pushNamed(
+              Routes.productsDetailsScreen,
+              arguments: product,
+            ),
           );
         },
       ),

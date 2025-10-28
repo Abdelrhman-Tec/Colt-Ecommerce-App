@@ -11,7 +11,10 @@ import 'package:colt_ecommerce_app/features/categories/presentation/screens/all_
 import 'package:colt_ecommerce_app/features/categories/presentation/screens/category_screen.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/screens/home_screen.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/main_screen.dart';
+import 'package:colt_ecommerce_app/features/products/data/model/products_response_model.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_cubit.dart';
+import 'package:colt_ecommerce_app/features/products/presentation/screens/all_products_screen.dart';
+import 'package:colt_ecommerce_app/features/products/presentation/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -72,11 +75,8 @@ class AppRouter {
         );
       case Routes.categoriesDetailsScreen:
         return _animatedRoute(
-          MultiBlocProvider(
-            providers: [
-              BlocProvider.value(value: getIt<CategoriesCubit>()),
-              BlocProvider.value(value: getIt<ProductsCubit>()),
-            ],
+          BlocProvider.value(
+            value: getIt<ProductsCubit>(),
             child: CategoryScreen(
               category: settings.arguments as CategoriesResponseModel,
             ),
@@ -85,12 +85,26 @@ class AppRouter {
 
       case Routes.allCategoriesScreen:
         return _animatedRoute(
-          MultiBlocProvider(
-            providers: [
-              BlocProvider.value(value: getIt<CategoriesCubit>()),
-              BlocProvider.value(value: getIt<ProductsCubit>()),
-            ],
+          BlocProvider.value(
+            value: getIt<CategoriesCubit>(),
             child: const AllCategoriesScreen(),
+          ),
+        );
+
+      case Routes.allProductsScreen:
+        return _animatedRoute(
+          BlocProvider.value(
+            value: getIt<ProductsCubit>(),
+            child: const AllProductsScreen(),
+          ),
+        );
+      case Routes.productsDetailsScreen:
+        return _animatedRoute(
+          BlocProvider.value(
+            value: getIt<ProductsCubit>(),
+            child: ProductDetailsScreen(
+              product: settings.arguments as ProductsResponseModel,
+            ),
           ),
         );
 

@@ -332,6 +332,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "shopByCategories": MessageLookupByLibrary.simpleMessage(
       "Shop by Categories",
     ),
+    "shopByProducts": MessageLookupByLibrary.simpleMessage("Shop by Products"),
     "shorts": MessageLookupByLibrary.simpleMessage("Shorts"),
     "showLess": MessageLookupByLibrary.simpleMessage("Show Less"),
     "showMore": MessageLookupByLibrary.simpleMessage("Show More"),

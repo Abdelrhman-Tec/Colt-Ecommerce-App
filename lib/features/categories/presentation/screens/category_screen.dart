@@ -22,7 +22,7 @@ class _CategoryScreenState extends State<CategoryScreen>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      loadDataIfNeeded(context, loadCategories: false);
+      loadProductsIfNeeded(context);
     });
   }
 

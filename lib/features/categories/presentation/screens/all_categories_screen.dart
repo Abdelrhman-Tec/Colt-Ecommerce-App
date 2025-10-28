@@ -25,7 +25,7 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      loadDataIfNeeded(context, loadProducts: false);
+      loadCategoriesIfNeeded(context);
     });
   }
 

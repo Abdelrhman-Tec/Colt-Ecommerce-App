@@ -1533,6 +1533,16 @@ class T {
   String get showLess {
     return Intl.message('Show Less', name: 'showLess', desc: '', args: []);
   }
+
+  /// `Shop by Products`
+  String get shopByProducts {
+    return Intl.message(
+      'Shop by Products',
+      name: 'shopByProducts',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<T> {
