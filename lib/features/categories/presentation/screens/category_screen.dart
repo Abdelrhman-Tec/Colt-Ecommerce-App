@@ -58,7 +58,13 @@ class _CategoryScreenState extends State<CategoryScreen>
         return state.maybeWhen(
           loading: () => SizedBox(
             height: 300.h,
-            child: const Center(child: CircularProgressIndicator()),
+            child: Center(
+              child: Image.asset(
+                'asset/icon/loading.gif',
+                width: 160,
+                height: 160,
+              ),
+            ),
           ),
           success: (products) {
             final productsByCategory = context
