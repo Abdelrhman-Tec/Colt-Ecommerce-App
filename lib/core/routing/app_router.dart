@@ -5,6 +5,8 @@ import 'package:colt_ecommerce_app/features/auth/presentation/screens/forgot_pas
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/screens/register_screen.dart';
+import 'package:colt_ecommerce_app/features/cart/presentation/cubit/cart_cubit.dart';
+import 'package:colt_ecommerce_app/features/cart/presentation/screens/cart_screen.dart';
 import 'package:colt_ecommerce_app/features/categories/data/model/categories_response_model.dart';
 import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_cubit.dart';
 import 'package:colt_ecommerce_app/features/categories/presentation/screens/all_categories_screen.dart';
@@ -56,17 +58,18 @@ class AppRouter {
         return _animatedRoute(
           MultiBlocProvider(
             providers: [
+              BlocProvider.value(value: getIt<CartCubit>()),
               BlocProvider.value(value: getIt<ProductsCubit>()),
               BlocProvider.value(value: getIt<CategoriesCubit>()),
             ],
             child: const HomeScreen(),
           ),
         );
-
       case Routes.mainScreen:
         return _animatedRoute(
           MultiBlocProvider(
             providers: [
+              BlocProvider.value(value: getIt<CartCubit>()),
               BlocProvider.value(value: getIt<ProductsCubit>()),
               BlocProvider.value(value: getIt<CategoriesCubit>()),
             ],
@@ -93,18 +96,33 @@ class AppRouter {
 
       case Routes.allProductsScreen:
         return _animatedRoute(
-          BlocProvider.value(
-            value: getIt<ProductsCubit>(),
+          MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: getIt<ProductsCubit>()),
+              BlocProvider.value(value: getIt<CartCubit>()),
+            ],
             child: const AllProductsScreen(),
           ),
         );
+
       case Routes.productsDetailsScreen:
         return _animatedRoute(
-          BlocProvider.value(
-            value: getIt<ProductsCubit>(),
+          MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: getIt<ProductsCubit>()),
+              BlocProvider.value(value: getIt<CartCubit>()),
+            ],
             child: ProductDetailsScreen(
               product: settings.arguments as ProductsResponseModel,
             ),
+          ),
+        );
+
+      case Routes.cartScreen:
+        return _animatedRoute(
+          BlocProvider.value(
+            value: getIt<CartCubit>(),
+            child: const CartScreen(),
           ),
         );
 

@@ -4,13 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddToCartButton extends StatelessWidget {
   final double price;
-  const AddToCartButton({super.key, required this.price});
+  final VoidCallback ontap;
+  const AddToCartButton({super.key, required this.price, required this.ontap});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: ontap,
       style: ElevatedButton.styleFrom(
         backgroundColor: theme.primaryColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),

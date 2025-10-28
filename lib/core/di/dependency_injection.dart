@@ -3,6 +3,7 @@ import 'package:colt_ecommerce_app/core/databases/api/api_services.dart';
 import 'package:colt_ecommerce_app/core/databases/api/dio_factory.dart';
 import 'package:colt_ecommerce_app/core/databases/firebase/firebase_service.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:colt_ecommerce_app/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:colt_ecommerce_app/features/categories/data/repo/categories_repo.dart';
 import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_cubit.dart';
 import 'package:colt_ecommerce_app/features/products/data/repo/products_repo.dart';
@@ -45,8 +46,10 @@ Future<void> setupGetIt() async {
     () => CategoriesCubit(getIt<CategoriesRepo>()),
   );
 
-  // ✅ AuthCubit registration
   getIt.registerFactory<AuthCubit>(
     () => AuthCubit(getIt<FirebaseAuthService>()),
   );
+
+  // CartCubit singleton
+  getIt.registerLazySingleton<CartCubit>(() => CartCubit());
 }

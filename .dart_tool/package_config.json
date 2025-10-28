@@ -122,6 +122,12 @@
       "languageVersion": "3.8"
     },
     {
+      "name": "cli_util",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/cli_util-0.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "clock",
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/clock-1.1.2",
       "packageUri": "lib/",
@@ -300,6 +306,12 @@
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_facebook_auth_web-6.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_launcher_icons-0.13.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
     },
     {
       "name": "flutter_lints",

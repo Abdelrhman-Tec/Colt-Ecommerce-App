@@ -10,4 +10,6 @@ class Routes {
   static const String allCategoriesScreen = "/allCategoriesScreen";
   static const String allProductsScreen = "/allproductsScreen";
   static const String productsDetailsScreen = "/productsDetailsScreen";
+  static const String cartScreen = "/cartScreen";
+  static const String homeAppBar = "/homeAppBar";
 }

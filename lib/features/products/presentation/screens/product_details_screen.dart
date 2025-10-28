@@ -1,4 +1,5 @@
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
+import 'package:colt_ecommerce_app/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:colt_ecommerce_app/features/products/data/model/products_response_model.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/widget/add_to_cart_button.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/widget/product_header.dart';
@@ -6,6 +7,7 @@ import 'package:colt_ecommerce_app/features/products/presentation/widget/product
 import 'package:colt_ecommerce_app/features/products/presentation/widget/product_info_section.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/widget/product_selectors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -56,7 +58,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ),
               ),
               verticalSpace(24),
-              AddToCartButton(price: widget.product.price.toDouble()),
+              AddToCartButton(
+                price: widget.product.price.toDouble(),
+                ontap: () =>
+                    context.read<CartCubit>().addToCart(widget.product),
+              ),
             ],
           ),
         ),
