@@ -38,7 +38,7 @@ class AuthBlocListener extends StatelessWidget {
 
             Navigator.pushReplacementNamed(
               context,
-              redirectRoute ?? Routes.homeScreen,
+              redirectRoute ?? Routes.mainScreen,
             );
           },
           error: (message) {

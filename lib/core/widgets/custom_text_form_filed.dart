@@ -32,64 +32,65 @@ class CustomTextFormField extends StatelessWidget {
   });
 
   @override
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return TextFormField(
-      controller: controller,
-      keyboardType: keyboardType,
-      obscureText: obscureText,
-      validator: validator,
-      onChanged: onChanged,
-      style: textStyle ?? theme.textTheme.bodyLarge,
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle:
-            hintStyle ??
-            theme.textTheme.displaySmall?.copyWith(
-              color: theme.hintColor,
-              fontSize: 15.sp,
-            ),
-        filled: true,
-        fillColor: fillColor ?? theme.inputDecorationTheme.fillColor,
-
-        prefixIcon: prefixIcon != null
-            ? Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                child: prefixIcon,
-              )
-            : null,
-        prefixIconConstraints: const BoxConstraints(
-          minWidth: 24,
-          minHeight: 24,
-        ),
-
-        suffixIcon: suffixIcon != null
-            ? Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                child: suffixIcon,
-              )
-            : null,
-        suffixIconConstraints: const BoxConstraints(
-          minWidth: 24,
-          minHeight: 24,
-        ),
-
-        contentPadding: const EdgeInsets.symmetric(
-          vertical: 16,
-          horizontal: 16,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide.none,
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide.none,
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide(color: theme.primaryColor, width: 2),
+    return Material(
+      color: Colors.transparent, // علشان ما يغيّرش الخلفية
+      child: TextFormField(
+        controller: controller,
+        keyboardType: keyboardType,
+        obscureText: obscureText,
+        validator: validator,
+        onChanged: onChanged,
+        style: textStyle ?? theme.textTheme.bodyLarge,
+        decoration: InputDecoration(
+          hintText: hintText,
+          hintStyle:
+              hintStyle ??
+              theme.textTheme.displaySmall?.copyWith(
+                color: theme.hintColor,
+                fontSize: 15.sp,
+              ),
+          filled: true,
+          fillColor: fillColor ?? theme.inputDecorationTheme.fillColor,
+          prefixIcon: prefixIcon != null
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  child: prefixIcon,
+                )
+              : null,
+          prefixIconConstraints: const BoxConstraints(
+            minWidth: 24,
+            minHeight: 24,
+          ),
+          suffixIcon: suffixIcon != null
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  child: suffixIcon,
+                )
+              : null,
+          suffixIconConstraints: const BoxConstraints(
+            minWidth: 24,
+            minHeight: 24,
+          ),
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 16,
+            horizontal: 16,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
+            borderSide: BorderSide.none,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
+            borderSide: BorderSide(color: theme.primaryColor, width: 2),
+          ),
         ),
       ),
     );

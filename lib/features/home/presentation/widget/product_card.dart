@@ -67,16 +67,18 @@ class ProductCard extends StatelessWidget {
                 Positioned(
                   top: 10.h,
                   right: 10.w,
-                  child: InkWell(
-                    onTap: ontap,
-                    borderRadius: BorderRadius.circular(50),
-                    child: Container(
-                      padding: EdgeInsets.all(6.w),
-                      decoration: BoxDecoration(shape: BoxShape.circle),
-                      child: SvgPicture.asset(
-                        "asset/icon/heart.svg",
-
-                        color: Theme.of(context).colorScheme.primary,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: ontap,
+                      borderRadius: BorderRadius.circular(50),
+                      child: Container(
+                        padding: EdgeInsets.all(6.w),
+                        decoration: const BoxDecoration(shape: BoxShape.circle),
+                        child: SvgPicture.asset(
+                          "asset/icon/heart.svg",
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                       ),
                     ),
                   ),
