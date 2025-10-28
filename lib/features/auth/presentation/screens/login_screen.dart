@@ -29,113 +29,118 @@ class _LoginScreenState extends State<LoginScreen> {
   TapGestureRecognizer get _tapRecognizer =>
       TapGestureRecognizer()
         ..onTap = () => context.pushNamed(Routes.registerScreen);
-  bool obscurePassword = true;
-  bool changeThemeMode = true;
-  bool isEnglish = true;
 
   @override
   Widget build(BuildContext context) {
+    return _loginBody();
+  }
+
+  Widget _loginBody() {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
 
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(top: 80.h, right: 27.w, left: 27.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    ThemeToggleButton(
-                      isLightMode:
-                          context.watch<ThemeCubit>().state.themeMode ==
-                          ThemeMode.light,
-                      onToggle: () {
-                        context.read<ThemeCubit>().toggleTheme();
-                      },
-                    ),
-                    horizontalSpace(20),
-                    LanguageToggleButton(
-                      isEnglish:
-                          context
-                              .watch<LanguageCubit>()
-                              .state
-                              .locale
-                              .languageCode ==
-                          'en',
-                      onToggle: () {
-                        context.read<LanguageCubit>().toggleLanguage();
-                      },
-                    ),
-                  ],
-                ),
-                verticalSpace(30),
-                Header(textTheme: textTheme, title: T.current.signIn),
-                EmailAndPassword(),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: TextButton(
-                    onPressed: () =>
-                        context.pushNamed(Routes.forgotPasswordScreen),
-                    child: Text(
-                      T.current.forgotPassword,
-                      style: textTheme.displaySmall!.copyWith(fontSize: 18.sp),
-                    ),
-                  ),
-                ),
-                verticalSpace(100),
-                CustomButton(
-                  backgroundColor: AppColors.primary,
-                  text: T.current.signIn,
-                  textColor: AppColors.lightBackground,
-                  borderRadius: 50,
-                  onPressed: () {
-                    validateThenDoLogin(context);
-                  },
-                ),
-                verticalSpace(10),
-                Center(
-                  child: Text.rich(
-                    TextSpan(
-                      text: T.current.dontHaveAccount,
-                      children: [
-                        TextSpan(
-                          text: T.current.createOne,
-                          recognizer: _tapRecognizer,
-                        ),
-                      ],
-                    ),
-                    style: Theme.of(
-                      context,
-                    ).textTheme.displaySmall!.copyWith(fontSize: 14.sp),
-                  ),
-                ),
-                verticalSpace(50),
-                SocialButton(
-                  ontap: () {
-                    context.read<AuthCubit>().loginWithFacebook();
-                  },
-                  icon: Icons.facebook,
-                  text: T.current.continueWithFacebook,
-                  iconSize: 20,
-                  background: theme.colorScheme.primary.withAlpha(30),
-                ),
-                verticalSpace(40),
-                AuthBlocListener(),
-              ],
-            ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 27.w, vertical: 80.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildHeaderRow(context),
+              verticalSpace(30),
+              Header(textTheme: textTheme, title: T.current.signIn),
+              const EmailAndPassword(),
+              _buildForgotPasswordButton(context, textTheme),
+              verticalSpace(100),
+              _buildLoginButton(context),
+              verticalSpace(10),
+              _buildRegisterText(context),
+              verticalSpace(50),
+              _buildSocialLoginButton(context),
+              verticalSpace(40),
+              const AuthBlocListener(),
+            ],
           ),
         ),
       ),
     );
   }
-}
 
-void validateThenDoLogin(BuildContext context) {
-  if (context.read<AuthCubit>().formKey.currentState!.validate()) {
-    context.read<AuthCubit>().login();
+  //================ Helper Widgets =================//
+
+  Widget _buildHeaderRow(BuildContext context) {
+    final themeCubit = context.watch<ThemeCubit>();
+    final languageCubit = context.watch<LanguageCubit>();
+
+    return Row(
+      children: [
+        ThemeToggleButton(
+          isLightMode: themeCubit.state.themeMode == ThemeMode.light,
+          onToggle: themeCubit.toggleTheme,
+        ),
+        horizontalSpace(20),
+        LanguageToggleButton(
+          isEnglish: languageCubit.state.locale.languageCode == 'en',
+          onToggle: languageCubit.toggleLanguage,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildForgotPasswordButton(BuildContext context, TextTheme textTheme) {
+    return Align(
+      alignment: Alignment.topRight,
+      child: TextButton(
+        onPressed: () => context.pushNamed(Routes.forgotPasswordScreen),
+        child: Text(
+          T.current.forgotPassword,
+          style: textTheme.displaySmall!.copyWith(fontSize: 18.sp),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLoginButton(BuildContext context) {
+    return CustomButton(
+      backgroundColor: AppColors.primary,
+      text: T.current.signIn,
+      textColor: AppColors.lightBackground,
+      borderRadius: 50,
+      onPressed: () => _validateThenDoLogin(context),
+    );
+  }
+
+  Widget _buildRegisterText(BuildContext context) {
+    return Center(
+      child: Text.rich(
+        TextSpan(
+          text: T.current.dontHaveAccount,
+          children: [
+            TextSpan(text: T.current.createOne, recognizer: _tapRecognizer),
+          ],
+        ),
+        style: Theme.of(
+          context,
+        ).textTheme.displaySmall!.copyWith(fontSize: 14.sp),
+      ),
+    );
+  }
+
+  Widget _buildSocialLoginButton(BuildContext context) {
+    final theme = Theme.of(context);
+    return SocialButton(
+      ontap: () => context.read<AuthCubit>().loginWithFacebook(),
+      icon: Icons.facebook,
+      text: T.current.continueWithFacebook,
+      iconSize: 20,
+      background: theme.colorScheme.primary.withAlpha(30),
+    );
+  }
+
+  void _validateThenDoLogin(BuildContext context) {
+    if (context.read<AuthCubit>().formKey.currentState!.validate()) {
+      context.read<AuthCubit>().login();
+    }
   }
 }
