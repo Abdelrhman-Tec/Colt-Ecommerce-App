@@ -36,50 +36,48 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    return buildHomeBody();
+  }
 
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 63.h),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                // App Bar
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: const HomeAppBar(),
-                ),
-                verticalSpace(20),
-
-                // Search Field
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: const SearchField(),
-                ),
-                verticalSpace(20),
-
-                // Categories Section
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: SectionTitle(title: T.current.categories),
-                ),
-                verticalSpace(20),
-                _buildCategoriesBloc(),
-
-                // Products Section
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: SectionTitle(title: T.current.product),
-                ),
-                verticalSpace(20),
-                _buildProductsBloc(),
-
-                verticalSpace(20),
-              ],
-            ),
+  Widget buildHomeBody() {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 63.h),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // App Bar
+              buildSection(child: const HomeAppBar()),
+              // Search Field
+              buildSection(child: const SearchField()),
+              // Categories Section
+              buildSection(child: SectionTitle(title: T.current.categories)),
+              _buildCategoriesBloc(),
+              verticalSpace(20),
+              // Products Section
+              buildSection(child: SectionTitle(title: T.current.product)),
+              _buildProductsBloc(),
+              verticalSpace(20),
+            ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget buildSection({
+    required Widget child,
+    double horizontalPadding = 20,
+    double verticalSpaceAfter = 20,
+  }) {
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding.w),
+          child: child,
+        ),
+        verticalSpace(verticalSpaceAfter),
+      ],
     );
   }
 
@@ -97,9 +95,15 @@ class _HomeScreenState extends State<HomeScreen>
       },
       builder: (context, state) {
         return state.maybeWhen(
-          loading: () => const SizedBox(
+          loading: () => SizedBox(
             height: 100,
-            child: Center(child: CircularProgressIndicator()),
+            child: Center(
+              child: Image.asset(
+                'asset/icon/loading.gif',
+                width: 160,
+                height: 160,
+              ),
+            ),
           ),
           success: (categories) => _buildListViewCategories(categories),
           error: (message) => SizedBox(
@@ -131,7 +135,13 @@ class _HomeScreenState extends State<HomeScreen>
         return state.maybeWhen(
           loading: () => SizedBox(
             height: 300.h,
-            child: const Center(child: CircularProgressIndicator()),
+            child: Center(
+              child: Image.asset(
+                'asset/icon/loading.gif',
+                width: 160,
+                height: 160,
+              ),
+            ),
           ),
           success: (products) => _buildListViewProductCard(products),
           error: (message) => SizedBox(
