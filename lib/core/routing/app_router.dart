@@ -18,6 +18,7 @@ import 'package:colt_ecommerce_app/features/products/data/model/products_respons
 import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_cubit.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/screens/all_products_screen.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/screens/product_details_screen.dart';
+import 'package:colt_ecommerce_app/features/profile/presentation/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -128,6 +129,14 @@ class AppRouter {
             child: const CartScreen(),
           ),
         );
+      case Routes.profileScreen:
+        return _animatedRoute(
+          BlocProvider.value(
+            value: getIt<AuthCubit>(),
+            child: const ProfileScreen(),
+          ),
+        );
+
       case Routes.checkOut:
         return _animatedRoute(
           BlocProvider.value(
