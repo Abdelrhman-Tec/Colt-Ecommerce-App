@@ -141,8 +141,13 @@ class CheckoutScreen extends StatelessWidget {
       await PaymentManager.makePayment(amountInCents, 'usd');
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Payment successful!"),
+        SnackBar(
+          content: Text(
+            "Payment successful!",
+            style: Theme.of(
+              context,
+            ).textTheme.displaySmall!.copyWith(fontSize: 15.sp),
+          ),
           backgroundColor: Colors.green,
         ),
       );
@@ -151,7 +156,12 @@ class CheckoutScreen extends StatelessWidget {
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Payment failed: $e"),
+          content: Text(
+            "Payment failed: $e",
+            style: Theme.of(
+              context,
+            ).textTheme.displaySmall!.copyWith(fontSize: 15.sp),
+          ),
           backgroundColor: Colors.red,
         ),
       );

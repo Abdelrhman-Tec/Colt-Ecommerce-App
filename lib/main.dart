@@ -11,13 +11,26 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase
   await firebaseSetup();
+
+  // Initialize Dependency Injection
   await setupGetIt();
+
+  // Initialize Cache
   await CacheHelper.init();
+
+  // Set Stripe Publishable Key
   Stripe.publishableKey = ApiKeys.publishableKey;
+
+  // Check Network Connection
   final networkInfo = getIt<NetworkInfo>();
   final isConnected = await networkInfo.isConnected;
   log('🌐 Internet Connected: $isConnected');
+
+  // Determine initial route based on login
   final initialRoute = checkLogin();
+
   runApp(ColtEcommerceApp(initialRoute: initialRoute));
 }
