@@ -138,7 +138,7 @@ class CheckoutScreen extends StatelessWidget {
   Future<void> _handlePayment(BuildContext context, double total) async {
     try {
       final amountInCents = (total).toInt();
-      await StripeManager.makePayment(amountInCents, 'usd');
+      await PaymentManager.makePayment(amountInCents, 'usd');
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
