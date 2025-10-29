@@ -6,7 +6,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 
-[Watch App Demo](https://www.dropbox.com/s/<share-id>/ecommerce_app.mp4?raw=1)
+[![Watch the Demo](asset/project_structure.png)](https://www.dropbox.com/s/<share-id>/ecommerce_app.mp4?raw=1)
 
 ![Project Structure](asset/project_structure.png)
 
