@@ -1,9 +1,11 @@
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:colt_ecommerce_app/features/cart/presentation/cubit/cart_state.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/cart_button.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/user_avatar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,7 +16,23 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const UserAvatar(initial: 'A'),
+        BlocBuilder<AuthCubit, AuthState<User?>>(
+          builder: (context, state) {
+            final initial = state.maybeWhen(
+              success: (user) {
+                if (user != null &&
+                    user.email != null &&
+                    user.email!.isNotEmpty) {
+                  return user.email![0].toUpperCase();
+                }
+                return 'A';
+              },
+              orElse: () => 'A',
+            );
+
+            return UserAvatar(initial: initial);
+          },
+        ),
         const Spacer(),
         BlocBuilder<CartCubit, CartState>(
           builder: (context, state) {

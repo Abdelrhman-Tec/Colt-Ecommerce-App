@@ -17,12 +17,14 @@
         "firebase_core",
         "flutter",
         "flutter_bloc",
+        "flutter_dotenv",
         "flutter_facebook_auth",
         "flutter_launcher_icons",
         "flutter_localization",
         "flutter_localizations",
         "flutter_native_splash",
         "flutter_screenutil",
+        "flutter_stripe",
         "flutter_svg",
         "freezed",
         "freezed_annotation",
@@ -65,6 +67,24 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "flutter_stripe",
+      "version": "12.1.0",
+      "dependencies": [
+        "flutter",
+        "meta",
+        "stripe_android",
+        "stripe_ios",
+        "stripe_platform_interface"
+      ]
+    },
+    {
+      "name": "flutter_dotenv",
+      "version": "6.0.0",
+      "dependencies": [
+        "flutter"
       ]
     },
     {
@@ -498,6 +518,31 @@
       ]
     },
     {
+      "name": "stripe_platform_interface",
+      "version": "12.1.0",
+      "dependencies": [
+        "flutter",
+        "freezed_annotation",
+        "json_annotation",
+        "meta",
+        "plugin_platform_interface"
+      ]
+    },
+    {
+      "name": "stripe_ios",
+      "version": "12.1.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
+      "name": "stripe_android",
+      "version": "12.1.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
       "name": "yaml",
       "version": "3.1.3",
       "dependencies": [
@@ -513,6 +558,14 @@
         "archive",
         "meta",
         "xml"
+      ]
+    },
+    {
+      "name": "cli_util",
+      "version": "0.4.2",
+      "dependencies": [
+        "meta",
+        "path"
       ]
     },
     {
@@ -1497,14 +1550,6 @@
       "version": "0.6.7",
       "dependencies": [
         "meta"
-      ]
-    },
-    {
-      "name": "cli_util",
-      "version": "0.4.2",
-      "dependencies": [
-        "meta",
-        "path"
       ]
     }
   ],

@@ -1,4 +1,4 @@
-import 'package:colt_ecommerce_app/core/databases/api/api_result.dart' as api;
+import 'package:colt_ecommerce_app/core/networking/api/api_result.dart' as api;
 import 'package:colt_ecommerce_app/features/products/data/model/products_response_model.dart';
 import 'package:colt_ecommerce_app/features/products/data/repo/products_repo.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_state.dart';

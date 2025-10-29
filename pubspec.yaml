@@ -54,7 +54,10 @@ dependencies:
   persistent_bottom_nav_bar: ^6.2.1
   cached_network_image: ^3.4.1
 
-  flutter_launcher_icons: ^0.13.1 
+  flutter_launcher_icons: ^0.13.1
+  # Easily configure any flutter application with global variables
+  flutter_dotenv: ^6.0.0 
+  flutter_stripe: ^12.1.0
 
 
 dev_dependencies:

@@ -275,6 +275,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordValidationUppercase": MessageLookupByLibrary.simpleMessage(
       "حرف كبير واحد على الأقل",
     ),
+    "payNow": MessageLookupByLibrary.simpleMessage("ادفع الآن"),
     "paymentMethod": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
     "placeOrder": MessageLookupByLibrary.simpleMessage("تقديم الطلب"),
     "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(
@@ -311,6 +312,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "seeAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "seeOrderDetails": MessageLookupByLibrary.simpleMessage("عرض تفاصيل الطلب"),
     "shipped": MessageLookupByLibrary.simpleMessage("تم الشحن"),
+    "shipping": MessageLookupByLibrary.simpleMessage("شحن"),
     "shippingAddress": MessageLookupByLibrary.simpleMessage("عنوان الشحن"),
     "shippingCost": MessageLookupByLibrary.simpleMessage("تكلفة الشحن"),
     "shippingReturns": MessageLookupByLibrary.simpleMessage("الشحن والإرجاع"),

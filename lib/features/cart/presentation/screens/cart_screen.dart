@@ -185,7 +185,7 @@ class CartScreen extends StatelessWidget {
                 textColor: theme.colorScheme.onPrimary,
                 height: 55.h,
                 borderRadius: 50,
-                onPressed: () {},
+                onPressed: () => context.pushNamed(Routes.checkOut),
               ),
               verticalSpace(50),
             ],
@@ -232,7 +232,7 @@ class CartScreen extends StatelessWidget {
     return Container(
       height: 50.h,
       decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceVariant,
+        color: theme.colorScheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(14.r),
       ),
       child: Row(

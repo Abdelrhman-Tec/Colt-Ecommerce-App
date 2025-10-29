@@ -290,6 +290,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_dotenv",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_dotenv-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_facebook_auth",
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_facebook_auth-7.1.2",
       "packageUri": "lib/",
@@ -378,6 +384,12 @@
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage_windows-3.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_stripe",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_stripe-12.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
     },
     {
       "name": "flutter_svg",
@@ -834,6 +846,24 @@
       "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/string_scanner-1.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.1"
+    },
+    {
+      "name": "stripe_android",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/stripe_android-12.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
+    },
+    {
+      "name": "stripe_ios",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/stripe_ios-12.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
+    },
+    {
+      "name": "stripe_platform_interface",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/stripe_platform_interface-12.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
     },
     {
       "name": "synchronized",

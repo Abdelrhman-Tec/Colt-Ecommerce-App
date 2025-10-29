@@ -287,6 +287,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordValidationUppercase": MessageLookupByLibrary.simpleMessage(
       "At least 1 uppercase letter",
     ),
+    "payNow": MessageLookupByLibrary.simpleMessage("Pay Now"),
     "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment Method"),
     "placeOrder": MessageLookupByLibrary.simpleMessage("Place Order"),
     "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(
@@ -323,6 +324,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "See Order details",
     ),
     "shipped": MessageLookupByLibrary.simpleMessage("Shipped"),
+    "shipping": MessageLookupByLibrary.simpleMessage("shipping"),
     "shippingAddress": MessageLookupByLibrary.simpleMessage("Shipping Address"),
     "shippingCost": MessageLookupByLibrary.simpleMessage("Shipping Cost"),
     "shippingReturns": MessageLookupByLibrary.simpleMessage(

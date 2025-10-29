@@ -1543,6 +1543,16 @@ class T {
       args: [],
     );
   }
+
+  /// `shipping`
+  String get shipping {
+    return Intl.message('shipping', name: 'shipping', desc: '', args: []);
+  }
+
+  /// `Pay Now`
+  String get payNow {
+    return Intl.message('Pay Now', name: 'payNow', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<T> {

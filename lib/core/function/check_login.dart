@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:developer';
-import 'package:colt_ecommerce_app/core/databases/cache/cache_helper.dart';
+import 'package:colt_ecommerce_app/core/networking/cache/cache_helper.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 
 String checkLogin() {

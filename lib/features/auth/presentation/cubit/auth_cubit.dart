@@ -1,5 +1,5 @@
-import 'package:colt_ecommerce_app/core/databases/cache/cache_helper.dart';
-import 'package:colt_ecommerce_app/core/databases/firebase/firebase_service.dart';
+import 'package:colt_ecommerce_app/core/networking/cache/cache_helper.dart';
+import 'package:colt_ecommerce_app/core/networking/firebase/firebase_service.dart';
 import 'package:colt_ecommerce_app/core/errors/firebase_error_handler.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

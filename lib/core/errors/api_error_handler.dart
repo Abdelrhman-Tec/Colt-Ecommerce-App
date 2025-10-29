@@ -2,7 +2,7 @@
 
 import 'package:dio/dio.dart';
 
-import '../databases/api/api_constants.dart';
+import '../networking/api/api_constants.dart';
 import 'api_error_model.dart';
 
 // TODO: wallahy I will refactor this .. Omar Ahmed

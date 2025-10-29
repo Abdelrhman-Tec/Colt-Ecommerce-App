@@ -191,5 +191,7 @@
     "product": "منتجات",
     "showMore": "اعرض المزيد",
     "showLess": "اعرض أقل",
-    "shopByProducts": "تسوق حسب المنتجات"
+    "shopByProducts": "تسوق حسب المنتجات",
+    "shipping": "شحن",
+    "payNow": "ادفع الآن"
 }

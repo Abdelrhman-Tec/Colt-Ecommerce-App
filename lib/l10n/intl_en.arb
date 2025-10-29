@@ -191,5 +191,7 @@
     "product": "Products",
     "showMore": "Show More",
     "showLess": "Show Less",
-    "shopByProducts": "Shop by Products"
+    "shopByProducts": "Shop by Products",
+    "shipping": "shipping",
+    "payNow": "Pay Now"
 }

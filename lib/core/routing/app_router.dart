@@ -11,6 +11,7 @@ import 'package:colt_ecommerce_app/features/categories/data/model/categories_res
 import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_cubit.dart';
 import 'package:colt_ecommerce_app/features/categories/presentation/screens/all_categories_screen.dart';
 import 'package:colt_ecommerce_app/features/categories/presentation/screens/category_screen.dart';
+import 'package:colt_ecommerce_app/features/checkout/presentation/screens/checkout_screen.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/screens/home_screen.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/main_screen.dart';
 import 'package:colt_ecommerce_app/features/products/data/model/products_response_model.dart';
@@ -58,6 +59,7 @@ class AppRouter {
         return _animatedRoute(
           MultiBlocProvider(
             providers: [
+              BlocProvider.value(value: getIt<AuthCubit>()),
               BlocProvider.value(value: getIt<CartCubit>()),
               BlocProvider.value(value: getIt<ProductsCubit>()),
               BlocProvider.value(value: getIt<CategoriesCubit>()),
@@ -69,6 +71,7 @@ class AppRouter {
         return _animatedRoute(
           MultiBlocProvider(
             providers: [
+              BlocProvider.value(value: getIt<AuthCubit>()),
               BlocProvider.value(value: getIt<CartCubit>()),
               BlocProvider.value(value: getIt<ProductsCubit>()),
               BlocProvider.value(value: getIt<CategoriesCubit>()),
@@ -125,7 +128,13 @@ class AppRouter {
             child: const CartScreen(),
           ),
         );
-
+      case Routes.checkOut:
+        return _animatedRoute(
+          BlocProvider.value(
+            value: getIt<CartCubit>(),
+            child: const CheckoutScreen(),
+          ),
+        );
       default:
         return _errorRoute(settings.name);
     }
