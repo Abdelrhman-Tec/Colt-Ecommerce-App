@@ -1,5 +1,6 @@
 # Colt-Ecommerce-App
 
+<video src="https://www.dropbox.com/home?preview=ecommerce_app.mp4" >
 A modern Flutter-based e-commerce application designed with clean architecture, state management, and responsive UI.
 
 ## Key Features & Benefits
