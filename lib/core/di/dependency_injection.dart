@@ -2,8 +2,6 @@ import 'package:colt_ecommerce_app/core/connection/network_info.dart';
 import 'package:colt_ecommerce_app/core/networking/api/api_services.dart';
 import 'package:colt_ecommerce_app/core/networking/api/dio_factory.dart';
 import 'package:colt_ecommerce_app/core/networking/firebase/firebase_service.dart';
-import 'package:colt_ecommerce_app/core/networking/stripe_service/stripeDio.dart';
-import 'package:colt_ecommerce_app/core/networking/stripe_service/stripe_service.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:colt_ecommerce_app/features/categories/data/repo/categories_repo.dart';
@@ -19,7 +17,6 @@ final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
   // Dio
   Dio dio = await DioFactory.getDio();
-  final Dio stripeDio = StripeDio().dio;
   getIt.registerLazySingleton<Dio>(() => dio);
 
   // Services
@@ -55,6 +52,4 @@ Future<void> setupGetIt() async {
 
   // CartCubit singleton
   getIt.registerLazySingleton<CartCubit>(() => CartCubit());
-
-  getIt.registerLazySingleton<StripeService>(() => StripeService(stripeDio));
 }
