@@ -11,8 +11,12 @@
 
 Click below to watch the demo video:
 
-👉 [**Watch App Demo**]([https://www.dropbox.com/scl/fi/a6voulqbckb86nvjvxaiq/ecommerce_app.mp4?rlkey=cqhe2u2oirkady9blqhy0ds77&st=bc3idhmo&raw=1](https://www.youtube.com/watch?v=6bmzUw-0dAc))
-
+<iframe width="560" height="315"
+  src="https://www.youtube.com/embed/6bmzUw-0dAc"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
 
 ![Project Structure](asset/project_structure2.png)
 ![Application Life Cycle](asset/Application_life_cycle.png)
