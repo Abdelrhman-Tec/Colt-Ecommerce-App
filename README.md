@@ -13,7 +13,7 @@ Click below to watch the demo video:
 👉 [**Watch App Demo**](https://www.dropbox.com/scl/fi/a6voulqbckb86nvjvxaiq/ecommerce_app.mp4?rlkey=cqhe2u2oirkady9blqhy0ds77&st=bc3idhmo&raw=1)
 
 
-![Project Structure](asset/project_structure.png)
+![Project Structure](asset/project_structure2.png)
 
 
 A modern Flutter-based e-commerce application designed with clean architecture, state management, and responsive UI.
