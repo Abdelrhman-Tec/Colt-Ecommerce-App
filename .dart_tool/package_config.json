@@ -764,6 +764,12 @@
       "languageVersion": "3.5"
     },
     {
+      "name": "shimmer",
+      "rootUri": "file:///C:/Users/gdfdf/AppData/Local/Pub/Cache/hosted/pub.dev/shimmer-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/src/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",

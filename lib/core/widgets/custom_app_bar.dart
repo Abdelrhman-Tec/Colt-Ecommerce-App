@@ -1,6 +1,7 @@
 import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/back_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -18,7 +19,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           showIcon ? CustomBackButton() : SizedBox.shrink(),
           const Spacer(),
           Center(
-            child: Text(title, style: Theme.of(context).textTheme.displaySmall),
+            child: Text(
+              title,
+              style: Theme.of(
+                context,
+              ).textTheme.displaySmall!.copyWith(fontSize: 20.sp),
+            ),
           ),
           showIcon ? horizontalSpace(20) : horizontalSpace(0),
           const Spacer(),

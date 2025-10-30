@@ -196,5 +196,12 @@
     "payNow": "ادفع الآن",
     "lightMode": "الوضع النهاري",
     "darkMode": "الوضع الليلي",
-    "noItemsInWishlist": "لا توجد عناصر في قائمة المفضلة"
+    "noItemsInWishlist": "لا توجد عناصر في قائمة المفضلة",
+    "filterByTitle": "تصفية حسب الاسم",
+    "enterTitle": "ادخل الاسم",
+    "filterByPrice": "تصفية حسب السعر",
+    "enterPrice": "ادخل السعر",
+    "filterByPriceRange": "تصفية حسب نطاق السعر",
+    "filterByCategory": "تصفية حسب الفئة",
+    "applyFilters": "تطبيق الفلاتر"
 }

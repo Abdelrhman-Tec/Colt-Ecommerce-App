@@ -106,6 +106,7 @@ class AppRouter {
         return _animatedRoute(
           MultiBlocProvider(
             providers: [
+              BlocProvider.value(value: getIt<CategoriesCubit>()),
               BlocProvider.value(value: getIt<ProductsCubit>()),
               BlocProvider.value(value: getIt<CartCubit>()),
             ],

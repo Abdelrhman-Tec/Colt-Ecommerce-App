@@ -1573,6 +1573,66 @@ class T {
       args: [],
     );
   }
+
+  /// `Filter by Title`
+  String get filterByTitle {
+    return Intl.message(
+      'Filter by Title',
+      name: 'filterByTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter title`
+  String get enterTitle {
+    return Intl.message('Enter title', name: 'enterTitle', desc: '', args: []);
+  }
+
+  /// `Filter by Price`
+  String get filterByPrice {
+    return Intl.message(
+      'Filter by Price',
+      name: 'filterByPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter price`
+  String get enterPrice {
+    return Intl.message('Enter price', name: 'enterPrice', desc: '', args: []);
+  }
+
+  /// `Filter by Price Range`
+  String get filterByPriceRange {
+    return Intl.message(
+      'Filter by Price Range',
+      name: 'filterByPriceRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter by Category`
+  String get filterByCategory {
+    return Intl.message(
+      'Filter by Category',
+      name: 'filterByCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apply Filters`
+  String get applyFilters {
+    return Intl.message(
+      'Apply Filters',
+      name: 'applyFilters',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<T> {

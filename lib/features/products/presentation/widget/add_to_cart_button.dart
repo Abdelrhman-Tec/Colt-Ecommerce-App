@@ -21,6 +21,7 @@ class AddToCartButton extends StatelessWidget {
         '\$${price.toStringAsFixed(2)} | Add to Bag',
         style: theme.textTheme.displaySmall?.copyWith(
           fontSize: 18.sp,
+          color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),

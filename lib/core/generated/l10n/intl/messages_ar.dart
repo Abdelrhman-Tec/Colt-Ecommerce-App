@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "addToBag": MessageLookupByLibrary.simpleMessage("أضف إلى الحقيبة"),
     "ageRange": MessageLookupByLibrary.simpleMessage("الفئة العمرية"),
+    "applyFilters": MessageLookupByLibrary.simpleMessage("تطبيق الفلاتر"),
     "bags": MessageLookupByLibrary.simpleMessage("حقائب"),
     "canceled": MessageLookupByLibrary.simpleMessage("تم الإلغاء"),
     "cardNumber": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
@@ -75,6 +76,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterEmailAddress": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكتروني",
     ),
+    "enterPrice": MessageLookupByLibrary.simpleMessage("ادخل السعر"),
+    "enterTitle": MessageLookupByLibrary.simpleMessage("ادخل الاسم"),
     "error": MessageLookupByLibrary.simpleMessage("خطأ"),
     "exp": MessageLookupByLibrary.simpleMessage("انتهاء"),
     "exploreCategories": MessageLookupByLibrary.simpleMessage("استكشف الفئات"),
@@ -90,6 +93,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToSendVerificationEmail": MessageLookupByLibrary.simpleMessage(
       "فشل إرسال بريد التحقق",
     ),
+    "filterByCategory": MessageLookupByLibrary.simpleMessage("تصفية حسب الفئة"),
+    "filterByPrice": MessageLookupByLibrary.simpleMessage("تصفية حسب السعر"),
+    "filterByPriceRange": MessageLookupByLibrary.simpleMessage(
+      "تصفية حسب نطاق السعر",
+    ),
+    "filterByTitle": MessageLookupByLibrary.simpleMessage("تصفية حسب الاسم"),
     "finish": MessageLookupByLibrary.simpleMessage("إنهاء"),
     "firebaseAccountExistsWithDifferentCredential":
         MessageLookupByLibrary.simpleMessage(

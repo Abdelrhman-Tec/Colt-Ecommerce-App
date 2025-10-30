@@ -196,7 +196,12 @@
   "payNow": "Pay Now",
   "lightMode": "Light Mode",
   "darkMode": "Dark Mode",
-  "noItemsInWishlist": "No items in your wishlist"
-
-
+  "noItemsInWishlist": "No items in your wishlist",
+  "filterByTitle": "Filter by Title",
+  "enterTitle": "Enter title",
+  "filterByPrice": "Filter by Price",
+  "enterPrice": "Enter price",
+  "filterByPriceRange": "Filter by Price Range",
+  "filterByCategory": "Filter by Category",
+  "applyFilters": "Apply Filters"
 }

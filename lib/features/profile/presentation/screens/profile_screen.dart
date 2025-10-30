@@ -1,14 +1,18 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_cubit.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_state.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/networking/cache/cache_helper.dart';
+import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/cubit/theme_cubit.dart';
 import 'package:colt_ecommerce_app/core/theme/cubit/theme_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -98,19 +102,19 @@ class ProfileScreen extends StatelessWidget {
 
               const Spacer(),
 
-              TextButton(
-                onPressed: () {
-                  context.read<AuthCubit>().logout();
-                },
-                child: Text(
-                  T.current.signOut,
-                  style: theme.textTheme.bodyLarge?.copyWith(
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+              CustomButton(
+                text: T.current.signOut,
+                onPressed: () => context.read<AuthCubit>().logout(),
+                width: 190.w,
+                height: 60.h,
+                borderRadius: 28,
+                backgroundColor: Colors.red.shade600,
+                textColor: Colors.white,
+                elevation: 4,
+                shadowColor: Colors.black.withOpacity(0.2),
+                icon: Icons.logout,
+                iconSize: 20,
               ),
-
               const SizedBox(height: 20),
             ],
           ),

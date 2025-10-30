@@ -1,6 +1,7 @@
 import 'package:colt_ecommerce_app/core/theme/app_colors.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/screens/home_screen.dart';
 import 'package:colt_ecommerce_app/features/notification/presentation/screens/notification_screen.dart';
+import 'package:colt_ecommerce_app/features/order/presentation/screens/order_screen.dart';
 import 'package:colt_ecommerce_app/features/profile/presentation/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = const [
     HomeScreen(),
     NotificationScreen(),
-    OrdersScreen(),
+    OrderScreen(),
     ProfileScreen(),
   ];
 
@@ -122,13 +123,5 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
     );
-  }
-}
-
-class OrdersScreen extends StatelessWidget {
-  const OrdersScreen({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("📦 Orders")));
   }
 }

@@ -46,6 +46,7 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen>
                 textTheme: Theme.of(context).textTheme,
                 title: T.current.shopByCategories,
               ),
+
               verticalSpace(20),
               Expanded(child: _buildCategoriesBloc()),
             ],

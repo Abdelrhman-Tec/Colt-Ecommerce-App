@@ -58,6 +58,7 @@ dependencies:
   # Easily configure any flutter application with global variables
   flutter_dotenv: ^6.0.0 
   flutter_stripe: ^12.1.0
+  shimmer: ^3.0.0
 
 
 dev_dependencies:

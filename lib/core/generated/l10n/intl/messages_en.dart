@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "addToBag": MessageLookupByLibrary.simpleMessage("Add to Bag"),
     "ageRange": MessageLookupByLibrary.simpleMessage("Age Range"),
+    "applyFilters": MessageLookupByLibrary.simpleMessage("Apply Filters"),
     "bags": MessageLookupByLibrary.simpleMessage("Bags"),
     "canceled": MessageLookupByLibrary.simpleMessage("Canceled"),
     "cardNumber": MessageLookupByLibrary.simpleMessage("Card Number"),
@@ -83,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterEmailAddress": MessageLookupByLibrary.simpleMessage(
       "Enter Email address",
     ),
+    "enterPrice": MessageLookupByLibrary.simpleMessage("Enter price"),
+    "enterTitle": MessageLookupByLibrary.simpleMessage("Enter title"),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
     "exp": MessageLookupByLibrary.simpleMessage("Exp"),
     "exploreCategories": MessageLookupByLibrary.simpleMessage(
@@ -100,6 +103,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToSendVerificationEmail": MessageLookupByLibrary.simpleMessage(
       "Failed to send verification email",
     ),
+    "filterByCategory": MessageLookupByLibrary.simpleMessage(
+      "Filter by Category",
+    ),
+    "filterByPrice": MessageLookupByLibrary.simpleMessage("Filter by Price"),
+    "filterByPriceRange": MessageLookupByLibrary.simpleMessage(
+      "Filter by Price Range",
+    ),
+    "filterByTitle": MessageLookupByLibrary.simpleMessage("Filter by Title"),
     "finish": MessageLookupByLibrary.simpleMessage("Finish"),
     "firebaseAccountExistsWithDifferentCredential":
         MessageLookupByLibrary.simpleMessage(

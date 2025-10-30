@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen>
   Widget buildHomeBody() {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 63.h),
+        padding: EdgeInsets.symmetric(vertical: 30.h),
         child: SingleChildScrollView(
           child: Column(
             children: [
