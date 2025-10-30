@@ -11,6 +11,9 @@
 
 Click below to watch the demo video:
 
+[![Watch the video](https://img.youtube.com/vi/6bmzUw-0dAc/0.jpg)](https://www.youtube.com/watch?v=6bmzUw-0dAc)
+
+
 <iframe width="560" height="315"
   src="https://www.youtube.com/embed/6bmzUw-0dAc"
   frameborder="0"
