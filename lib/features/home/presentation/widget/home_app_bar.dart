@@ -1,4 +1,5 @@
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
+import 'package:colt_ecommerce_app/core/networking/cache/cache_helper.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/features/cart/presentation/cubit/cart_cubit.dart';
@@ -18,21 +19,15 @@ class HomeAppBar extends StatelessWidget {
       children: [
         BlocBuilder<AuthCubit, AuthState<User?>>(
           builder: (context, state) {
-            final initial = state.maybeWhen(
-              success: (user) {
-                if (user != null &&
-                    user.email != null &&
-                    user.email!.isNotEmpty) {
-                  return user.email![0].toUpperCase();
-                }
-                return 'A';
-              },
-              orElse: () => 'A',
-            );
+            final cachedEmail = CacheHelper.getData(key: 'email') ?? '';
+            final initial = cachedEmail.isNotEmpty
+                ? cachedEmail[0].toUpperCase()
+                : 'A';
 
             return UserAvatar(initial: initial);
           },
         ),
+
         const Spacer(),
         BlocBuilder<CartCubit, CartState>(
           builder: (context, state) {

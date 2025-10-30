@@ -37,7 +37,7 @@ class CustomTextFormField extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Material(
-      color: Colors.transparent, // علشان ما يغيّرش الخلفية
+      color: Colors.transparent,
       child: TextFormField(
         controller: controller,
         keyboardType: keyboardType,

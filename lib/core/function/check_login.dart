@@ -7,7 +7,7 @@ String checkLogin() {
   final uid = CacheHelper.getData(key: 'uid');
 
   if (isLoggedIn && uid != null && uid.isNotEmpty) {
-    log('User is logged in');
+    log('User is logged in : $uid');
     return Routes.mainScreen;
   } else {
     log('User is not logged in');

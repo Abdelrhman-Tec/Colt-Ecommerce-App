@@ -1,5 +1,6 @@
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
+import 'package:colt_ecommerce_app/core/networking/cache/cache_helper.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
+    final cachedEmail = CacheHelper.getData(key: 'email') ?? '';
+    final displayName = cachedEmail.isNotEmpty ? cachedEmail : 'User';
 
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
@@ -37,9 +40,15 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 40),
-
-              _buildProfileAvatar(context, "Gilbert Jones"),
+              _buildProfileAvatar(context, displayName),
               const SizedBox(height: 16),
+              Text(
+                displayName,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  color: colorScheme.onSurface,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
 
               const SizedBox(height: 20),
 
@@ -60,7 +69,6 @@ class ProfileScreen extends StatelessWidget {
 
               TextButton(
                 onPressed: () {
-                  // تنفيذ عملية تسجيل الخروج
                   context.read<AuthCubit>().logout();
                 },
                 child: Text(
@@ -80,11 +88,12 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileAvatar(BuildContext context, String name) {
+  Widget _buildProfileAvatar(BuildContext context, String email) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
 
-    String initial = name.isNotEmpty ? name[0].toUpperCase() : "?";
+    String initial = email.isNotEmpty ? email[0].toUpperCase() : "?";
+
     return CircleAvatar(
       radius: 40,
       backgroundColor: colorScheme.surfaceContainerHighest.withOpacity(0.6),

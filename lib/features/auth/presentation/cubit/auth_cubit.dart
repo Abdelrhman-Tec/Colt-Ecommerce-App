@@ -30,6 +30,7 @@ class AuthCubit extends Cubit<AuthState<User?>> {
       emit(AuthState.success(data: user));
       await CacheHelper.saveData(key: 'isLoggedIn', value: true);
       await CacheHelper.saveData(key: 'uid', value: user.uid);
+      await CacheHelper.saveData(key: "email", value: emailController.text);
     } on FirebaseAuthException catch (e) {
       emit(AuthState.error(message: FirebaseErrorHandler.handleAuthError(e)));
     } catch (e) {
