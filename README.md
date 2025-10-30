@@ -1,5 +1,21 @@
 # Colt-Ecommerce-App
 
+
+![Flutter](https://img.shields.io/badge/Flutter-3.x-blue)
+![Firebase](https://img.shields.io/badge/Firebase-Integrated-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+
+## 🎥 App Demo
+
+Click below to watch the demo video:
+
+👉 [**Watch App Demo**](https://www.dropbox.com/scl/fi/a6voulqbckb86nvjvxaiq/ecommerce_app.mp4?rlkey=cqhe2u2oirkady9blqhy0ds77&st=bc3idhmo&raw=1)
+
+
+![Project Structure](asset/project_structure.png)
+
+
 A modern Flutter-based e-commerce application designed with clean architecture, state management, and responsive UI.
 
 ## Key Features & Benefits
