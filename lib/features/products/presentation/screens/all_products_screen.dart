@@ -5,10 +5,12 @@ import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/back_button.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/widgets/header.dart';
+import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_cubit.dart';
 import 'package:colt_ecommerce_app/features/home/presentation/widget/product_card.dart';
 import 'package:colt_ecommerce_app/features/products/data/model/products_response_model.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_cubit.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_state.dart';
+import 'package:colt_ecommerce_app/features/products/presentation/widget/product_filter_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,6 +47,12 @@ class _AllProductsScreenState extends State<AllProductsScreen>
               Header(
                 textTheme: Theme.of(context).textTheme,
                 title: T.current.shopByProducts,
+              ),
+              verticalSpace(20),
+              IconButton(
+                color: Theme.of(context).highlightColor,
+                onPressed: () => _showFilterSheet(context),
+                icon: Icon(Icons.sort),
               ),
               verticalSpace(20),
               Expanded(child: _buildProductsBloc()),
@@ -145,4 +153,30 @@ Widget _buildProductsWithShowMore(
       );
     },
   );
+}
+
+void _showFilterSheet(BuildContext context) async {
+  final filteredProducts =
+      await showModalBottomSheet<List<ProductsResponseModel>>(
+        context: context,
+        isScrollControlled: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
+        ),
+        builder: (_) {
+          final categoriesCubit = context.read<CategoriesCubit>();
+          final productsCubit = context.read<ProductsCubit>();
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: categoriesCubit),
+              BlocProvider.value(value: productsCubit),
+            ],
+            child: const ProductFilterSheet(),
+          );
+        },
+      );
+
+  if (filteredProducts != null) {
+    print(filteredProducts.length);
+  }
 }

@@ -47,4 +47,30 @@ class ProductsCubit extends Cubit<ProductsState<List<ProductsResponseModel>>> {
         .where((product) => product.category?.id == categoryId)
         .toList();
   }
+
+  List<ProductsResponseModel> filterProducts({
+    String? title,
+    double? minPrice,
+    double? maxPrice,
+    List<int>? categoryIds,
+  }) {
+    final currentProducts = state.maybeWhen(
+      success: (products) => products.cast<ProductsResponseModel>(),
+      orElse: () => <ProductsResponseModel>[],
+    );
+
+    return currentProducts.where((product) {
+      final matchesTitle = title == null || title.isEmpty
+          ? true
+          : product.title.toLowerCase().contains(title.toLowerCase());
+      final matchesPrice =
+          (minPrice == null || product.price >= minPrice) &&
+          (maxPrice == null || product.price <= maxPrice);
+      final matchesCategory = categoryIds == null || categoryIds.isEmpty
+          ? true
+          : categoryIds.contains(product.category?.id);
+
+      return matchesTitle && matchesPrice && matchesCategory;
+    }).toList();
+  }
 }
