@@ -14,7 +14,7 @@ Click below to watch the demo video:
 
 
 ![Project Structure](asset/project_structure2.png)
-
+![Application Life Cycle](asset/Application_life_cycle.png)
 
 A modern Flutter-based e-commerce application designed with clean architecture, state management, and responsive UI.
 
