@@ -1633,6 +1633,106 @@ class T {
       args: [],
     );
   }
+
+  /// `How can we help you?`
+  String get howCanWeHelp {
+    return Intl.message(
+      'How can we help you?',
+      name: 'howCanWeHelp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Frequently Asked Questions`
+  String get frequentlyAskedQuestions {
+    return Intl.message(
+      'Frequently Asked Questions',
+      name: 'frequentlyAskedQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to place an order?`
+  String get howToPlaceOrder {
+    return Intl.message(
+      'How to place an order?',
+      name: 'howToPlaceOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can browse products, add them to your cart, and proceed to checkout.`
+  String get orderHelpDesc {
+    return Intl.message(
+      'You can browse products, add them to your cart, and proceed to checkout.',
+      name: 'orderHelpDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Issues`
+  String get paymentIssues {
+    return Intl.message(
+      'Payment Issues',
+      name: 'paymentIssues',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you face payment issues, please check your card details or try another payment method.`
+  String get paymentHelpDesc {
+    return Intl.message(
+      'If you face payment issues, please check your card details or try another payment method.',
+      name: 'paymentHelpDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Time`
+  String get deliveryTime {
+    return Intl.message(
+      'Delivery Time',
+      name: 'deliveryTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery usually takes 3-5 business days depending on your location.`
+  String get deliveryHelpDesc {
+    return Intl.message(
+      'Delivery usually takes 3-5 business days depending on your location.',
+      name: 'deliveryHelpDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Us`
+  String get contactUs {
+    return Intl.message('Contact Us', name: 'contactUs', desc: '', args: []);
+  }
+
+  /// `Email Us`
+  String get emailUs {
+    return Intl.message('Email Us', name: 'emailUs', desc: '', args: []);
+  }
+
+  /// `Call Us`
+  String get callUs {
+    return Intl.message('Call Us', name: 'callUs', desc: '', args: []);
+  }
+
+  /// `Live Chat`
+  String get liveChat {
+    return Intl.message('Live Chat', name: 'liveChat', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<T> {

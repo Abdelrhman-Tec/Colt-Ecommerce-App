@@ -19,6 +19,7 @@ import 'package:colt_ecommerce_app/features/products/presentation/cubit/products
 import 'package:colt_ecommerce_app/features/products/presentation/screens/all_products_screen.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/screens/product_details_screen.dart';
 import 'package:colt_ecommerce_app/features/profile/presentation/screens/profile_screen.dart';
+import 'package:colt_ecommerce_app/features/support/presentation/screens/support_screen.dart';
 import 'package:colt_ecommerce_app/features/wishlist/presentation/cubit/wishlist_cubit.dart';
 import 'package:colt_ecommerce_app/features/wishlist/presentation/screens/wishlist_screen.dart';
 import 'package:flutter/material.dart';
@@ -156,6 +157,8 @@ class AppRouter {
             child: const WishlistScreen(),
           ),
         );
+      case Routes.supportScreen:
+        return _animatedRoute(const SupportScreen());
       default:
         return _errorRoute(settings.name);
     }

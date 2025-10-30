@@ -15,4 +15,5 @@ class Routes {
   static const String checkOut = "/checkout";
   static const String profileScreen = "/profileScreen";
   static const String wishlist = "/wishlistScreen";
+  static const String supportScreen = "/supportScreen";
 }

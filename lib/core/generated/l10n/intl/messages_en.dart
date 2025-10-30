@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ageRange": MessageLookupByLibrary.simpleMessage("Age Range"),
     "applyFilters": MessageLookupByLibrary.simpleMessage("Apply Filters"),
     "bags": MessageLookupByLibrary.simpleMessage("Bags"),
+    "callUs": MessageLookupByLibrary.simpleMessage("Call Us"),
     "canceled": MessageLookupByLibrary.simpleMessage("Canceled"),
     "cardNumber": MessageLookupByLibrary.simpleMessage("Card Number"),
     "cardholderName": MessageLookupByLibrary.simpleMessage("Cardholder Name"),
@@ -57,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "colorOrange": MessageLookupByLibrary.simpleMessage("Orange"),
     "colorRed": MessageLookupByLibrary.simpleMessage("Red"),
     "colorYellow": MessageLookupByLibrary.simpleMessage("Yellow"),
+    "contactUs": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "continueText": MessageLookupByLibrary.simpleMessage("Continue"),
     "continueWithApple": MessageLookupByLibrary.simpleMessage(
       "Continue With Apple",
@@ -73,11 +75,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "daysAgo": MessageLookupByLibrary.simpleMessage("days ago"),
     "deals": MessageLookupByLibrary.simpleMessage("Deals"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+    "deliveryHelpDesc": MessageLookupByLibrary.simpleMessage(
+      "Delivery usually takes 3-5 business days depending on your location.",
+    ),
+    "deliveryTime": MessageLookupByLibrary.simpleMessage("Delivery Time"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Dont have an Account ? ",
     ),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
+    "emailUs": MessageLookupByLibrary.simpleMessage("Email Us"),
     "enterCouponCode": MessageLookupByLibrary.simpleMessage(
       "Enter Coupon Code",
     ),
@@ -211,6 +218,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "freeShippingReturns": MessageLookupByLibrary.simpleMessage(
       "Free standard shipping and free 60-day returns",
     ),
+    "frequentlyAskedQuestions": MessageLookupByLibrary.simpleMessage(
+      "Frequently Asked Questions",
+    ),
     "gender": MessageLookupByLibrary.simpleMessage("Gender"),
     "gucciDescription": MessageLookupByLibrary.simpleMessage(
       "Gucci transcribes its heritage, creativity, and innovation into a plenitude of collections. From staple items to distinctive accessories.",
@@ -220,9 +230,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Highest - Lowest Price",
     ),
     "hoodies": MessageLookupByLibrary.simpleMessage("Hoodies"),
+    "howCanWeHelp": MessageLookupByLibrary.simpleMessage(
+      "How can we help you?",
+    ),
     "howOldAreYou": MessageLookupByLibrary.simpleMessage("How Old are you ?"),
+    "howToPlaceOrder": MessageLookupByLibrary.simpleMessage(
+      "How to place an order?",
+    ),
     "lastname": MessageLookupByLibrary.simpleMessage("Lastname"),
     "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
+    "liveChat": MessageLookupByLibrary.simpleMessage("Live Chat"),
     "lowestHighestPrice": MessageLookupByLibrary.simpleMessage(
       "Lowest - Highest Price",
     ),
@@ -281,6 +298,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "onSale": MessageLookupByLibrary.simpleMessage("On sale"),
     "order": MessageLookupByLibrary.simpleMessage("Order"),
     "orderConfirmed": MessageLookupByLibrary.simpleMessage("Order Confirmed"),
+    "orderHelpDesc": MessageLookupByLibrary.simpleMessage(
+      "You can browse products, add them to your cart, and proceed to checkout.",
+    ),
     "orderItems": MessageLookupByLibrary.simpleMessage("Order Items"),
     "orderPlaced": MessageLookupByLibrary.simpleMessage("Order Placed"),
     "orderPlacedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -304,6 +324,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "At least 1 uppercase letter",
     ),
     "payNow": MessageLookupByLibrary.simpleMessage("Pay Now"),
+    "paymentHelpDesc": MessageLookupByLibrary.simpleMessage(
+      "If you face payment issues, please check your card details or try another payment method.",
+    ),
+    "paymentIssues": MessageLookupByLibrary.simpleMessage("Payment Issues"),
     "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment Method"),
     "placeOrder": MessageLookupByLibrary.simpleMessage("Place Order"),
     "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(

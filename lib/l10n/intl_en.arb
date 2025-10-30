@@ -203,5 +203,18 @@
   "enterPrice": "Enter price",
   "filterByPriceRange": "Filter by Price Range",
   "filterByCategory": "Filter by Category",
-  "applyFilters": "Apply Filters"
+  "applyFilters": "Apply Filters",
+  "howCanWeHelp": "How can we help you?",
+  "frequentlyAskedQuestions": "Frequently Asked Questions",
+  "howToPlaceOrder": "How to place an order?",
+  "orderHelpDesc": "You can browse products, add them to your cart, and proceed to checkout.",
+  "paymentIssues": "Payment Issues",
+  "paymentHelpDesc": "If you face payment issues, please check your card details or try another payment method.",
+  "deliveryTime": "Delivery Time",
+  "deliveryHelpDesc": "Delivery usually takes 3-5 business days depending on your location.",
+  "contactUs": "Contact Us",
+  "emailUs": "Email Us",
+  "callUs": "Call Us",
+  "liveChat": "Live Chat"
+
 }

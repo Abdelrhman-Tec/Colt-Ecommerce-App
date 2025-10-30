@@ -203,5 +203,17 @@
     "enterPrice": "ادخل السعر",
     "filterByPriceRange": "تصفية حسب نطاق السعر",
     "filterByCategory": "تصفية حسب الفئة",
-    "applyFilters": "تطبيق الفلاتر"
+    "applyFilters": "تطبيق الفلاتر",
+    "howCanWeHelp": "كيف يمكننا مساعدتك؟",
+    "frequentlyAskedQuestions": "الأسئلة المتكررة",
+    "howToPlaceOrder": "كيف تقوم بالطلب؟",
+    "orderHelpDesc": "يمكنك تصفح المنتجات، إضافتها إلى السلة، ثم المتابعة للدفع.",
+    "paymentIssues": "مشاكل الدفع",
+    "paymentHelpDesc": "إذا واجهت مشاكل في الدفع، تحقق من بيانات البطاقة أو جرب طريقة دفع أخرى.",
+    "deliveryTime": "مدة التوصيل",
+    "deliveryHelpDesc": "عادةً ما يستغرق التوصيل من 3 إلى 5 أيام عمل حسب موقعك.",
+    "contactUs": "تواصل معنا",
+    "emailUs": "راسلنا عبر البريد",
+    "callUs": "اتصل بنا",
+    "liveChat": "الدردشة المباشرة"
 }

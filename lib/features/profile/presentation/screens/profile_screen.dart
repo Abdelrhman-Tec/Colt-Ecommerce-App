@@ -75,7 +75,7 @@ class ProfileScreen extends StatelessWidget {
                 context,
                 T.current.support,
                 Icons.support_agent_outlined,
-                () {},
+                () => context.pushNamed(Routes.supportScreen),
               ),
               BlocBuilder<LanguageCubit, LanguageState>(
                 builder: (context, langState) {

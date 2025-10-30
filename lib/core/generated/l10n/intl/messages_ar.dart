@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ageRange": MessageLookupByLibrary.simpleMessage("الفئة العمرية"),
     "applyFilters": MessageLookupByLibrary.simpleMessage("تطبيق الفلاتر"),
     "bags": MessageLookupByLibrary.simpleMessage("حقائب"),
+    "callUs": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
     "canceled": MessageLookupByLibrary.simpleMessage("تم الإلغاء"),
     "cardNumber": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
     "cardholderName": MessageLookupByLibrary.simpleMessage("اسم حامل البطاقة"),
@@ -53,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "colorOrange": MessageLookupByLibrary.simpleMessage("برتقالي"),
     "colorRed": MessageLookupByLibrary.simpleMessage("أحمر"),
     "colorYellow": MessageLookupByLibrary.simpleMessage("أصفر"),
+    "contactUs": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
     "continueText": MessageLookupByLibrary.simpleMessage("متابعة"),
     "continueWithApple": MessageLookupByLibrary.simpleMessage(
       "المتابعة مع Apple",
@@ -69,9 +71,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "daysAgo": MessageLookupByLibrary.simpleMessage("أيام مضت"),
     "deals": MessageLookupByLibrary.simpleMessage("العروض"),
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+    "deliveryHelpDesc": MessageLookupByLibrary.simpleMessage(
+      "عادةً ما يستغرق التوصيل من 3 إلى 5 أيام عمل حسب موقعك.",
+    ),
+    "deliveryTime": MessageLookupByLibrary.simpleMessage("مدة التوصيل"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "emailAddress": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "emailUs": MessageLookupByLibrary.simpleMessage("راسلنا عبر البريد"),
     "enterCouponCode": MessageLookupByLibrary.simpleMessage("أدخل رمز القسيمة"),
     "enterEmailAddress": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكتروني",
@@ -197,6 +204,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "freeShippingReturns": MessageLookupByLibrary.simpleMessage(
       "شحن قياسي مجاني وإرجاع مجاني لمدة 60 يومًا",
     ),
+    "frequentlyAskedQuestions": MessageLookupByLibrary.simpleMessage(
+      "الأسئلة المتكررة",
+    ),
     "gender": MessageLookupByLibrary.simpleMessage("الجنس"),
     "gucciDescription": MessageLookupByLibrary.simpleMessage(
       "تترجم غوتشي تراثها وإبداعها وابتكارها إلى مجموعة وفيرة من المجموعات. من القطع الأساسية إلى الإكسسوارات المميزة.",
@@ -206,9 +216,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "أعلى - أقل سعر",
     ),
     "hoodies": MessageLookupByLibrary.simpleMessage("هوديات"),
+    "howCanWeHelp": MessageLookupByLibrary.simpleMessage("كيف يمكننا مساعدتك؟"),
     "howOldAreYou": MessageLookupByLibrary.simpleMessage("كم عمرك؟"),
+    "howToPlaceOrder": MessageLookupByLibrary.simpleMessage("كيف تقوم بالطلب؟"),
     "lastname": MessageLookupByLibrary.simpleMessage("اسم العائلة"),
     "lightMode": MessageLookupByLibrary.simpleMessage("الوضع النهاري"),
+    "liveChat": MessageLookupByLibrary.simpleMessage("الدردشة المباشرة"),
     "lowestHighestPrice": MessageLookupByLibrary.simpleMessage(
       "أقل - أعلى سعر",
     ),
@@ -267,6 +280,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "onSale": MessageLookupByLibrary.simpleMessage("في العرض"),
     "order": MessageLookupByLibrary.simpleMessage("طلب"),
     "orderConfirmed": MessageLookupByLibrary.simpleMessage("تم تأكيد الطلب"),
+    "orderHelpDesc": MessageLookupByLibrary.simpleMessage(
+      "يمكنك تصفح المنتجات، إضافتها إلى السلة، ثم المتابعة للدفع.",
+    ),
     "orderItems": MessageLookupByLibrary.simpleMessage("عناصر الطلب"),
     "orderPlaced": MessageLookupByLibrary.simpleMessage("تم تقديم الطلب"),
     "orderPlacedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -290,6 +306,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "حرف كبير واحد على الأقل",
     ),
     "payNow": MessageLookupByLibrary.simpleMessage("ادفع الآن"),
+    "paymentHelpDesc": MessageLookupByLibrary.simpleMessage(
+      "إذا واجهت مشاكل في الدفع، تحقق من بيانات البطاقة أو جرب طريقة دفع أخرى.",
+    ),
+    "paymentIssues": MessageLookupByLibrary.simpleMessage("مشاكل الدفع"),
     "paymentMethod": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
     "placeOrder": MessageLookupByLibrary.simpleMessage("تقديم الطلب"),
     "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(
