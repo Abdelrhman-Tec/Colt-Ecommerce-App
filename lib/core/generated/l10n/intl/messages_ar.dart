@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createOne": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
     "daysAgo": MessageLookupByLibrary.simpleMessage("أيام مضت"),
     "deals": MessageLookupByLibrary.simpleMessage("العروض"),
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
@@ -198,6 +199,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hoodies": MessageLookupByLibrary.simpleMessage("هوديات"),
     "howOldAreYou": MessageLookupByLibrary.simpleMessage("كم عمرك؟"),
     "lastname": MessageLookupByLibrary.simpleMessage("اسم العائلة"),
+    "lightMode": MessageLookupByLibrary.simpleMessage("الوضع النهاري"),
     "lowestHighestPrice": MessageLookupByLibrary.simpleMessage(
       "أقل - أعلى سعر",
     ),

@@ -193,5 +193,7 @@
     "showLess": "اعرض أقل",
     "shopByProducts": "تسوق حسب المنتجات",
     "shipping": "شحن",
-    "payNow": "ادفع الآن"
+    "payNow": "ادفع الآن",
+    "lightMode": "الوضع النهاري",
+    "darkMode": "الوضع الليلي"
 }

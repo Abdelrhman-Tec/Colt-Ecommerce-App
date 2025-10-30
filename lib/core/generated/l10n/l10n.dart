@@ -1553,6 +1553,16 @@ class T {
   String get payNow {
     return Intl.message('Pay Now', name: 'payNow', desc: '', args: []);
   }
+
+  /// `Light Mode`
+  String get lightMode {
+    return Intl.message('Light Mode', name: 'lightMode', desc: '', args: []);
+  }
+
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message('Dark Mode', name: 'darkMode', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<T> {

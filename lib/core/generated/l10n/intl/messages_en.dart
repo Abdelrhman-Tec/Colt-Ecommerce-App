@@ -68,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
     "createOne": MessageLookupByLibrary.simpleMessage("Create One"),
+    "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "daysAgo": MessageLookupByLibrary.simpleMessage("days ago"),
     "deals": MessageLookupByLibrary.simpleMessage("Deals"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
@@ -210,6 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hoodies": MessageLookupByLibrary.simpleMessage("Hoodies"),
     "howOldAreYou": MessageLookupByLibrary.simpleMessage("How Old are you ?"),
     "lastname": MessageLookupByLibrary.simpleMessage("Lastname"),
+    "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
     "lowestHighestPrice": MessageLookupByLibrary.simpleMessage(
       "Lowest - Highest Price",
     ),

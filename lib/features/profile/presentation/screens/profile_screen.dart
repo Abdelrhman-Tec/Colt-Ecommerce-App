@@ -1,8 +1,12 @@
+import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_cubit.dart';
+import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_state.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
 import 'package:colt_ecommerce_app/core/networking/cache/cache_helper.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
+import 'package:colt_ecommerce_app/core/theme/cubit/theme_cubit.dart';
+import 'package:colt_ecommerce_app/core/theme/cubit/theme_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -63,6 +67,33 @@ class ProfileScreen extends StatelessWidget {
                 T.current.support,
                 Icons.support_agent_outlined,
                 () {},
+              ),
+
+              BlocBuilder<LanguageCubit, LanguageState>(
+                builder: (context, langState) {
+                  return _buildOptionItem(
+                    context,
+                    langState.locale.languageCode == 'en'
+                        ? 'العربية'
+                        : 'English',
+                    Icons.language,
+                    () => context.read<LanguageCubit>().toggleLanguage(),
+                  );
+                },
+              ),
+
+              BlocBuilder<ThemeCubit, ThemeState>(
+                builder: (context, themeState) {
+                  final isDark = themeState.themeMode == ThemeMode.dark;
+                  return _buildOptionItem(
+                    context,
+                    isDark ? T.current.lightMode : T.current.darkMode,
+                    isDark
+                        ? Icons.light_mode_outlined
+                        : Icons.dark_mode_outlined,
+                    () => context.read<ThemeCubit>().toggleTheme(),
+                  );
+                },
               ),
 
               const Spacer(),
@@ -128,6 +159,8 @@ class ProfileScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             child: Row(
               children: [
+                Icon(icon, color: colorScheme.primary, size: 22),
+                const SizedBox(width: 16),
                 Text(
                   title,
                   style: theme.textTheme.bodyMedium?.copyWith(
