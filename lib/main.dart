@@ -6,6 +6,7 @@ import 'package:colt_ecommerce_app/core/networking/cache/cache_helper.dart';
 import 'package:colt_ecommerce_app/core/di/dependency_injection.dart';
 import 'package:colt_ecommerce_app/core/function/check_login.dart';
 import 'package:colt_ecommerce_app/core/networking/stripe_service/api_keys.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
@@ -32,5 +33,10 @@ Future<void> main() async {
   // Determine initial route based on login
   final initialRoute = checkLogin();
 
-  runApp(ColtEcommerceApp(initialRoute: initialRoute));
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => ColtEcommerceApp(initialRoute: initialRoute),
+    ),
+  );
 }

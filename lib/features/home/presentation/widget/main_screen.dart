@@ -57,68 +57,68 @@ class _MainScreenState extends State<MainScreen> {
 
     return Scaffold(
       body: _screens[_selectedIndex],
-      bottomNavigationBar: SafeArea(
-        top: false,
-        child: Container(
-          height: 85.h,
-          decoration: BoxDecoration(
-            color: colorScheme.surface,
-            borderRadius: BorderRadius.circular(10.r),
-            boxShadow: [
-              BoxShadow(
-                color: colorScheme.shadow.withOpacity(0.06),
-                blurRadius: 8,
-                offset: const Offset(0, -2),
+      bottomNavigationBar: Container(
+        height: 100.h,
+        decoration: BoxDecoration(
+          color: colorScheme.surface,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(16.r),
+            topRight: Radius.circular(16.r),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: colorScheme.shadow.withOpacity(0.06),
+              blurRadius: 8,
+              offset: const Offset(0, -2),
+            ),
+          ],
+        ),
+        child: Theme(
+          data: Theme.of(context).copyWith(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            splashFactory: NoSplash.splashFactory,
+          ),
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.transparent,
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
+            selectedItemColor: colorScheme.primary,
+            unselectedItemColor: colorScheme.onSurfaceVariant,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            elevation: 0,
+            items: [
+              _navItem(
+                "asset/icon/home2.svg",
+                "Home",
+                _selectedIndex == 0,
+                AppColors.primary,
+                colorScheme.onSurfaceVariant,
+              ),
+              _navItem(
+                "asset/icon/notificationbing.svg",
+                "Notifications",
+                _selectedIndex == 1,
+                AppColors.primary,
+                colorScheme.onSurfaceVariant,
+              ),
+              _navItem(
+                "asset/icon/order.svg",
+                "Orders",
+                _selectedIndex == 2,
+                AppColors.primary,
+                colorScheme.onSurfaceVariant,
+              ),
+              _navItem(
+                "asset/icon/profile.svg",
+                "Profile",
+                _selectedIndex == 3,
+                AppColors.primary,
+                colorScheme.onSurfaceVariant,
               ),
             ],
-          ),
-          child: Theme(
-            data: Theme.of(context).copyWith(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              splashFactory: NoSplash.splashFactory,
-            ),
-            child: BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
-              backgroundColor: Colors.transparent,
-              currentIndex: _selectedIndex,
-              onTap: _onItemTapped,
-              selectedItemColor: colorScheme.primary,
-              unselectedItemColor: colorScheme.onSurfaceVariant,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
-              elevation: 0,
-              items: [
-                _navItem(
-                  "asset/icon/home2.svg",
-                  "Home",
-                  _selectedIndex == 0,
-                  AppColors.primary,
-                  colorScheme.onSurfaceVariant,
-                ),
-                _navItem(
-                  "asset/icon/notificationbing.svg",
-                  "Notifications",
-                  _selectedIndex == 1,
-                  AppColors.primary,
-                  colorScheme.onSurfaceVariant,
-                ),
-                _navItem(
-                  "asset/icon/order.svg",
-                  "Orders",
-                  _selectedIndex == 2,
-                  AppColors.primary,
-                  colorScheme.onSurfaceVariant,
-                ),
-                _navItem(
-                  "asset/icon/profile.svg",
-                  "Profile",
-                  _selectedIndex == 3,
-                  AppColors.primary,
-                  colorScheme.onSurfaceVariant,
-                ),
-              ],
-            ),
           ),
         ),
       ),
