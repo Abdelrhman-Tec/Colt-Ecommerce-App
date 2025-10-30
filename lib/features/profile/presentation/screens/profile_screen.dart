@@ -4,12 +4,14 @@ import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_cubit.dart
 import 'package:colt_ecommerce_app/core/generated/l10n/cubit/language_state.dart';
 import 'package:colt_ecommerce_app/core/generated/l10n/l10n.dart';
 import 'package:colt_ecommerce_app/core/helpers/extensions.dart';
+import 'package:colt_ecommerce_app/core/helpers/spacing.dart';
 import 'package:colt_ecommerce_app/core/networking/cache/cache_helper.dart';
 import 'package:colt_ecommerce_app/core/widgets/custom_button.dart';
 import 'package:colt_ecommerce_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:colt_ecommerce_app/core/routing/routes.dart';
 import 'package:colt_ecommerce_app/core/theme/cubit/theme_cubit.dart';
 import 'package:colt_ecommerce_app/core/theme/cubit/theme_state.dart';
+import 'package:colt_ecommerce_app/features/auth/presentation/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,9 +49,14 @@ class ProfileScreen extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              verticalSpace(20),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: CustomBackButton(),
+              ),
+              verticalSpace(40),
               _buildProfileAvatar(context, displayName),
-              const SizedBox(height: 16),
+              verticalSpace(16),
               Text(
                 displayName,
                 style: theme.textTheme.titleMedium?.copyWith(
@@ -57,9 +64,7 @@ class ProfileScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
-              const SizedBox(height: 20),
-
+              verticalSpace(20),
               _buildOptionItem(
                 context,
                 T.current.wishlist,
@@ -72,7 +77,6 @@ class ProfileScreen extends StatelessWidget {
                 Icons.support_agent_outlined,
                 () {},
               ),
-
               BlocBuilder<LanguageCubit, LanguageState>(
                 builder: (context, langState) {
                   return _buildOptionItem(
@@ -85,7 +89,6 @@ class ProfileScreen extends StatelessWidget {
                   );
                 },
               ),
-
               BlocBuilder<ThemeCubit, ThemeState>(
                 builder: (context, themeState) {
                   final isDark = themeState.themeMode == ThemeMode.dark;
@@ -99,9 +102,7 @@ class ProfileScreen extends StatelessWidget {
                   );
                 },
               ),
-
               const Spacer(),
-
               CustomButton(
                 text: T.current.signOut,
                 onPressed: () => context.read<AuthCubit>().logout(),

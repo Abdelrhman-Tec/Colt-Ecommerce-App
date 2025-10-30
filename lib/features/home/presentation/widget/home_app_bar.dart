@@ -24,7 +24,10 @@ class HomeAppBar extends StatelessWidget {
                 ? cachedEmail[0].toUpperCase()
                 : 'A';
 
-            return UserAvatar(initial: initial);
+            return UserAvatar(
+              initial: initial,
+              ontap: () => context.pushNamed(Routes.profileScreen),
+            );
           },
         ),
 
