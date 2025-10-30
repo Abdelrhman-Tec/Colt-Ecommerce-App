@@ -255,6 +255,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "nikeShowXRush": MessageLookupByLibrary.simpleMessage("Nike Show X Rush"),
     "nikeUnscripted": MessageLookupByLibrary.simpleMessage("Nike Unscripted"),
     "nikeWindrunner": MessageLookupByLibrary.simpleMessage("Nike Windrunner"),
+    "noItemsInWishlist": MessageLookupByLibrary.simpleMessage(
+      "No items in your wishlist",
+    ),
     "noMatchingResults": MessageLookupByLibrary.simpleMessage(
       "Sorry, we couldn\'t find any matching result for your Search.",
     ),

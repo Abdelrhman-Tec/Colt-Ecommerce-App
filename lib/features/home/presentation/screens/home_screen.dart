@@ -209,10 +209,11 @@ class _HomeScreenState extends State<HomeScreen>
             image: product.images.isNotEmpty ? product.images.first : '',
             name: product.title,
             price: product.price.toDouble(),
-            ontap: () => context.pushNamed(
+            onTap: () => context.pushNamed(
               Routes.productsDetailsScreen,
               arguments: product,
             ),
+            product: product,
           );
         },
       ),

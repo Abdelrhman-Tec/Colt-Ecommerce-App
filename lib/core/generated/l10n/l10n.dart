@@ -1563,6 +1563,16 @@ class T {
   String get darkMode {
     return Intl.message('Dark Mode', name: 'darkMode', desc: '', args: []);
   }
+
+  /// `No items in your wishlist`
+  String get noItemsInWishlist {
+    return Intl.message(
+      'No items in your wishlist',
+      name: 'noItemsInWishlist',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<T> {

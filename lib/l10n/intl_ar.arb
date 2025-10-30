@@ -195,5 +195,6 @@
     "shipping": "شحن",
     "payNow": "ادفع الآن",
     "lightMode": "الوضع النهاري",
-    "darkMode": "الوضع الليلي"
+    "darkMode": "الوضع الليلي",
+    "noItemsInWishlist": "لا توجد عناصر في قائمة المفضلة"
 }

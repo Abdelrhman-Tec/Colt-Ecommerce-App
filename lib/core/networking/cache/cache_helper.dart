@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
@@ -26,12 +28,17 @@ class CacheHelper {
     if (value is String) {
       return await sharedPreferences.setString(key, value);
     }
-
     if (value is int) {
       return await sharedPreferences.setInt(key, value);
-    } else {
+    }
+    if (value is double) {
       return await sharedPreferences.setDouble(key, value);
     }
+    if (value is List || value is Map) {
+      return await sharedPreferences.setString(key, jsonEncode(value));
+    }
+
+    throw Exception("Unsupported type for SharedPreferences");
   }
 
   //! this method to get data already saved in local database

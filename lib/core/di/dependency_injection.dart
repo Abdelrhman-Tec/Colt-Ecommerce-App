@@ -8,6 +8,7 @@ import 'package:colt_ecommerce_app/features/categories/data/repo/categories_repo
 import 'package:colt_ecommerce_app/features/categories/presentation/cubit/categories_cubit.dart';
 import 'package:colt_ecommerce_app/features/products/data/repo/products_repo.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/cubit/products_cubit.dart';
+import 'package:colt_ecommerce_app/features/wishlist/presentation/cubit/wishlist_cubit.dart';
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -52,4 +53,6 @@ Future<void> setupGetIt() async {
 
   // CartCubit singleton
   getIt.registerLazySingleton<CartCubit>(() => CartCubit());
+  // Wishlist singleton
+  getIt.registerLazySingleton<WishlistCubit>(() => WishlistCubit());
 }

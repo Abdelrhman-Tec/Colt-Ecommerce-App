@@ -19,6 +19,8 @@ import 'package:colt_ecommerce_app/features/products/presentation/cubit/products
 import 'package:colt_ecommerce_app/features/products/presentation/screens/all_products_screen.dart';
 import 'package:colt_ecommerce_app/features/products/presentation/screens/product_details_screen.dart';
 import 'package:colt_ecommerce_app/features/profile/presentation/screens/profile_screen.dart';
+import 'package:colt_ecommerce_app/features/wishlist/presentation/cubit/wishlist_cubit.dart';
+import 'package:colt_ecommerce_app/features/wishlist/presentation/screens/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -60,6 +62,7 @@ class AppRouter {
         return _animatedRoute(
           MultiBlocProvider(
             providers: [
+              BlocProvider.value(value: getIt<WishlistCubit>()),
               BlocProvider.value(value: getIt<AuthCubit>()),
               BlocProvider.value(value: getIt<CartCubit>()),
               BlocProvider.value(value: getIt<ProductsCubit>()),
@@ -72,6 +75,7 @@ class AppRouter {
         return _animatedRoute(
           MultiBlocProvider(
             providers: [
+              BlocProvider.value(value: getIt<WishlistCubit>()),
               BlocProvider.value(value: getIt<AuthCubit>()),
               BlocProvider.value(value: getIt<CartCubit>()),
               BlocProvider.value(value: getIt<ProductsCubit>()),
@@ -142,6 +146,13 @@ class AppRouter {
           BlocProvider.value(
             value: getIt<CartCubit>(),
             child: const CheckoutScreen(),
+          ),
+        );
+      case Routes.wishlist:
+        return _animatedRoute(
+          BlocProvider.value(
+            value: getIt<WishlistCubit>(),
+            child: const WishlistScreen(),
           ),
         );
       default:

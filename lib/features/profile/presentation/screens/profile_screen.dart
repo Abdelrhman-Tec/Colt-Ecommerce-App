@@ -60,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                 context,
                 T.current.wishlist,
                 Icons.favorite_border,
-                () {},
+                () => context.pushNamed(Routes.wishlist),
               ),
               _buildOptionItem(
                 context,
@@ -74,7 +74,7 @@ class ProfileScreen extends StatelessWidget {
                   return _buildOptionItem(
                     context,
                     langState.locale.languageCode == 'en'
-                        ? 'العربية'
+                        ? 'Arabic'
                         : 'English',
                     Icons.language,
                     () => context.read<LanguageCubit>().toggleLanguage(),
