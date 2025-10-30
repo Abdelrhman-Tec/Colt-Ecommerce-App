@@ -3,6 +3,7 @@
 
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-blue)
 ![Firebase](https://img.shields.io/badge/Firebase-Integrated-orange)
+![REST APIS](https://img.shields.io/badge/Firebase-Integrated-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 
