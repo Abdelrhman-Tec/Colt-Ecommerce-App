@@ -32,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
         );
       },
       child: Scaffold(
-        backgroundColor: colorScheme.background,
+        backgroundColor: colorScheme.surface,
         body: SafeArea(
           child: Column(
             children: [
@@ -87,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
     String initial = name.isNotEmpty ? name[0].toUpperCase() : "?";
     return CircleAvatar(
       radius: 40,
-      backgroundColor: colorScheme.surfaceVariant.withOpacity(0.6),
+      backgroundColor: colorScheme.surfaceContainerHighest.withOpacity(0.6),
       child: Text(
         initial,
         style: theme.textTheme.headlineMedium?.copyWith(
@@ -110,7 +110,7 @@ class ProfileScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
       child: Material(
-        color: colorScheme.surfaceVariant.withOpacity(0.3),
+        color: colorScheme.surfaceContainerHighest.withOpacity(0.3),
         borderRadius: BorderRadius.circular(10),
         child: InkWell(
           borderRadius: BorderRadius.circular(10),

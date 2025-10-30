@@ -20,11 +20,16 @@ class AuthCubit extends Cubit<AuthState<User?>> {
     emit(AuthState.loading());
     try {
       final user = await _auth.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
       );
+      if (user == null) {
+        emit(AuthState.error(message: 'Login failed: user is null.'));
+        return;
+      }
       emit(AuthState.success(data: user));
       await CacheHelper.saveData(key: 'isLoggedIn', value: true);
+      await CacheHelper.saveData(key: 'uid', value: user.uid);
     } on FirebaseAuthException catch (e) {
       emit(AuthState.error(message: FirebaseErrorHandler.handleAuthError(e)));
     } catch (e) {

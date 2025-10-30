@@ -27,7 +27,7 @@ Future<void> main() async {
   // Check Network Connection
   final networkInfo = getIt<NetworkInfo>();
   final isConnected = await networkInfo.isConnected;
-  log('🌐 Internet Connected: $isConnected');
+  log('Internet Connected: $isConnected');
 
   // Determine initial route based on login
   final initialRoute = checkLogin();
