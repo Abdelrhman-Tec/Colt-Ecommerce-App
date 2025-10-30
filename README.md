@@ -2,14 +2,17 @@
 
 <div align="center">
 
-   Video App 
-![Flutter]([https://img.shields.io/badge/Flutter-3.9.2-02569B?logo=flutter](https://www.youtube.com/watch?v=6bmzUw-0dAc&t=60s))
-
-
 ![Flutter](https://img.shields.io/badge/Flutter-3.9.2-02569B?logo=flutter)
 ![Dart](https://img.shields.io/badge/Dart-3.9.2-0175C2?logo=dart)
 ![Firebase](https://img.shields.io/badge/Firebase-Integrated-FFCA28?logo=firebase)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+## 🎥 App Demo
+
+Click below to watch the demo video:
+
+[![Watch the video](https://img.youtube.com/vi/6bmzUw-0dAc/0.jpg)](https://www.youtube.com/watch?v=6bmzUw-0dAc)
+
 
 A modern, feature-rich e-commerce mobile application built with Flutter, offering seamless shopping experiences with Firebase authentication, Stripe payment integration, and real-time product browsing.
 
