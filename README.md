@@ -22,6 +22,12 @@ Offering seamless shopping experiences with Firebase authentication, Stripe paym
 
 Colt E-Commerce App is a full-featured mobile shopping platform that demonstrates modern Flutter development practices. The app provides users with an intuitive interface to browse products, manage their shopping cart, track orders, and complete secure payments.
 
+### 🎥 Video Demo
+
+[![Colt E-Commerce App Demo](https://img.youtube.com/vi/6bmzUw-0dAc/maxresdefault.jpg)](https://www.youtube.com/watch?v=6bmzUw-0dAc&t=3s)
+
+Watch the complete app walkthrough and feature demonstration on YouTube.
+
 ### Key Highlights
 
 - 🔐 **Secure Authentication** with Firebase (Email/Password & Facebook Login)
