@@ -10,7 +10,7 @@
 ## 🎥 App Demo  
 Click below to watch the demo video:
 
-[![Watch the video](https://img.shields.io/badge/YouTube-Video-red?logo=youtube)](https://www.youtube.com/watch?v=ITtY8s8g1EE&t=8s)
+[![Watch the video](https://img.youtube.com/vi/ITtY8s8g1EE/0.jpg)](https://www.youtube.com/watch?v=ITtY8s8g1EE&t=8s)
 
 A modern Flutter-based education platform that provides an interactive learning experience with course management, enrollment, and progress tracking.
 
