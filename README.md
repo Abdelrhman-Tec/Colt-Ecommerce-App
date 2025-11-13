@@ -7,18 +7,17 @@
 ![Firebase](https://img.shields.io/badge/Firebase-Integrated-FFCA28?logo=firebase)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## 🎥 App Demo
-
+## 🎥 App Demo  
 Click below to watch the demo video:
 
-[![Watch the video](https://img.youtube.com/vi/6bmzUw-0dAc/0.jpg)](https://www.youtube.com/watch?v=6bmzUw-0dAc)
+[![Watch the video](https://img.shields.io/badge/YouTube-Video-red?logo=youtube)](https://www.youtube.com/watch?v=ITtY8s8g1EE&t=8s)
 
-
-A modern, feature-rich e-commerce mobile application built with Flutter, offering seamless shopping experiences with Firebase authentication, Stripe payment integration, and real-time product browsing.
+A modern Flutter-based education platform that provides an interactive learning experience with course management, enrollment, and progress tracking.
 
 [Features](#-features) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started) • [Architecture](#-architecture)
 
 </div>
+
 
 ---
 
