@@ -1,135 +1,128 @@
-# 🛒 Colt E-Commerce App
-
+🛒 Colt E-Commerce App
 <div align="center">
-
-![Flutter](https://img.shields.io/badge/Flutter-3.9.2-02569B?logo=flutter)
-![Dart](https://img.shields.io/badge/Dart-3.9.2-0175C2?logo=dart)
-![Firebase](https://img.shields.io/badge/Firebase-Integrated-FFCA28?logo=firebase)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-## 🎥 App Demo  
-Click below to watch the demo video:
-
-[![Watch the video](https://img.youtube.com/vi/ITtY8s8g1EE/0.jpg)](https://www.youtube.com/watch?v=ITtY8s8g1EE&t=8s)
-
-A modern Flutter-based education platform that provides an interactive learning experience with course management, enrollment, and progress tracking.
-
-[Features](#-features) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started) • [Architecture](#-architecture)
-
+Show Image
+Show Image
+Show Image
+Show Image
+A modern, feature-rich e-commerce mobile application built with Flutter, offering seamless shopping experiences with Firebase authentication, Stripe payment integration, and real-time product browsing.
+Features • Tech Stack • Getting Started • Architecture
 </div>
 
-
----
-
-## 📱 Project Overview
-
+📱 Project Overview
 Colt E-Commerce App is a full-featured mobile shopping platform that demonstrates modern Flutter development practices. The app provides users with an intuitive interface to browse products, manage their shopping cart, track orders, and complete secure payments.
+Key Highlights
 
-### Key Highlights
-- 🔐 **Secure Authentication** with Firebase (Email/Password & Facebook Login)
-- 💳 **Stripe Payment Integration** for seamless checkout
-- 🌍 **Multilingual Support** (English & Arabic)
-- 🌓 **Dark Mode** support with theme persistence
-- 📦 **State Management** using BLoC/Cubit pattern
-- 🔄 **Offline Caching** with SharedPreferences
-- 📱 **Responsive Design** using ScreenUtil
+🔐 Secure Authentication with Firebase (Email/Password & Facebook Login)
+💳 Stripe Payment Integration for seamless checkout
+🌍 Multilingual Support (English & Arabic)
+🌓 Dark Mode support with theme persistence
+📦 State Management using BLoC/Cubit pattern
+🔄 Offline Caching with SharedPreferences
+📱 Responsive Design using ScreenUtil
 
----
 
-## 🚀 Features
+🚀 Features
+Authentication & User Management
 
-### Authentication & User Management
-- ✅ Email/Password authentication
-- ✅ Facebook OAuth integration
-- ✅ Password recovery via email
-- ✅ Password validation with visual feedback
-- ✅ User profile management
+✅ Email/Password authentication
+✅ Facebook OAuth integration
+✅ Password recovery via email
+✅ Password validation with visual feedback
+✅ User profile management
 
-### Shopping Experience
-- ✅ Browse products by categories
-- ✅ Product search and filtering
-- ✅ Advanced filters (price range, category, title)
-- ✅ Product details with image gallery
-- ✅ Add to cart functionality
-- ✅ Wishlist management with local persistence
-- ✅ Real-time cart updates
+Shopping Experience
 
-### Checkout & Payments
-- ✅ Shopping cart with quantity management
-- ✅ Coupon code support
-- ✅ Stripe payment gateway integration
-- ✅ Order summary with shipping and tax calculation
-- ✅ Payment success/failure handling
+✅ Browse products by categories
+✅ Product search and filtering
+✅ Advanced filters (price range, category, title)
+✅ Product details with image gallery
+✅ Add to cart functionality
+✅ Wishlist management with local persistence
+✅ Real-time cart updates
 
-### UI/UX Features
-- ✅ Beautiful product cards with cached images
-- ✅ Smooth page transitions
-- ✅ Loading states with custom animations
-- ✅ Error handling with user-friendly messages
-- ✅ Bottom navigation with persistent tabs
-- ✅ Pull-to-refresh functionality
+Checkout & Payments
 
-### Localization & Theme
-- ✅ Full RTL (Right-to-Left) support for Arabic
-- ✅ Dynamic language switching
-- ✅ Light/Dark theme toggle
-- ✅ Theme and language persistence
+✅ Shopping cart with quantity management
+✅ Coupon code support
+✅ Stripe payment gateway integration
+✅ Order summary with shipping and tax calculation
+✅ Payment success/failure handling
 
----
+UI/UX Features
 
-## 🛠️ Tech Stack
+✅ Beautiful product cards with cached images
+✅ Smooth page transitions
+✅ Loading states with custom animations
+✅ Error handling with user-friendly messages
+✅ Bottom navigation with persistent tabs
+✅ Pull-to-refresh functionality
 
-### Frontend Framework
-- **Flutter** 3.9.2
-- **Dart** 3.9.2
+Localization & Theme
 
-### State Management
-- **flutter_bloc** ^9.1.1 - BLoC pattern implementation
-- **get_it** ^8.0.3 - Dependency injection
+✅ Full RTL (Right-to-Left) support for Arabic
+✅ Dynamic language switching
+✅ Light/Dark theme toggle
+✅ Theme and language persistence
 
-### Backend & Services
-- **Firebase Core** ^4.0.0
-- **Firebase Auth** ^6.1.1 - User authentication
-- **Dio** ^5.9.0 - HTTP client
-- **Retrofit** ^4.6.0 - Type-safe API calls
 
-### Payment Processing
-- **flutter_stripe** ^12.1.0 - Stripe SDK integration
+🛠️ Tech Stack
+Frontend Framework
 
-### Local Storage
-- **shared_preferences** ^2.5.3 - Key-value storage
-- **flutter_cache_manager** ^3.4.1 - Image caching
+Flutter 3.9.2
+Dart 3.9.2
 
-### UI Components
-- **flutter_svg** ^2.2.1 - SVG rendering
-- **flutter_screenutil** ^5.9.3 - Responsive design
-- **cached_network_image** ^3.4.1 - Optimized image loading
-- **shimmer** ^3.0.0 - Loading placeholders
+State Management
 
-### Localization
-- **easy_localization** ^3.0.7
-- **intl** ^0.20.2
-- **flutter_localizations** - Material & Cupertino localizations
+flutter_bloc ^9.1.1 - BLoC pattern implementation
+get_it ^8.0.3 - Dependency injection
 
-### Code Generation
-- **freezed** ^3.2.0 - Immutable models
-- **json_serializable** ^6.11.1 - JSON serialization
-- **build_runner** ^2.6.0 - Code generation
+Backend & Services
 
-### Social Login
-- **flutter_facebook_auth** ^7.1.2
+Firebase Core ^4.0.0
+Firebase Auth ^6.1.1 - User authentication
+Dio ^5.9.0 - HTTP client
+Retrofit ^4.6.0 - Type-safe API calls
 
-### Developer Tools
-- **device_preview** ^1.3.1 - Multi-device testing
-- **pretty_dio_logger** ^1.4.0 - Network request logging
+Payment Processing
 
----
+flutter_stripe ^12.1.0 - Stripe SDK integration
 
-## 🏗️ Architecture
+Local Storage
 
-The app follows **Clean Architecture** principles with a clear separation of concerns:
+shared_preferences ^2.5.3 - Key-value storage
+flutter_cache_manager ^3.4.1 - Image caching
 
-```
+UI Components
+
+flutter_svg ^2.2.1 - SVG rendering
+flutter_screenutil ^5.9.3 - Responsive design
+cached_network_image ^3.4.1 - Optimized image loading
+shimmer ^3.0.0 - Loading placeholders
+
+Localization
+
+easy_localization ^3.0.7
+intl ^0.20.2
+flutter_localizations - Material & Cupertino localizations
+
+Code Generation
+
+freezed ^3.2.0 - Immutable models
+json_serializable ^6.11.1 - JSON serialization
+build_runner ^2.6.0 - Code generation
+
+Social Login
+
+flutter_facebook_auth ^7.1.2
+
+Developer Tools
+
+device_preview ^1.3.1 - Multi-device testing
+pretty_dio_logger ^1.4.0 - Network request logging
+
+
+🏗️ Architecture
+The app follows Clean Architecture principles with a clear separation of concerns:
 lib/
 ├── core/                          # Core utilities and configurations
 │   ├── config/                    # App configuration
@@ -176,30 +169,27 @@ lib/
 │
 ├── app.dart                       # App initialization
 └── main.dart                      # Entry point
-```
+Design Patterns Used
 
-### Design Patterns Used
-- **BLoC Pattern** for state management
-- **Repository Pattern** for data access
-- **Dependency Injection** with GetIt
-- **Factory Pattern** for API client creation
-- **Observer Pattern** for route tracking
+BLoC Pattern for state management
+Repository Pattern for data access
+Dependency Injection with GetIt
+Factory Pattern for API client creation
+Observer Pattern for route tracking
 
----
 
-## 📦 Folder Structure
-
-### Core Layer
+📦 Folder Structure
+Core Layer
 Contains app-wide utilities, configurations, and shared components:
-- **config/** - Firebase, app settings
-- **networking/** - API services, caching, Stripe
-- **theme/** - Light/dark themes with cubit
-- **routing/** - Navigation setup with observers
-- **di/** - Dependency injection configuration
 
-### Feature Layer
+config/ - Firebase, app settings
+networking/ - API services, caching, Stripe
+theme/ - Light/dark themes with cubit
+routing/ - Navigation setup with observers
+di/ - Dependency injection configuration
+
+Feature Layer
 Each feature follows a modular structure:
-```
 feature/
 ├── data/
 │   ├── model/       # Data models with JSON serialization
@@ -208,81 +198,71 @@ feature/
     ├── cubit/       # State management
     ├── screens/     # UI screens
     └── widgets/     # Feature-specific widgets
-```
 
----
+🎯 Getting Started
+Prerequisites
 
-## 🎯 Getting Started
+Flutter SDK 3.9.2 or higher
+Dart SDK 3.9.2 or higher
+Android Studio / VS Code with Flutter extensions
+Firebase project setup
+Stripe account for payment testing
 
-### Prerequisites
-- Flutter SDK 3.9.2 or higher
-- Dart SDK 3.9.2 or higher
-- Android Studio / VS Code with Flutter extensions
-- Firebase project setup
-- Stripe account for payment testing
+Installation
 
-### Installation
+Clone the repository
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/colt-ecommerce-app.git
+bash   git clone https://github.com/yourusername/colt-ecommerce-app.git
    cd colt-ecommerce-app
-   ```
 
-2. **Install dependencies**
-   ```bash
-   flutter pub get
-   ```
+Install dependencies
 
-3. **Configure Firebase**
-   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
-   - Add Android/iOS apps to your Firebase project
-   - Download `google-services.json` (Android) and `GoogleService-Info.plist` (iOS)
-   - Place them in the appropriate directories
-   - Run FlutterFire CLI to configure:
-     ```bash
-     flutterfire configure
-     ```
+bash   flutter pub get
 
-4. **Configure Facebook Login**
-   - Create a Facebook App at [Facebook Developers](https://developers.facebook.com/)
-   - Update `android/app/src/main/res/values/strings.xml` with your Facebook App ID and Client Token
-   - Update `android/app/src/main/AndroidManifest.xml` with Facebook scheme
+Configure Firebase
 
-5. **Configure Stripe**
-   - Get your Stripe keys from [Stripe Dashboard](https://dashboard.stripe.com/)
-   - Update `lib/core/networking/stripe_service/api_keys.dart`:
-     ```dart
-     static const String publishableKey = 'your_publishable_key';
+Create a Firebase project at Firebase Console
+Add Android/iOS apps to your Firebase project
+Download google-services.json (Android) and GoogleService-Info.plist (iOS)
+Place them in the appropriate directories
+Run FlutterFire CLI to configure:
+
+
+
+bash     flutterfire configure
+
+Configure Facebook Login
+
+Create a Facebook App at Facebook Developers
+Update android/app/src/main/res/values/strings.xml with your Facebook App ID and Client Token
+Update android/app/src/main/AndroidManifest.xml with Facebook scheme
+
+
+Configure Stripe
+
+Get your Stripe keys from Stripe Dashboard
+Update lib/core/networking/stripe_service/api_keys.dart:
+
+
+
+dart     static const String publishableKey = 'your_publishable_key';
      static const String secretKey = 'your_secret_key';
-     ```
 
-6. **Generate code**
-   ```bash
-   flutter pub run build_runner build --delete-conflicting-outputs
-   ```
+Generate code
 
-7. **Run the app**
-   ```bash
-   flutter run
-   ```
+bash   flutter pub run build_runner build --delete-conflicting-outputs
 
-### Environment Setup
+Run the app
 
-Create a `.env` file in the root directory (if needed for future environment variables):
-```env
-API_BASE_URL=https://api.escuelajs.co/api/v1/
-```
+bash   flutter run
+Environment Setup
+Create a .env file in the root directory (if needed for future environment variables):
+envAPI_BASE_URL=https://api.escuelajs.co/api/v1/
 
----
-
-## 🧪 Testing
-
+🧪 Testing
 The project is structured to support comprehensive testing:
-
-### Running Tests
-```bash
-# Run all tests
+Running Tests
+bash# Run all tests
 flutter test
 
 # Run tests with coverage
@@ -365,82 +345,63 @@ The app uses the [FakeStore API](https://api.escuelajs.co/api/v1/) for demonstra
 GET    /categories           # Fetch all categories
 GET    /products             # Fetch all products
 GET    /products/:id         # Fetch single product
-```
-
 For production, replace with your own backend API.
 
----
+🔧 Configuration Files
+Firebase Configuration
 
-## 🔧 Configuration Files
+firebase.json - Firebase project configuration
+android/app/google-services.json - Android Firebase config
+ios/Runner/GoogleService-Info.plist - iOS Firebase config
 
-### Firebase Configuration
-- `firebase.json` - Firebase project configuration
-- `android/app/google-services.json` - Android Firebase config
-- `ios/Runner/GoogleService-Info.plist` - iOS Firebase config
+App Configuration
 
-### App Configuration
-- `pubspec.yaml` - Dependencies and assets
-- `analysis_options.yaml` - Dart analyzer rules
-- `flutter_native_splash.yaml` - Splash screen configuration
-- `flutter_launcher_icons` - App icon configuration
+pubspec.yaml - Dependencies and assets
+analysis_options.yaml - Dart analyzer rules
+flutter_native_splash.yaml - Splash screen configuration
+flutter_launcher_icons - App icon configuration
 
----
 
-## 🤝 Contributing
-
+🤝 Contributing
 Contributions are welcome! Please follow these steps:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Fork the repository
+Create a feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
 
-### Coding Standards
-- Follow [Effective Dart](https://dart.dev/guides/language/effective-dart) guidelines
-- Write meaningful commit messages
-- Add comments for complex logic
-- Ensure all tests pass before submitting PR
+Coding Standards
 
----
+Follow Effective Dart guidelines
+Write meaningful commit messages
+Add comments for complex logic
+Ensure all tests pass before submitting PR
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
----
+👨‍💻 Author
+Your Name
+Show Image
+Show Image
+Show Image
+Show Image
 
-## 👨‍💻 Author
+🙏 Acknowledgments
 
-**Your Name**
+Flutter - UI framework
+Firebase - Backend services
+Stripe - Payment processing
+FakeStore API - Demo API
+Unsplash - Product images
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/abdelrhman-nada/))
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourhandle)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yourportfolio.com)
 
----
-
-## 🙏 Acknowledgments
-
-- [Flutter](https://flutter.dev/) - UI framework
-- [Firebase](https://firebase.google.com/) - Backend services
-- [Stripe](https://stripe.com/) - Payment processing
-- [FakeStore API](https://fakestoreapi.com/) - Demo API
-- [Unsplash](https://unsplash.com/) - Product images
-
----
-
-## 📞 Support
-
-For support, email abdelrhman.nada.tech@gmail.com or join our Slack channel.
-
----
+📞 Support
+For support, email support@coltapp.com or join our Slack channel.
 
 <div align="center">
-
-**If you found this project helpful, please give it a ⭐!**
-
+If you found this project helpful, please give it a ⭐!
 Made with ❤️ using Flutter
-
 </div>
